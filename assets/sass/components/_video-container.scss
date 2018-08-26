@@ -1,0 +1,18 @@
+.video-container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    box-shadow: var(--shadow-blurry-light);
+    border-radius: 2rem;
+    transform: rotate(2deg);
+    & > * {
+        transform: rotate(-2deg);
+    }
+    //background-color: rebeccapurple;
+    &__video {
+        height: 40rem;
+        width: 60rem;
+        background-color: var(--color-grey-light-3);
+        border-radius: .6rem;
+    }
+}

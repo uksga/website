@@ -1,0 +1,48 @@
+.user {
+    display: flex;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: var(--shadow-light);
+    width: 100%;
+    border-radius: var(--radius-medium);
+    align-items: center;
+
+    &__profile-image-container {
+        margin: 0 2rem;
+    }
+
+    &__profile-image {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+    }
+
+    &__contact-container {
+        height: 100%;
+    }
+
+    &__contact {
+        margin-right: 2rem;
+    }
+
+    &__role-container {
+        padding: 1rem 1.5rem;
+        background-color: var(--color-primary-light);
+        border-radius: var(--radius-small);
+        margin-right: auto;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    &__role {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: var(--font-weight-medium);
+    }
+
+    &__icon {
+        color: #fff;
+        margin-right: .5rem;
+    }
+}

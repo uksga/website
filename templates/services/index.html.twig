@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services{% endblock %}
+
+{% block body %}
+
+<header class="header header--services">
+    <div class="header__text-container">
+        <h1 class="heading-primary heading-primary--white">
+            Our Services
+        </h1>
+        <p class="description description--white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusamus tenetur expedita illum deserunt cupiditate ducimus soluta vitae saepe, dolor iusto quasi, repellat quae. Nobis, quaerat! Iste in veniam quisquam.</p>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        {% for service in services %}
+            {{ include('services/_service.html.twig', {'service': service}) }}
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock %}

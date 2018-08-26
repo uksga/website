@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<header class="header header--{{team.name}}">
+    <div class="header__text-container">
+        <h1 class="heading-primary heading-primary--white">
+            The {{ team.name|capitalize }} team
+        </h1>
+        <p class="description description--white">{{ team.longDescription }}</p>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        {{ include('branches/_branch-roster.html.twig', {'team': team}) }}
+    </section>
+</main>
+
+{% endblock %}

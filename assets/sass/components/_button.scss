@@ -1,0 +1,100 @@
+.btn {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all .2s;
+    text-align: center;
+    display: inline-block;
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+
+    &--destructive {
+        border: 1px solid var(--color-red);
+        color: var(--color-red);
+        &:hover {
+            background-color: var(--color-red);
+            color: #fff;
+        }
+    }
+
+    &--blue {
+        border: 1px solid royalblue;
+        color: royalblue;
+        &:hover {
+            background-color: royalblue;
+            color: #fff;
+        }
+        &-solid {
+            background-color: royalblue;
+            color: #fff;
+        }
+    }
+
+    &--approved {
+        &::before {
+            font-family: "Material Icons"; 
+            content: "\E876";
+            margin-right: .7rem;
+        }
+    }
+
+    &--green {
+        border: 1px solid var(--color-green);
+        color: var(--color-green);
+        text-transform: uppercase;
+        &:hover {
+            background-color: var(--color-green);
+            color: #fff;
+        }
+        &-solid {
+            background-color: var(--color-green);
+            color: #fff;
+            &:hover {
+                border: 1px solid var(--color-green);
+                color: var(--color-green);
+                background-color: #fff;
+            }
+        }
+    }
+
+    &--full-width {
+        width: 100%;
+    }
+
+    &-default {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        border-radius: var(--radius-small);
+        &--centered {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+    }
+
+
+    &-primary {
+        background-color: var(--color-primary);
+        color: #fff;
+        border-radius: 100rem;
+        font-size: 1.4rem;
+        box-shadow: 0 0 2rem rgba(var(--color-primary), 0.2);
+        align-content: center;
+        justify-content: center;
+    }
+    &--right {
+        float: right;
+    }
+    &:focus {
+        box-sizing: content-box;
+        border: 3px solid var(--color-primary-light);
+        outline: none;
+    }
+}

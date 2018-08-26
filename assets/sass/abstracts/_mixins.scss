@@ -1,0 +1,51 @@
+@mixin centerVertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+// MEDIA QUERRY MANAGER
+
+/*
+0 - 600 px:         Phone
+600 - 900 px:       Tablet Portrait
+900 - 1200px:       Tablet Landscape
+1200 - 1800px:      Desktop (where our normal styles apply)
+1800 +:             Big Desktop
+
+$breakpoint argument choices
+- phone: 600px
+- tab-port: 900px
+- tab-land: 1200px
+- big-desktop: 1800px
+
+Order to attack media querries:
+- Base
+- Typography
+- Layout (header, footer, navigation, grid)
+- page layout
+- changing components
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) {
+            @content;
+        };
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content;
+        };
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) {
+            @content;
+        };
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        };
+    }
+}

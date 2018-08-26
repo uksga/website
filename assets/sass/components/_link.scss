@@ -1,0 +1,19 @@
+.link {
+
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-primary);
+    transition: all .2s;
+
+    &--primary {
+        color: var(--color-primary);
+    }
+
+    &:hover {
+        letter-spacing: 1px;
+    }
+
+}

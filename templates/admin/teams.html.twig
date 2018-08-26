@@ -1,0 +1,9 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Manage Teams{% endblock %}
+
+{% block body %}
+    {% for team in teams %}
+        {{ include('components/_team-container.html.twig', {'team': team}) }}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>UKSGA Admin &mdash; {% block title %}University of Kentucky Student Government Assoication {% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/css/app_admin.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:300i,400,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+        <nav class="nav-header">
+            <ul class="nav">
+                <li class="nav__item nav__logo"><a href="{{ path('home') }}"><img src="{{ asset('img/logo.jpg') }}" alt="UKSGA Logo" class="logo--primary"></a></li>
+                <li class="nav__item"><a href="{{ path('logout') }}" class="nav__link">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="container-admin-content">
+            <nav class="nav-side">
+                <div class="nav-side__title"><span>Navigation</span></div>
+                <ul class="nav-sidebar">
+                    {% if is_granted('ROLE_USER') %}
+                        <li class="nav-sidebar__item {% if active_link is defined and active_link == 'manage_team' %} nav-sidebar__item--active {% endif %}">
+                            <a href="{{ path('manage_teams') }}" class="nav-sidebar__link">
+                                {# <svg class="nav-sidebar__icon">
+                                    <use xlink:href="img/sprite.svg#icon-home"></use>
+                                </svg> #}
+                                <span>Manage the Teams</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-sidebar__item {% if active_link is defined and active_link == 'control' %} nav-sidebar__item--active {% endif %}">
+                            <a href="{{ path('current_users') }}" class="nav-sidebar__link">
+                                {# <svg class="nav-sidebar__icon">
+                                    <use xlink:href="img/sprite.svg#icon-home"></use>
+                                </svg> #}
+                                <span>Users</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-sidebar__item {% if active_link is defined and active_link == 'services' %} nav-sidebar__item--active {% endif %}">
+                            <a href="{{ path('current_services') }}" class="nav-sidebar__link">
+                                {# <svg class="nav-sidebar__icon">
+                                    <use xlink:href="img/sprite.svg#icon-home"></use>
+                                </svg> #}
+                                <span>Services</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                        <li class="nav-sidebar__item {% if active_link is defined and active_link == 'records' %} nav-sidebar__item--active {% endif %}">
+                            <a href="{{ path('current_records') }}" class="nav-sidebar__link">
+                                {# <svg class="nav-sidebar__icon">
+                                    <use xlink:href="img/sprite.svg#icon-home"></use>
+                                </svg> #}
+                                <span>Records</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+            <div class="container-admin-body">
+                {% block body %}{% endblock %}
+            </div>
+
+        </div>
+        
+        {# <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <div class="footer__logo">
+                            <img src="{{ asset('img/logo_white.png') }}" alt="UKSGA Logo" class="logo--secondary">
+                        </div>
+                        <p class="contact contact--white u-margin-top-medium">Phone Number</p>
+                        <p class="contact contact--white">Address</p>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-12">
+                        <nav class="nav-footer u-margin-bottom-medium">
+                            <ul class="nav-footer">
+                                <li class="nav-footer__item"><a href="#" class="nav-footer__link">About Us</a></li>
+                                <li class="nav-footer__item"><a href="#" class="nav-footer__link">Funding</a></li>
+                                <li class="nav-footer__item"><a href="#" class="nav-footer__link">Constitution</a></li>
+                                <li class="nav-footer__item"><a href="#" class="nav-footer__link">Services</a></li>
+                                <li class="nav-footer__item"><a href="#" class="nav-footer__link">Branches</a></li>
+                            </ul>
+                        </nav>
+                        <div class="social-container">
+                            <a href="#" class="social-container__item">
+                                <div class="social-container__logo"><img src="{{ asset('/img/social_facebook.png') }}" alt="Facebook" class="social-container__image"></div>
+                            </a>
+                            <a href="#" class="social-container__item">
+                                <div class="social-container__logo"><img src="{{ asset('/img/social_github.png') }}" alt="Facebook" class="social-container__image"></div>
+                            </a>
+                            <a href="#" class="social-container__item">
+                                <div class="social-container__logo"><img src="{{ asset('/img/social_instagram.png') }}" alt="Facebook" class="social-container__image"></div>
+                            </a>
+                            <a href="#" class="social-container__item">
+                                <div class="social-container__logo"><img src="{{ asset('/img/social_twitter.png') }}" alt="Facebook" class="social-container__image"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copy">
+                <span class="footer__copy-text">&copy; 2018 University of Kentucky Student Government Association</span>
+            </div>
+        </footer> #}
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

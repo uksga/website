@@ -1,0 +1,26 @@
+<div class="team-container u-margin-bottom-medium">
+    <div class="team-container__title-box u-margin-bottom-medium">
+        <h1 class="heading-secondary team-container__title">{{team.name|capitalize}} Team</h1>
+        {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('edit_team', {'id': team.id})  }}" class="team-container__action btn btn-default btn-default--centered btn--blue"><i class="material-icons centered md-16 team-container__icon">edit</i>Edit Information</a> 
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('add_member') }}" class="team-container__action btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">person_add</i>Add a Member</a>
+        {% endif %}
+    </div>
+    <article class="team-container__description team-container__description--short">
+        <i class="material-icons centered md-18 team-container__description-icon">format_align_left</i>
+        <p class="description u-margin-bottom-small u-margin-top-small">{{ team.shortDescription }}</p>
+    </article>
+    <article class="team-container__description team-container__description--long">
+        <i class="material-icons centered md-18 team-container__description-icon">description</i>
+        <p class="description u-margin-bottom-small u-margin-top-small">{{ team.longDescription }}</p>
+    </article>
+    <div class="container-fluid">
+        <div class="row profile-container__row profile-container__row">
+            {% for member in team.teamMembers %}
+                {{ include('components/_profile-card.html.twig', {'member': member}) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>

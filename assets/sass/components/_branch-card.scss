@@ -1,0 +1,75 @@
+.branch {
+    padding: 0 1rem;
+    margin: 1rem 0;
+
+    @include respond(tab-port)
+    {
+        padding: 0;
+        margin: -4rem;
+    }
+
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        padding-right: 0;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        border-radius: var(--radius-medium);
+        box-shadow: var(--shadow-light);
+        overflow: hidden;
+        @include respond(tab-port)
+        {
+            border-radius: 0;
+        }
+    }
+
+    &__content-container {
+        padding: 2rem 3rem;
+    }
+
+    &__hero {
+        width: 100%;
+        overflow: hidden;
+        min-height: 22rem;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        background-size: cover;
+        background-image: url('../../img/hero_legislative.jpg'); // Default in case the team name isn't defined
+        &--left {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+        }
+        &--legislative {
+            background-image: url('../../img/hero_legislative.jpg');
+        }
+        &--executive {
+            background-image: url('../../img/hero_executive.jpg');
+        }
+        &--judicial {
+            background-image: url('../../img/hero_judicial.jpg');
+        }
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__link,
+    &__link:link,
+    &__link:visited {
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        background-color: var(--color-primary);
+        border-radius: var(--radius-small);
+        font-size: 1.2rem;
+        font-weight: var(--font-weight-medium);
+    }
+
+    &__title-container {
+    }
+}

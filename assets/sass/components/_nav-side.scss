@@ -1,0 +1,84 @@
+.nav-side {
+    flex: 0 0 25%;
+    font-size: 1.4rem;
+    max-width: 25rem;
+    background-color: var(--color-grey-light-1);
+    padding-bottom: 3rem;
+    border-radius: var(--radius-medium);
+
+    &__title {
+        font-weight: var(--font-weight-bold);
+        padding: 0 2.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .nav-sidebar {
+        list-style: none;
+        width: 100%;
+
+        &__item {
+            position: relative;
+            &:not(:last-child) {
+                margin-bottom: .5rem;
+                @media only screen and (max-width: $bp-medium) {
+                    margin-bottom: 0;
+                }
+            }
+            @media only screen and (max-width: $bp-medium) {
+                flex: 1;
+            }
+        }
+
+        &__item--active {
+            background-color: var(--color-primary);
+            color: #fff;
+            font-weight: var(--font-weight-bold);
+
+            & span {
+                color: #fff;
+            }
+        }
+    
+        &__item:active::before {
+            background-color: var(--color-primary-light);
+        }
+    
+        &__link:link,
+        &__link:visited {
+            z-index: 10;
+            position: relative;
+            color: var(--color-grey-dark-1);
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            padding: 1.5rem 3rem;
+            display: flex;
+            align-items: center;
+            
+            @media only screen and (max-width: $bp-medium) {
+                justify-content: center;
+                padding: 2rem;
+            }
+    
+            @media only screen and (max-width: $bp-small) {
+                flex-direction: column;
+                padding: 1.5rem .5rem;
+            }
+        }
+    
+        &__icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            margin-right: 2rem;
+            fill: currentColor;
+            @media only screen and (max-width: $bp-small) {
+                margin-right: 0;
+                margin-bottom: .5rem;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+}

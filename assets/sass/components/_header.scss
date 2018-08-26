@@ -1,0 +1,35 @@
+.header {
+    height: 90vh;
+    background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/header_hero.jpg'); //
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    position: relative;
+
+    &--branches {
+        background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_branches.jpg');
+    }
+
+    &--executive {
+        background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_executive.jpg');
+    }
+
+    &--legislative {
+        background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_legislative.jpg');
+    }
+
+    &--judicial {
+        background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_judicial.jpg');
+    }
+
+    &--services {
+        background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_services.jpg');
+    }
+
+    &__text-container {
+        width: 50vw;
+        margin-left: 10vw;
+    }
+}

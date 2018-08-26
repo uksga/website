@@ -1,0 +1,61 @@
+.service {
+    display: flex;
+    margin: 1rem 0;
+    padding: 5rem 3rem;
+    border-bottom: var(--line);
+
+    &__content-container {
+        flex: 0 0 70%;
+        margin: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__description {
+        margin-bottom: 1rem;
+    }
+
+    &__contact-container {
+        display: flex;
+        position: relative;
+        margin: 4rem 0;
+        &::before {
+            content: "Get in touch!";
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-medium);
+            position: absolute;
+            top: -2.3rem;
+        }
+    }
+
+    &__icon {
+        margin-right: 1rem;
+    }
+
+    &__image-container {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    &__image-caption {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-grey-dark-3);
+    }
+}

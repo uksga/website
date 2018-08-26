@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Branches{% endblock %}
+
+{% block body %}
+<header class="header header--branches">
+    <div class="header__text-container">
+        <h1 class="heading-primary heading-primary--white">
+            Our Branches
+        </h1>
+        <p class="description description--white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusamus tenetur expedita illum deserunt cupiditate ducimus soluta vitae saepe, dolor iusto quasi, repellat quae. Nobis, quaerat! Iste in veniam quisquam.</p>
+    </div>
+</header>
+
+<main>
+    <section class="section container-fluid">
+        <div class="row">
+        {% for team in teams %}
+            {{ include('components/_branch-card.html.twig', {'team': team}) }}
+        {% endfor %}
+        </div>
+    </section>
+</main>
+
+{% endblock %}

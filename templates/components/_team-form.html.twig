@@ -1,0 +1,25 @@
+
+{{ form_start(form, { 'attr': {'class': 'team-member'}}) }}
+{{ form_errors(form) }}
+
+{{ form_label(form.name, null, {'label_attr': {'class': 'team-member__label'}}) }}
+{{ form_widget(form.name, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Enter the team name'}}) }}
+
+{{ form_label(form.short_description, null, {'label_attr': {'class': 'team-member__label'}}) }}
+{{ form_widget(form.short_description, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Enter a short description'}}) }}
+
+{{ form_label(form.long_description, null, {'label_attr': {'class': 'team-member__label'}}) }}
+{{ form_widget(form.long_description, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Enter a longer description'}}) }}
+
+<div class="team-member__action-bar">
+    <div class="team-member__action-item">
+    {% if member is defined %}
+        <a href="{{ path('deactivate', {'id': member.id}) }}" class="btn btn-default btn-default--centered btn--destructive"><i class="material-icons md-16 centered team-member__icon">delete</i>deactivate</a>
+    {% endif %}
+    </div>
+    <div class="team-member__action-item">
+        {{ form_widget(form.save, { 'attr': {'class': 'btn btn-default btn--green-solid'} }) }}
+    </div>
+</div>
+
+{{ form_end(form) }}

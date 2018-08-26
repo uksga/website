@@ -1,0 +1,26 @@
+<div class="profile-container">
+    <div class="container-fluid">
+        <div class="profile-container__section-description u-margin-bottom-medium">
+            <h2 class="heading-secondary heading-secondary--italic">Leadership</h2>
+        </div>
+        <div class="row profile-container__row profile-container__row--vip">
+            {% for member in team.teamMembers %}
+                {% if member.isVip == true %}
+                    {{ include('components/_profile-card.html.twig', {'member': member}) }}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="profile-container__section-description u-margin-bottom-medium">
+            <h2 class="heading-secondary heading-secondary--italic">{% if team.name == 'judicial' %} Justices {% elseif team.name == 'legislative' %} Senators {% elseif team.name == 'executive' %} Directors
+                 {% endif %}
+            </h2>
+        </div>
+        <div class="row profile-container__row profile-container__row">
+            {% for member in team.teamMembers %}
+                {% if member.isVip == false %}
+                    {{ include('components/_profile-card.html.twig', {'member': member}) }}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

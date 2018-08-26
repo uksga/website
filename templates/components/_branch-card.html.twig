@@ -1,0 +1,16 @@
+<article class="col-lg-4 col-md-6 col-sm-12 branch">
+    <div class="branch__card">
+        <div class="branch__hero branch__hero--{{ team.name }}"></div>
+        <div class="branch__content-container">
+            <div class="branch__title-container">
+                <h2 class="heading-secondary heading-secondary--italic heading-secondary--small"> 
+                    {{ team.name|capitalize }}
+                </h1>
+            </div>
+            <div class="branch__description-container">
+                <p class="description description--small u-margin-bottom-small">{{ team.shortDescription }}</p>
+                <a href="{{ path('branch_page', {'teamName': team.name}) }}" class="branch__link">Learn More &rarr;</a>
+            </div>
+        </div>
+    </div>
+</article>

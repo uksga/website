@@ -1,0 +1,21 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Edit {{member.firstName ~ ' ' ~ member.lastName|capitalize}}{% endblock %}
+
+{% block body %}
+
+<div class="team-container__title-box u-margin-bottom-medium">
+    <h1 class="team-container__title heading-secondary"> {% if member is defined %}Editing {{member.firstName ~ ' ' ~ member.lastName|capitalize}} {% else %} Add a Member
+        {% endif %} </h1>
+    {% if referer is defined %}
+        <a href="{{ referer }}" class="btn btn-default btn--blue">&larr; Go Back</a>
+    {% endif %} 
+</div>
+
+{{ include('team/_member-form.html.twig', {'form':form}) }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src=" {{ asset('build/js/app.js') }} "></script>
+{% endblock %}

@@ -1,0 +1,32 @@
+.footer {
+    min-height: 25rem;
+    background-color: var(--color-primary-dark);
+    clip-path: polygon(0% 12%, 33% 0%, 100% 10%, 100% 100%, 0% 100%);
+    position: relative;
+    display: flex;
+    padding: 6rem 6rem;
+
+
+    &__copy {
+        position: absolute;
+        width: 100%;
+        background-color: var(--color-primary-darkest);
+        bottom: 0;
+        left: 0;
+    }
+
+    &__copy-text {
+        color: #fff;
+        font-size: 1rem;
+        opacity: .4;
+        display: block;
+        text-align: center;
+        padding-top: .7rem;
+        padding-bottom: .7rem;
+        letter-spacing: .15rem;
+    }
+
+    &__logo {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+}

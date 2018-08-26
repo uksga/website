@@ -1,0 +1,29 @@
+{% if member.active == true %}
+<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
+    <div class="profile-container__profile">
+        {% if is_granted('ROLE_ADMIN') %}
+            {% if can_delete is not defined or can_delete == false %}
+                <a href="{{ path('edit_member', {'id': member.id} ) }}" class="profile-container__link">
+                    <i class="profile-container__icon material-icons">settings</i>
+                </a>
+            {% endif %}
+        {% endif %}
+        
+        <div class="profile-container__image-container u-margin-bottom-xsmall">
+            <img src="{% if member.profileImageURL == "" %} {{ asset('img/placeholder_profile.png')}} {% else %} {{ s3_path ~ member.profileImageURL}} {% endif %}" alt="Profile picture" class="profile-container__image">
+        </div>
+        <div class="profile-container__information">
+            <p class="contact-information contact-information--title">{{member.title|title}}
+            </p>
+            <p class="contact-information contact-information--name">{{member.firstName ~ ' ' ~ member.lastName|title}}</p>
+            <div class="profile-container__information-box">
+                <i class="material-icons md-18 centered profile-container__text-icon">mail</i>
+                <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" class="profile-container__link">{{member.email}}</a>
+            </div>
+            {% if can_delete is defined and can_delete == true %}
+                <a href="{{ path('edit_member', {'id': member.id}) }}" class="btn btn-default btn--blue btn--full-width u-margin-top-medium">edit</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}

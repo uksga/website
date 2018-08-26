@@ -1,0 +1,94 @@
+:root {
+    --color-primary-lightest: #d5e4fc;
+    --color-primary-light: #3772d1;
+    --color-primary: #18468f;
+    --color-primary-dark: #202c5f;
+    --color-primary-darkest: #141e3f;
+
+    --color-grey-light-1: #f9f9f9;
+    --color-grey-light-2: #dfe1e5;
+    --color-grey-light-3: #c2c6cc;
+
+    --color-grey-dark-1: #2c2a29;
+    --color-grey-dark-2: #63656a;
+    --color-grey-dark-3: #6f787c;
+
+    --color-green: rgb(54, 199, 90);
+
+    --color-red: rgb(233, 79, 79);
+
+    --shadow-dark: 0 .2rem .6rem rgba(0, 0, 0, .5);
+    --shadow-light: 0rem 0rem 1rem rgba(0, 0, 0, .1);
+    --shadow-blurry-light: 0rem .2rem 1.8rem rgba(0, 0, 0, .15);
+
+    --line: 1px solid var(--color-grey-light-2);
+    --line-light: 2px solid var(--color-grey-light-1);
+
+    --font-serif: 'Merriweather', serif;
+    --font-sans-serif: 'Open Sans', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 600;
+    --font-weight-bold: 700;
+
+    --radius-small: .3rem;
+    --radius-medium: .6rem;
+    --radius-large: 1rem;
+}
+
+$bp-largest: 75em; // 1200 px
+$bp-large: 68.75em; // 1100 px
+$bp-medium: 56.25em; // 900 px
+$bp-small: 37.5em; // 600 px
+$bp-smallest: 31.25rem; // 500 px
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1 rem = 9px -> 9px / 16px = 56.25%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 1 rem = 8px -> 8px / 16px = 50%;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1 rem = 12px -> 12px / 16px = 75%;
+    }
+}
+
+body {
+    //background-color: #eb2f64;
+    font-family: var(--font-sans-serif);
+    font-weight: 300;
+    line-height: 1.6;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: var(--color-grey-dark-2);
+}
+
+[class^="col-"],
+.container-fluid,
+.row {
+    padding: 0;
+    margin: 0;
+}
+
+::selection {
+    background-color: var(--color-primary);
+    color: #fff;
+}

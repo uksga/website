@@ -1,0 +1,14 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Records{% endblock %}
+
+{% block body %}
+
+<div class="team-container u-margin-bottom-medium">
+    {{ include('components/_records-container.html.twig', {'managingEntity': asa}) }}
+    {{ include('components/_records-container.html.twig', {'managingEntity': ar}) }}
+    {{ include('components/_records-container.html.twig', {'managingEntity': oe}) }}
+    {{ include('components/_records-container.html.twig', {'managingEntity': fullSenate}) }}
+</div>
+
+{% endblock %}

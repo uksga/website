@@ -1,0 +1,18 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Edit {{team.name|capitalize}} Team{% endblock %}
+
+{% block body %}
+
+<div class="team-container__title-box u-margin-bottom-medium">
+    <h1 class="team-container__title heading-secondary"> {% if team is defined %}Editing {{ team.name|capitalize }} Team{% endif %}</h1>
+    {% if referer is defined %}
+        <a href="{{ referer }}" class="btn btn-default btn--blue">&larr; Go Back</a>
+    {% endif %} 
+</div>
+
+{{ include('components/_team-form.html.twig', { 'form': form })}}
+
+{% endblock %}
+
+

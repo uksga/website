@@ -1,0 +1,20 @@
+.section {
+    padding: 4rem 20rem;
+    @include respond(tab-port) {
+        padding: 4rem 4rem;
+    }
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.container-admin-content {
+    display: flex;
+    padding: 4rem;
+}
+
+.container-admin-body {
+    margin-left: 5rem;
+    flex: 1;
+}

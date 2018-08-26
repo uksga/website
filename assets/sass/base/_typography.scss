@@ -1,0 +1,90 @@
+.heading-primary {
+    font-size: 6.2rem;
+    color: var(--color-grey-dark-1);
+    font-family: var(--font-serif);
+    margin: 0;
+    padding: 0;
+
+    &--italic {
+        font-style: italic;
+    }
+
+    &--white {
+        color: #fff;
+    }
+}
+
+.heading-secondary {
+    font-size: 2.2rem;
+    color: var(--color-grey-dark-1);
+    font-family: var(--font-serif);
+    margin: 0;
+    padding: 0;
+    &--italic {
+        font-weight: var(--font-weight-bold);
+        font-size: 3.2rem;
+        font-style: italic;
+    }
+    &--small {
+        font-size: 2rem;
+    }
+
+}
+
+.description {
+    font-size: 1.8rem;
+    color: var(--color-grey-dark-2);
+
+    &--white {
+        color: #fff;
+    }
+
+    &--primary {
+        color: var(--color-primary);
+    }
+    &--callout {
+        font-family: var(--font-serif);
+        font-style: italic;
+    }
+
+    &--small {
+        font-size: 1.4rem;
+    }
+}
+
+.contact {
+    font-size: 1.4rem;
+    &--white {
+        color: rgba(#fff, 0.7);
+    }
+}
+
+.material-icons {
+    &.md-18 {
+        font-size: 1.8rem;
+    }
+    &.md-16 {
+        font-size: 1.6rem;
+    }
+    &.centered {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.contact-information {
+    font-size: 1.6rem;
+    font-family: var(--font-serif);
+    &--title {
+        font-weight: var(--font-weight-bold);
+        font-style: italic;
+    }
+    &--name {
+        font-size: 1.4rem;
+    }
+    &--contact {
+        font-size: 1.4rem;
+        font-family: var(--font-sans-serif);
+        font-style: italic;
+    }
+}

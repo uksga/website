@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<header class="header">
+    <div class="header__text-container">
+        <h1 class="heading-primary heading-primary--white">
+            Welcome
+        </h1>
+        <p class="description description--white">Student Government Association is the governing body of the University of Kentucky. We are here to improve the quality of students' experiences while they are on campus, by listening to them and advocating on their behalf.</p>
+        {% set messages = app.flashes('info') %}
+        {% if messages is not empty%}
+            {% for message in messages %}
+                <p class="description description--white description--callout u-margin-top-large">{{ message }}</p>
+            {% endfor %}
+        {% else %}
+            {{ form_start(form, {'attr': {'class': 'get-involved'}}) }}
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email, { 'attr': {'class': 'get-involved__email', 'placeholder': 'Enter your email'} }) }}
+                {{ form_widget(form.save, { 'attr': {'class': 'get-involved__submit'} }) }}
+            {{ form_end(form) }}
+        {% endif %}
+
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <h1 class="heading-primary">About Us</h1>
+        <p class="description u-margin-bottom-large">Student Government is passionate about students. SGA is more than just another student organization, we advocate for the students of the University of Kentucky, here to amplify their voices. We strive to empower students through providing programming, funding, and forums. We are here to support you.</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card__image-container">
+                            <img src="{{ asset('img/card_funding.png') }}" alt="Funding icon" class="card__image">
+                        </div>
+                        <div class="card__description">
+                            <h2 class="heading-secondary">Wildcab</h2>
+                            <p class="description-secondary">A free taxi service with student drivers that runs from Thursday night to Saturday night while promoting responsible late-night transportation decisions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card__image-container">
+                            <img src="{{ asset('img/card_helping.png') }}" alt="Funding icon" class="card__image">
+                        </div>
+                        <div class="card__description">
+                            <h2 class="heading-secondary">Wildcat Wardrobe</h2>
+                            <p class="description-secondary">A free career closet that helps to alleviate the burden that comes with acquiring professional attire. Students are allowed to pick out 3 times with their student ID, no questioned asked. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card__image-container">
+                            <img src="{{ asset('img/card_constitution.png') }}" alt="Funding icon" class="card__image">
+                        </div>
+                        <div class="card__description">
+                            <h2 class="heading-secondary">Childcare Grants</h2>
+                            <p class="description-secondary">Funding made available to full or part-time students to help them pay for daycare or after school programs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card">
+                        <div class="card__image-container">
+                            <img src="{{ asset('img/card_resources.png') }}" alt="Funding icon" class="card__image">
+                        </div>
+                        <div class="card__description">
+                            <h2 class="heading-secondary">Scholarships</h2>
+                            <p class="description-secondary">Funding given to students to help alleviate the cost of schooling as well as the costs of being an intern. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <h1 class="heading-primary">Get Involved</h1>
+        <p class="description u-margin-bottom-large">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit quae, explicabo recusandae, eaque voluptatem iste aliquam tempore quo iusto sed culpa reiciendis quam consectetur totam libero sint asperiores veritatis odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quae repudiandae et totam vero inventore accusamus doloribus ducimus saepe libero minima sed molestiae consequuntur temporibus magnam, enim aut nihil ea.</p>
+        <div class="video-container u-margin-bottom-huge">
+            <div class="video-container__video"></div>
+        </div>
+        <div class="get-involved-container">
+            {# {% if is_email_submitted == false %}
+                {{ form_start(form_bottom, {'attr': {'class': 'get-involved'}}) }}
+                        {{ form_label(form_bottom.email) }}
+                        {{ form_widget(form_bottom.email, { 'attr': {'class': 'get-involved__email', 'placeholder': 'Enter your email'} }) }}
+                        {{ form_widget(form_bottom.save, { 'attr': {'class': 'get-involved__submit'} }) }}
+                {{ form_end(form_bottom) }}
+            {% else %}
+                <p class="description description--primary description--callout u-margin-top-large">We've received your email and will get in contact with you shortly!</p>
+            {% endif %} #}
+        </div>
+    </section>
+</main> 
+
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Services{% endblock %}
+
+{% block body %}
+
+<div class="team-container">
+    <div class="team-container__title-box u-margin-bottom-small">
+        <h1 class="heading-secondary team-container__title">Current Services</h1>
+        <a href="{{ path('add_service') }}" class="btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">view_list</i> Add a Service</a>
+    </div>
+    <div class="container-fluid">
+        <div class="row profile-container__row profile-container__row">
+            {% if services|length == 0 %}
+                <p class="description description--callout u-margin-top-large">Sorry, there are no services.</p>
+            {% endif %}
+            {% for service in services %}
+                {{ include('services/_service.html.twig', {'service': service}) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

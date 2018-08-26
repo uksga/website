@@ -1,0 +1,24 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}Add a User{% endblock %}
+
+{% block body %}
+
+<div class="team-container">
+    <div class="team-container__title-box u-margin-bottom-small">
+        <h1 class="heading-secondary team-container__title">Current Team</h1>
+        <a href="{{ path('add_user') }}" class="btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">person_add</i> Add a User</a>
+    </div>
+    <div class="container-fluid">
+        <div class="row profile-container__row profile-container__row">
+            {% if users|length == 0 %}
+                <p class="description description--callout u-margin-top-large">Sorry, there are no users.</p>
+            {% endif %}
+            {% for user in users %}
+                {{ include('team/_user.html.twig', {'user': user}) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

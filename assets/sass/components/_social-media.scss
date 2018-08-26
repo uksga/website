@@ -1,0 +1,28 @@
+.social-container {
+    display: flex;
+    justify-content: flex-end;
+
+    &__item {
+        margin: 0 .5rem;
+        background-color: #fff;
+        border-radius: 50%;
+        height: 3.5rem;
+        width: 3.5rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-dark);
+        cursor: pointer;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__image {
+        width: 80%;
+    }
+
+}
+
