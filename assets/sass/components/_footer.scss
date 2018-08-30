@@ -1,10 +1,19 @@
 .footer {
     min-height: 25rem;
     background-color: var(--color-primary-dark);
-    clip-path: polygon(0% 12%, 33% 0%, 100% 10%, 100% 100%, 0% 100%);
     position: relative;
     display: flex;
     padding: 6rem 6rem;
+
+    @supports (clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%)) or (-webkit-clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%)) {
+        clip-path: polygon(0% 12%, 33% 0%, 100% 10%, 100% 100%, 0% 100%);
+    }
+
+    @include respond(tab-port) {
+        @supports (clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%)) or (-webkit-clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%)) {
+            clip-path: polygon(0% 0%, 100% 8%, 100% 100%, 0% 100%);
+        }
+    }
 
 
     &__copy {
@@ -28,5 +37,8 @@
 
     &__logo {
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        @include respond(tab-port) {
+            text-align: center;
+        }
     }
 }

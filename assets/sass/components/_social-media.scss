@@ -2,6 +2,10 @@
     display: flex;
     justify-content: flex-end;
 
+    @include respond(tab-port) {
+        justify-content: center;
+    }
+
     &__item {
         margin: 0 .5rem;
         background-color: #fff;
