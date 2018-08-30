@@ -10,19 +10,31 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         {% endblock %}
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     </head>
     <body>
-        <nav class="nav-header">
-            <ul class="nav">
-                <li class="nav__item nav__logo"><a href="{{ path('home') }}"><img src="{{ asset('img/logo.jpg') }}" alt="UKSGA Logo" class="logo--primary"></a></li>
-                <li class="nav__item {% if active_link is defined and active_link == 'about_us' %} nav__item--active {% endif %}"><a href="{{ path('home') }}" class="nav__link">About Us</a></li>
-                <li class="nav__item {% if active_link is defined and active_link == 'branches' %} nav__item--active {% endif %}"><a href="{{ path('branches') }}" class="nav__link">Branches</a></li>            
-                <li class="nav__item {% if active_link is defined and active_link == 'services' %} nav__item--active {% endif %}"><a href="{{ path('services_home') }}" class="nav__link">Services</a></li>
-                <li class="nav__item {% if active_link is defined and active_link == 'funding' %} nav__item--active {% endif %}"><a href="#" class="nav__link">Funding</a></li>
-                <li class="nav__item {% if active_link is defined and active_link == 'constitution' %} nav__item--active {% endif %}"><a href="#" class="nav__link">Legislation</a></li>
-                <li class="nav__item {% if active_link is defined and active_link == 'constitution' %} nav__item--active {% endif %}"><a href="#" class="nav__link">Records</a></li>
-            </ul>
-        </nav>
+        <header class="nav-header">
+            <figure class="nav-header__logo-container">
+                <a href="{{ path('home')}}"><img src="{{ asset('img/logo.jpg') }}" alt="UKSGA Logo" class="nav-header__logo logo--primary"></a>
+            </figure>
+            <div class="nav-header__nav-toggle" id="nav-toggle">
+                <button class="hamburger hamburger--collapse" type="button" id="nav-toggle-button" aria-label="Menu" aria-controls="navigation">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+            <nav class="nav-header__nav">
+                <ul class="nav-primary">
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'about_us' %} nav-primary__item--active {% endif %}"><a href="{{ path('home') }}" class="nav-primary__link">About Us</a></li>
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'branches' %} nav-primary__item--active {% endif %}"><a href="{{ path('branches') }}" class="nav-primary__link">Branches</a></li>            
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'services' %} nav-primary__item--active {% endif %}"><a href="{{ path('services_home') }}" class="nav-primary__link">Services</a></li>
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'funding' %} nav-primary__item--active {% endif %}"><a href="#" class="nav-primary__link">Funding</a></li>
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'constitution' %} nav-primary__item--active {% endif %}"><a href="#" class="nav-primary__link">Legislation</a></li>
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'constitution' %} nav-primary__item--active {% endif %}"><a href="#" class="nav-primary__link">Records</a></li>
+                </ul>
+            </nav>
+        </header>
 
         {% block body %}{% endblock %}
         
@@ -47,17 +59,17 @@
                             </ul>
                         </nav>
                         <div class="social-container">
-                            <a href="#" class="social-container__item">
+                            <a href="https://www.facebook.com/UKStudentGovernmentAssociation/" class="social-container__item" target="_blank">
                                 <div class="social-container__logo"><img src="{{ asset('/img/social_facebook.png') }}" alt="Facebook" class="social-container__image"></div>
                             </a>
-                            <a href="#" class="social-container__item">
-                                <div class="social-container__logo"><img src="{{ asset('/img/social_github.png') }}" alt="Facebook" class="social-container__image"></div>
+                            <a href="https://github.com/uksga" class="social-container__item" target="_blank">
+                                <div class="social-container__logo"><img src="{{ asset('/img/social_github.png') }}" alt="Github" class="social-container__image"></div>
                             </a>
-                            <a href="#" class="social-container__item">
-                                <div class="social-container__logo"><img src="{{ asset('/img/social_instagram.png') }}" alt="Facebook" class="social-container__image"></div>
+                            <a href="https://www.instagram.com/uksga/" class="social-container__item" target="_blank">
+                                <div class="social-container__logo"><img src="{{ asset('/img/social_instagram.png') }}" alt="Instagram" class="social-container__image"></div>
                             </a>
-                            <a href="#" class="social-container__item">
-                                <div class="social-container__logo"><img src="{{ asset('/img/social_twitter.png') }}" alt="Facebook" class="social-container__image"></div>
+                            <a href="https://twitter.com/uksga" class="social-container__item" target="_blank">
+                                <div class="social-container__logo"><img src="{{ asset('/img/social_twitter.png') }}" alt="Twitter" class="social-container__image"></div>
                             </a>
                         </div>
                     </div>
@@ -67,6 +79,25 @@
                 <span class="footer__copy-text">&copy; 2018 University of Kentucky Student Government Association</span>
             </div>
         </footer>
+        <script>
+            $("#nav-toggle-button").click(function(e){
+                e.preventDefault();
+                $('#nav-toggle-button').toggleClass('is-active');
+                $("header > nav").slideToggle();
+            });
+            {# $("#nav-toggle a").click(function(e){
+                
+            }); #}
+            $(window).resize(function() {
+                if($( window ).width() >= "900") {
+                    console.log("whaddup");
+                    $("header > nav").css("display", "flex");
+                }
+                else {
+                    $("header > nav").css("display", "none");
+                }
+            });
+        </script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

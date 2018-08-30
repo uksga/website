@@ -1,4 +1,5 @@
 @import 'abstracts/functions';
+@import 'abstracts/hamburgers-settings';
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
 
@@ -26,3 +27,4 @@
 @import 'layout/layout';
 
 @import 'vendor/bootstrap.min.css';
+@import '~hamburgers/_sass/hamburgers/hamburgers.scss';

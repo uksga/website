@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "ajv": "^6.5.3",
+    "hamburgers": "^0.9.3",
     "npm": "^6.4.0"
   }
 }

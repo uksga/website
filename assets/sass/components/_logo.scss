@@ -2,6 +2,9 @@
     &--primary {
         height: 4rem;
         margin: 1rem;
+        @include respond(tab-port) {
+            height: 6rem;
+        }
     }
     &--secondary {
         width: 20rem;
