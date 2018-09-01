@@ -4,6 +4,7 @@
     position: relative;
     display: flex;
     padding: 6rem 6rem;
+    margin-top: 6rem;
 
     @supports (clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%)) or (-webkit-clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%)) {
         clip-path: polygon(0% 12%, 33% 0%, 100% 10%, 100% 100%, 0% 100%);

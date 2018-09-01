@@ -1,7 +1,10 @@
 .section {
-    padding: 4rem 20rem;
+    padding: 2rem 20rem;
     @include respond(tab-port) {
-        padding: 4rem 4rem;
+        padding: 2rem 4rem;
+    }
+    &:first-child {
+        margin-top: 6rem;
     }
 }
 
