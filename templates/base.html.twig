@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather:300i,400,700,700i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
         {% endblock %}
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -50,7 +51,7 @@
                         Lexington, KY 40506-0676
                         </p>
                     </div>
-                    <div class="col-lg-7 col-md-7 col-sm-12 u-margin-top-medium">
+                    <div class="col-lg-7 col-md-7 col-sm-12 u-margin-top-large">
                         <div class="social-container">
                             <a href="https://www.facebook.com/UKStudentGovernmentAssociation/" class="social-container__item" target="_blank">
                                 <div class="social-container__logo"><img src="{{ asset('/img/social_facebook.png') }}" alt="Facebook" class="social-container__image"></div>
@@ -83,7 +84,6 @@
             }); #}
             $(window).resize(function() {
                 if($( window ).width() >= "900") {
-                    console.log("whaddup");
                     $("header > nav").css("display", "flex");
                 }
                 else {
