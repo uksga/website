@@ -2,6 +2,8 @@
     display: flex;
     position: relative;
     margin-top: 8rem;
+    flex-wrap: wrap;
+
     &-container {
         width: 100%;
         text-align: center;
@@ -22,6 +24,9 @@
         box-shadow: var(--shadow-dark);
         &--dark {
             box-shadow: var(--shadow-blurry-light);
+        }
+        @include respond(phone) {
+            flex-basis: 100%;
         }
     }
     &__label, label {
@@ -50,6 +55,11 @@
         box-shadow: var(--shadow-dark);
         &--dark {
             box-shadow: var(--shadow-blurry-light);
+        }
+        @include respond(phone) {
+            margin-top: 1rem;
+            flex-basis: 100%;
+            padding: 1.5rem 0;
         }
     }
 }

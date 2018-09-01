@@ -6,6 +6,8 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
     @supports (clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) or (-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) {
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);

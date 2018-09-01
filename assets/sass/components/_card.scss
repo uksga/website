@@ -8,14 +8,20 @@ $side-length: 28%;
     margin: 1.5rem 2rem;
     position: relative;
 
+    @include respond(phone) {
+        flex-direction: column;
+        margin: 3rem 0;
+    }
+
     &__image-container {
         overflow: hidden;
-        //clip-path: url(#svgPath);
         background-color: rebeccapurple;
-        //clip-path: polygon($side-length 0, 100%-$side-length 0%, 100% $side-length, 100% 100%-$side-length, 100%-$side-length 100%, $side-length 100%, 0% 100%-$side-length, 0% $side-length);
         margin-right: 3rem;
         flex: 0 0 40%;
         z-index: 100;
+        @include respond(phone) {
+            margin: -1.5rem -2rem 0 -2rem;
+        }
     }
     &__image {
         width: 100%;
@@ -26,5 +32,8 @@ $side-length: 28%;
         flex-direction: column;
         justify-content: center;
         flex: 1;
+        @include respond(phone) {
+            margin-top: 2rem;
+        }
     }
 }
