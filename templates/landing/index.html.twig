@@ -14,10 +14,10 @@
                 <p class="description description--white description--callout u-margin-top-large">{{ message }}</p>
             {% endfor %}
         {% else %}
-            {{ form_start(form, {'attr': {'class': 'get-involved'}}) }}
+            {{ form_start(form, {'attr': {'class': 'user-inputs'}}) }}
                 {{ form_label(form.email) }}
-                {{ form_widget(form.email, { 'attr': {'class': 'get-involved__email', 'placeholder': 'Enter your email'} }) }}
-                {{ form_widget(form.save, { 'attr': {'class': 'get-involved__submit'} }) }}
+                {{ form_widget(form.email, { 'attr': {'class': 'user-inputs__email', 'placeholder': 'Enter your email'} }) }}
+                {{ form_widget(form.save, { 'attr': {'class': 'user-inputs__submit'} }) }}
             {{ form_end(form) }}
         {% endif %}
 
@@ -121,4 +121,3 @@
 </main> 
 
 {% endblock %}
-
