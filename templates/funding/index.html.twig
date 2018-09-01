@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<header class="header header--funding">
+    <div class="header__text-container">
+        <h1 class="heading-primary heading-primary--white">
+            Funding
+        </h1>
+        <p class="description description--white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolorum veniam fuga perspiciatis? Similique doloremque repudiandae rem! Nisi maxime sunt veniam voluptate velit odit aliquam, saepe dolore eaque, asperiores quisquam.</p>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <h1 class="heading-primary">Types of Funding</h1>
+        <p class="description u-margin-bottom-medium">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quisquam voluptates nostrum quasi eaque 
+            animi quidem iusto cum beatae voluptate odit laudantium nihil excepturi, provident voluptatibus 
+            perferendis velit non itaque!
+        </p>
+
+        <article class="funding-type">
+            <h3 class="funding-type__title">General Funding Grant</h3>
+            <p class="funding-type__content">
+                General Funding Grants are all purpose funding requests, including travel, 
+                programming, etc, for Registered Student Organizations. The maximum for this grant is $750.
+            </p>
+            <div class="funding-type__amount-container">
+                 <span class="funding-type__amount-header">Max Amount: $750</span>
+            </div>
+        </article>
+
+        <article class="funding-type">
+            <h3 class="funding-type__title">Club Sports Grant</h3>
+            <p class="funding-type__content">
+                Club Sport Grants are reserved for registered Club Sport Teams wishing to obtain 
+                funding for a project, event and/or supplies.  The maximum for this grant is $1,500.
+            </p>
+            <div class="funding-type__amount-container">
+                 <span class="funding-type__amount-header">Max Amount: $1,500</span>
+            </div>
+        </article>
+
+        <article class="funding-type">
+            <h3 class="funding-type__title">Multicultural Inclusion Grant</h3>
+            <p class="funding-type__content">
+                Multicultural Inclusion Grant is a funding request in which any Registered Student 
+                Organization may apply for funding for the purpose of promoting diversity, inclusion, 
+                and/or the spread of multicultural values throughout the University of Kentucky Student Body.
+            </p>
+            <div class="funding-type__amount-container">
+                 <span class="funding-type__amount-header">Max Amount: $1,500</span>
+            </div>
+        </article>
+
+        <article class="funding-type">
+            <h3 class="funding-type__title">Service Grants</h3>
+            <p class="funding-type__content">
+                Service Grants are intended for a community service project sponsored by a 
+                Registered Student Organization. The maximum for this grant is $1,500.
+            </p>
+            <div class="funding-type__amount-container">
+                 <span class="funding-type__amount-header">Max Amount: $1,500</span>
+            </div>
+        </article>
+
+        <article class="funding-type">
+            <h3 class="funding-type__title">Senate Special Project</h3>
+            <p class="funding-type__content">
+                Senate Special Projects are funding requests intended to benefit the student body that must be 
+                sponsored by a Student Government Senator. The maximum for this grant is $2,500. 
+                Please contact a Senator and visit their office hours to discuss funding for a Senate Special Project.
+            </p>
+            <div class="funding-type__amount-container">
+                 <span class="funding-type__amount-header">Max Amount: $2,500</span>
+            </div>
+        </article>
+    </section>
+
+    <section class="section">
+        <h1 class="heading-primary">How to Receive Funding</h1>
+        <p class="description u-margin-bottom-small">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quisquam voluptates nostrum quasi eaque 
+            animi quidem iusto cum beatae voluptate odit laudantium nihil excepturi, provident voluptatibus 
+            perferendis velit non itaque!
+        </p>
+        <ol class="funding-type__list" type="1">
+            <li class="funding-type__list-item">
+                Complete this online form. If you have any additional questions, contact Courtney 
+                Wheeler at funding@uksga.org.
+            </li>
+            <li class="funding-type__list-item">
+                Present the request in person at the next Appropriations & Revenue (A&R) Committee Meeting. 
+            </li>
+            <li class="funding-type__list-item">
+                If your proposal is approved by the A&R Committee, you will need to contact Lynn Fresca 
+                within the next FIVE (5) business days. If you fail to do so, your grant will be voided.
+            </li>
+        </ol>
+    </section>
+
+    <section class="section">
+        <h1 class="heading-primary">Important Information</h1>
+        <article class="funding-type">
+            <h3 class="funding-type__title">Reimbursement Policy</h3>
+            <p class="funding-type__content">
+                Student Government funds organizations by reimbursement only. All receipts must be 
+                submitted to the SGA office manager within 30 days of the approved event, project or 
+                purchase. If receipts are not turned in within the 30 day window, the funding will be 
+                forfeited. Groups can only be funded once per fiscal year.
+            </p>
+        </article>
+        <article class="funding-type">
+            <h3 class="funding-type__title">Prohibited Items</h3>
+            <p class="funding-type__content">
+                Student Government will not provide funding for the following items: food and beverages, 
+                non-university approved vendors, subscriptions, taxes, management or consulting fees, 
+                organizational membership dues, personal gifts, donations or contributions, financial aid, 
+                scholarships, expenses incurred prior to Student Government approval, all equipment, awards, 
+                trophies or prizes.
+            </p>
+        </article>
+    </section>
+</main>
+
+{% endblock %}

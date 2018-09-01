@@ -29,8 +29,8 @@
                 <ul class="nav-primary">
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'about_us' %} nav-primary__item--active {% endif %}"><a href="{{ path('home') }}" class="nav-primary__link">About Us</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'branches' %} nav-primary__item--active {% endif %}"><a href="{{ path('branches') }}" class="nav-primary__link">Branches</a></li>            
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'services' %} nav-primary__item--active {% endif %}"><a href="{{ path('services_home') }}" class="nav-primary__link">Services</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'funding' %} nav-primary__item--active {% endif %}"><a href="#" class="nav-primary__link">Funding</a></li>
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'services' %} nav-primary__item--active {% endif %}"><a href="{{ path('services') }}" class="nav-primary__link">Services</a></li>
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'funding' %} nav-primary__item--active {% endif %}"><a href="{{ path('funding')}}" class="nav-primary__link">Funding</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'constitution' %} nav-primary__item--active {% endif %}"><a href="#" class="nav-primary__link">Legislation</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'constitution' %} nav-primary__item--active {% endif %}"><a href="#" class="nav-primary__link">Records</a></li>
                 </ul>

@@ -19,7 +19,7 @@ use App\Entity\TeamMember;
 class ServicesController extends Controller
 {
     /**
-     * @Route("/", name="services_home")
+     * @Route("/", name="services")
      */
     public function index(Request $request)
     {

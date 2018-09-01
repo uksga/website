@@ -1,12 +1,23 @@
 .header {
     height: 90vh;
-    background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent);//, url('../../img/header_hero.jpg'); //
+    background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/header_hero.jpg'); //
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
     position: relative;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    @supports (clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) or (-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    }
+
+    @include respond(tab-port) {
+        @supports (clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) or (-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)) {
+            clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+        }
+    }
 
     &--branches {
         background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_branches.jpg');
@@ -28,8 +39,17 @@
         background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_services.jpg');
     }
 
+    &--funding {
+        background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_funding.jpg');
+    }
+
     &__text-container {
         width: 50vw;
         margin-left: 10vw;
+        @include respond(tab-port) {
+            width: 100%;
+            padding: 4rem;
+            margin: 0;
+        }
     }
 }

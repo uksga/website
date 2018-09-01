@@ -1,0 +1,54 @@
+.funding-type {
+    font-family: var(--font-serif);
+    margin-left: 4rem;
+
+    @include respond(tab-port) {
+        margin-left: 0;
+    }
+
+    &:not(:first-child) {
+        margin-top: 4rem;
+        @include respond(tab-port) {
+            margin-top: 2rem;
+        }
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        color: var(--color-grey-dark-1);
+        border-bottom: var(--line);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    &__content {
+        font-family: var(--font-sans-serif);
+        font-size: 1.6rem;
+    }
+
+    &__amount-container {
+        display: flex;
+        margin-top: 1.4rem;
+    }
+
+    &__amount-header {
+        font-family: var(--font-sans-serif);
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: var(--font-weight-bold);
+    }
+
+    &__list {
+        padding: 0 4rem;
+        font-size: 1.6rem;
+        @include respond(tab-port) {
+            padding: 0 2rem;
+        }
+    }
+
+    &__list-item {
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
