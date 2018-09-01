@@ -615,6 +615,10 @@ body {
   margin: 1rem;
 }
 
+.logo--flex {
+  width: 100%;
+}
+
 .nav-header {
   display: flex;
   box-shadow: var(--shadow-light);

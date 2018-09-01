@@ -77,24 +77,46 @@
             </div>
         </div>
     </section>
-    <section class="section">
-        <h1 class="heading-primary">Get Involved</h1>
-        <p class="description u-margin-bottom-large">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit quae, explicabo recusandae, eaque voluptatem iste aliquam tempore quo iusto sed culpa reiciendis quam consectetur totam libero sint asperiores veritatis odio.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quae repudiandae et totam vero inventore accusamus doloribus ducimus saepe libero minima sed molestiae consequuntur temporibus magnam, enim aut nihil ea.</p>
-        <div class="video-container u-margin-bottom-huge">
-            <div class="video-container__video"></div>
-        </div>
-        <div class="user-inputs-container">
-            {# {% if is_email_submitted == false %}
-                {{ form_start(form_bottom, {'attr': {'class': 'user-inputs'}}) }}
-                        {{ form_label(form_bottom.email) }}
-                        {{ form_widget(form_bottom.email, { 'attr': {'class': 'user-inputs__email', 'placeholder': 'Enter your email'} }) }}
-                        {{ form_widget(form_bottom.save, { 'attr': {'class': 'user-inputs__submit'} }) }}
-                {{ form_end(form_bottom) }}
-            {% else %}
-                <p class="description description--primary description--callout u-margin-top-large">We've received your email and will get in contact with you shortly!</p>
-            {% endif %} #}
-        </div>
+    <section class="section u-margin-bottom-large">
+        <article class="letter">
+            <div class="letter__head u-margin-bottom-medium">
+                <figure class="letter__logo-container">
+                    <img src="{{ asset('img/logo.jpg') }}" alt="UKSGA Logo" class="letter__logo logo--flex">
+                </figure>
+                <div class="letter__office">
+                    <span class="letter__office-name">Student and Academic Life</span>
+                    <span class="letter__office-details">Office of Student Organizations and Activites</span>
+                </div>
+            </div>
+            <p class="letter__content">
+                Wildcats,
+                <br><br>
+                Thanks for showing an interest in Student Government! First off, please explore our many services and programs and utilize them during your time as a student. From Wildcab to Wildcat Wardrobe, our services address various aspects of the student experience, but they are sure to make life just a little bit easier.
+                <br><br>
+                Additionally, as your elected representatives, we strive to engage with students as much as possible in order to ensure the feedback we are providing to administrators is accurate and matches the pulse of campus. So, leave feedback here on our site, email us, call us, or best of all, visit us in our office space in Student Center Suite A267 in the Center for Student Involvement!
+                Finally, get involved! We have a great team of passionate leaders, but we can always benefit from new perspectives. Run to be a senator or executive member in our general election in the spring, apply to be a director or coordinator, or just stay in touch and talk to us about what you are passionate or concerned about!
+                <br><br>
+                On, On, UofK,
+                <br><br>
+                Michael A. Hamilton <br>
+                Student Body President <br>
+                University of Kentucky
+            </p>
+            <figure class="letter__signature-container u-margin-top-medium">
+            <img src="{{ asset('img/signature-small.png') }}" alt="Michael Hamilton's Signature" class="letter__signature">
+            </figure>
+            <div class="letter__footer u-margin-top-large">
+                <figure class="letter__footer-logo">
+                    <img src="{{ asset('img/logo.jpg') }}" alt="See Blue logo" class="letter__logo">
+                </figure>
+                <p class="letter__footer-contact u-margin-top-small">
+                Gatton Student Center | 160 Avenue of Champions, Suite A267 | Lexington, KY 
+                </p>
+                <p class="letter__footer-detail u-margin-top-small">
+                An Equal Opportunity University
+                </p>
+            </div>
+        </article>
     </section>
 </main> 
 

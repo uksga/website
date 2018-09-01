@@ -618,6 +618,72 @@ body {
   margin-left: 10vw;
 }
 
+.letter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 6rem 4rem 3rem 4rem;
+  margin: 0 auto;
+  max-width: 80rem;
+  box-shadow: var(--shadow-light);
+  border-radius: var(--radius-small);
+}
+
+.letter__head {
+  display: flex;
+  width: 100%;
+}
+
+.letter__logo-container {
+  flex: 0 0 20rem;
+  border-right: var(--line);
+}
+
+.letter__office {
+  flex: 1;
+  font-family: var(--font-serif);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+.letter__office-details {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.letter__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-serif);
+}
+
+.letter__footer-contact {
+  font-size: 1.2rem;
+}
+
+.letter__footer-detail {
+  color: var(--color-primary);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.letter__signature-container {
+  width: 20rem;
+  align-self: flex-start;
+}
+
+.letter__signature {
+  width: 100%;
+}
+
+.letter__logo {
+  width: 12rem;
+}
+
 .link {
   text-decoration: none;
   display: inline-block;
@@ -650,6 +716,10 @@ body {
 .logo--secondary {
   width: 20rem;
   margin: 1rem;
+}
+
+.logo--flex {
+  width: 100%;
 }
 
 .nav-header {
