@@ -14,27 +14,27 @@
 {{ form_start(form) }}
 
 {{ form_label(form.name) }}
-{{ form_widget(form.name, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Enter a name for the service'}}) }}
+{{ form_widget(form.name, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a name for the service'}}) }}
 
 {{ form_label(form.description) }}
-{{ form_widget(form.description, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Enter a description for the service'}}) }}
+{{ form_widget(form.description, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a description for the service'}}) }}
 
 {{ form_label(form.image_url) }}
-{{ form_widget(form.image_url, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Enter a image_url for the service'}}) }}
+{{ form_widget(form.image_url, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a image_url for the service'}}) }}
 
 {{ form_label(form.image_caption) }}
-{{ form_widget(form.image_caption, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Enter a image_caption for the service'}}) }}
+{{ form_widget(form.image_caption, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a image_caption for the service'}}) }}
 
 {{ form_label(form.contact) }}
-{{ form_widget(form.contact, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Enter a contact for the service'}}) }}
+{{ form_widget(form.contact, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a contact for the service'}}) }}
 
-<div class="team-member__action-bar u-margin-top-medium">
-    <div class="team-member__action-item">
+<div class="admin-inputs__action-bar u-margin-top-medium">
+    <div class="admin-inputs__action-item">
         {% if referer is defined %}
             <a href="{{ referer }}" class="btn btn-default btn--blue">Cancel</a>
         {% endif %}
     </div>
-    <div class="team-member__action-item">
+    <div class="admin-inputs__action-item">
         {{ form_widget(form.save, { 'attr': {'class': 'btn btn-default btn--green-solid'} }) }}
     </div>
 </div>

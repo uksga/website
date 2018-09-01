@@ -16,5 +16,5 @@
         {% endif %}
         <p class="user__role">{{ user.roles[0]|upper }}</p>
     </div>
-    <a href="{{ path('delete_user', {'id': user.id}) }}" class="btn btn-default btn-default--centered btn--destructive"><i class="material-icons md-16 centered team-member__icon">delete</i>deactivate</a>
+    <a href="{{ path('delete_user', {'id': user.id}) }}" class="btn btn-default btn-default--centered btn--destructive"><i class="material-icons md-16 centered admin-inputs__icon">delete</i>deactivate</a>
 </div>

@@ -14,10 +14,10 @@
                 <p class="description description--white description--callout u-margin-top-large">{{ message }}</p>
             {% endfor %}
         {% else %}
-            {{ form_start(form, {'attr': {'class': 'get-involved'}}) }}
+            {{ form_start(form, {'attr': {'class': 'user-inputs'}}) }}
                 {{ form_label(form.email) }}
-                {{ form_widget(form.email, { 'attr': {'class': 'get-involved__email', 'placeholder': 'Enter your email'} }) }}
-                {{ form_widget(form.save, { 'attr': {'class': 'get-involved__submit'} }) }}
+                {{ form_widget(form.email, { 'attr': {'class': 'user-inputs__email', 'placeholder': 'Enter your email'} }) }}
+                {{ form_widget(form.save, { 'attr': {'class': 'user-inputs__submit'} }) }}
             {{ form_end(form) }}
         {% endif %}
 
@@ -84,12 +84,12 @@
         <div class="video-container u-margin-bottom-huge">
             <div class="video-container__video"></div>
         </div>
-        <div class="get-involved-container">
+        <div class="user-inputs-container">
             {# {% if is_email_submitted == false %}
-                {{ form_start(form_bottom, {'attr': {'class': 'get-involved'}}) }}
+                {{ form_start(form_bottom, {'attr': {'class': 'user-inputs'}}) }}
                         {{ form_label(form_bottom.email) }}
-                        {{ form_widget(form_bottom.email, { 'attr': {'class': 'get-involved__email', 'placeholder': 'Enter your email'} }) }}
-                        {{ form_widget(form_bottom.save, { 'attr': {'class': 'get-involved__submit'} }) }}
+                        {{ form_widget(form_bottom.email, { 'attr': {'class': 'user-inputs__email', 'placeholder': 'Enter your email'} }) }}
+                        {{ form_widget(form_bottom.save, { 'attr': {'class': 'user-inputs__submit'} }) }}
                 {{ form_end(form_bottom) }}
             {% else %}
                 <p class="description description--primary description--callout u-margin-top-large">We've received your email and will get in contact with you shortly!</p>
@@ -99,4 +99,3 @@
 </main> 
 
 {% endblock %}
-

@@ -1,48 +1,48 @@
 
-{{ form_start(form, { 'attr': {'class': 'team-member', 'placeholder': 'Enter your email'}}) }}
+{{ form_start(form, { 'attr': {'class': 'admin-inputs', 'placeholder': 'Enter your email'}}) }}
 
-<div class="team-member__name-container">
+<div class="admin-inputs__name-container">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 team-member__name">
-                {{ form_label(form.first_name, null, {'label_attr': {'class': 'team-member__label'}}) }}
-                {{ form_widget(form.first_name, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'First name'}}) }}
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 admin-inputs__name">
+                {{ form_label(form.first_name, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+                {{ form_widget(form.first_name, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'First name'}}) }}
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 team-member__name">
-                {{ form_label(form.last_name, null, {'label_attr': {'class': 'team-member__label'}}) }}
-                {{ form_widget(form.last_name, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Last name'}}) }} </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 admin-inputs__name">
+                {{ form_label(form.last_name, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+                {{ form_widget(form.last_name, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Last name'}}) }} </div>
         </div>
     </div>
 </div>
 
-{{ form_label(form.email, null, {'label_attr': {'class': 'team-member__label'}}) }}
-{{ form_widget(form.email, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Email'}}) }}
+{{ form_label(form.email, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+{{ form_widget(form.email, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Email'}}) }}
 
-{{ form_label(form.title, null, {'label_attr': {'class': 'team-member__label'}}) }}
-{{ form_widget(form.title, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Title'}}) }}
+{{ form_label(form.title, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+{{ form_widget(form.title, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Title'}}) }}
 
-{{ form_label(form.office_hours, null, {'label_attr': {'class': 'team-member__label'}}) }}
-{{ form_widget(form.office_hours, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Office hours'}}) }}
+{{ form_label(form.office_hours, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+{{ form_widget(form.office_hours, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Office hours'}}) }}
 
-{{ form_label(form.team, null, {'label_attr': {'class': 'team-member__label'}}) }}
-{{ form_widget(form.team, { 'attr': {'class': 'team-member__text-input', 'placeholder': 'Office hours'}}) }}
+{{ form_label(form.team, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+{{ form_widget(form.team, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Office hours'}}) }}
 
-{{ form_label(form.is_vip, null, {'label_attr': {'class': 'team-member__label'}}) }}
-{{ form_widget(form.is_vip, { 'attr': {'class': 'team-member__bool-input u-margin-bottom-small'}}) }}
+{{ form_label(form.is_vip, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+{{ form_widget(form.is_vip, { 'attr': {'class': 'admin-inputs__bool-input u-margin-bottom-small'}}) }}
 
-<div class="team-member__image-preview-container" id="image-preview-container">
-    <img alt="Upload a profile image" class="team-member__image-preview u-margin-bottom-xsmall" id="image-preview">
+<div class="admin-inputs__image-preview-container" id="image-preview-container">
+    <img alt="Upload a profile image" class="admin-inputs__image-preview u-margin-bottom-xsmall" id="image-preview">
 </div>
 
 {{ include('team/_image-upload-form.html.twig', {'field': form.profile_image}) }}
 
-<div class="team-member__action-bar">
-    <div class="team-member__action-item">
+<div class="admin-inputs__action-bar">
+    <div class="admin-inputs__action-item">
     {% if member is defined %}
-        <a href="{{ path('deactivate', {'id': member.id}) }}" class="btn btn-default btn-default--centered btn--destructive"><i class="material-icons md-16 centered team-member__icon">delete</i>deactivate</a>
+        <a href="{{ path('deactivate', {'id': member.id}) }}" class="btn btn-default btn-default--centered btn--destructive"><i class="material-icons md-16 centered admin-inputs__icon">delete</i>deactivate</a>
     {% endif %}
     </div>
-    <div class="team-member__action-item">
+    <div class="admin-inputs__action-item">
         {{ form_widget(form.save, { 'attr': {'class': 'btn btn-default btn--green-solid'} }) }}
     </div>
 </div>
