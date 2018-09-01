@@ -1,22 +1,22 @@
-<div class="team-member-profile">
-    <div class="team-member-profile__image-container">
-        <img src="{{ s3_path ~ member.profileImageURL }}" alt="Profile Image" class="team-member-profile__image">
+<div class="contact-card">
+    <div class="contact-card__image-container">
+        <img src="{{ s3_path ~ member.profileImageURL }}" alt="Profile Image" class="contact-card__image">
     </div>
-    <div class="team-member-profile__contact-container">
-        <div class="team-member-profile__contact-item team-member-profile__contact-item--label">
-            <i class="team-member-profile__contact-item--icon material-icons md-16 centered">verified_user</i>
+    <div class="contact-card__contact-container">
+        <div class="contact-card__contact-item contact-card__contact-item--label">
+            <i class="contact-card__contact-item--icon material-icons md-16 centered">verified_user</i>
             <span>{{ member.title|title }}</span>
         </div>
-        <div class="team-member-profile__contact-item team-member-profile__contact-item--content">
+        <div class="contact-card__contact-item contact-card__contact-item--content">
             <span>{{ member.firstName ~ ' ' ~ member.lastName|title }}</span>
         </div>
     </div>
-    <div class="team-member-profile__contact-container">
-        <div class="team-member-profile__contact-item team-member-profile__contact-item--label">
-            <i class="team-member-profile__contact-item--icon material-icons md-16 centered">email</i>
+    <div class="contact-card__contact-container">
+        <div class="contact-card__contact-item contact-card__contact-item--label">
+            <i class="contact-card__contact-item--icon material-icons md-16 centered">email</i>
             <span>Email</span>
         </div>
-        <div class="team-member-profile__contact-item team-member-profile__contact-item--content">
+        <div class="contact-card__contact-item contact-card__contact-item--content">
             <span>{{ member.email }}</span>
         </div>
     </div>
