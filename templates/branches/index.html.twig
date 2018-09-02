@@ -3,14 +3,9 @@
 {% block title %}Branches{% endblock %}
 
 {% block body %}
-<header class="header header--branches">
-    <div class="header__text-container">
-        <h1 class="heading-primary heading-primary--white">
-            Our Branches
-        </h1>
-        <p class="description description--white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia accusamus tenetur expedita illum deserunt cupiditate ducimus soluta vitae saepe, dolor iusto quasi, repellat quae. Nobis, quaerat! Iste in veniam quisquam.</p>
-    </div>
-</header>
+{{ include('components/_header.html.twig', {'modifier': "branches", 'title': "Our Branches", 'description': "Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Dignissimos dolorum veniam fuga perspiciatis? Similique doloremque repudiandae rem!
+        Nisi maxime sunt veniam voluptate velit odit aliquam, saepe dolore eaque, asperiores quisquam."}) }}
 
 <main>
     <section class="section container-fluid">

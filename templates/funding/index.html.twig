@@ -2,14 +2,9 @@
 
 {% block body %}
 
-<header class="header header--funding">
-    <div class="header__text-container">
-        <h1 class="heading-primary heading-primary--white">
-            Funding
-        </h1>
-        <p class="description description--white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolorum veniam fuga perspiciatis? Similique doloremque repudiandae rem! Nisi maxime sunt veniam voluptate velit odit aliquam, saepe dolore eaque, asperiores quisquam.</p>
-    </div>
-</header>
+{{ include('components/_header.html.twig', {'modifier': "funding", 'title': "Funding", 'description': "Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Dignissimos dolorum veniam fuga perspiciatis? Similique doloremque repudiandae rem!
+        Nisi maxime sunt veniam voluptate velit odit aliquam, saepe dolore eaque, asperiores quisquam."}) }}
 
 <main>
     <section class="section">
