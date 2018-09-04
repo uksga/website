@@ -12,23 +12,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
-        <nav class="nav-header">
-            <ul class="nav">
-                <li class="nav__item nav__logo"><a href="{{ path('home') }}"><img src="{{ asset('img/logo.jpg') }}" alt="UKSGA Logo" class="logo--primary"></a></li>
-                <li class="nav__item"><a href="{{ path('logout') }}" class="nav__link">Logout</a></li>
-            </ul>
-        </nav>
+        <header class="nav-header">
+            <figure class="nav-header__logo-container">
+                <a href="{{ path('home')}}"><img src="{{ asset('img/logo.jpg') }}" alt="UKSGA Logo" class="nav-header__logo logo--primary"></a>
+            </figure>
+        </header>
 
         <div class="container-admin-content">
             <nav class="nav-side">
-                <div class="nav-side__title"><span>Navigation</span></div>
+                <div class="nav-side__profile-container">
+                    <img src="https://s3.amazonaws.com/uksga-website-assets/cf76ae72d40b979329540cea06ee6f85.jpeg" alt="Profile image" class="nav-side__profile-image">
+                    <div class="nav-side__profile-information">
+                        <span class="nav-side__profile-name">{{ app.user.username|title }}</span>
+                        <span class="nav-side__profile-role">{% if app.user.roles[0] == 'ROLE_ADMIN' %}Role Admin {% else %}Role User {% endif %}</span>
+                    </div>
+                </div>
                 <ul class="nav-sidebar">
                     {% if is_granted('ROLE_USER') %}
                         <li class="nav-sidebar__item {% if active_link is defined and active_link == 'manage_team' %} nav-sidebar__item--active {% endif %}">
                             <a href="{{ path('manage_teams') }}" class="nav-sidebar__link">
-                                {# <svg class="nav-sidebar__icon">
-                                    <use xlink:href="img/sprite.svg#icon-home"></use>
-                                </svg> #}
+                                <i class="material-icons nav-sidebar__icon">supervisor_account</i>
                                 <span>Manage the Teams</span>
                             </a>
                         </li>
@@ -36,9 +39,7 @@
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-sidebar__item {% if active_link is defined and active_link == 'control' %} nav-sidebar__item--active {% endif %}">
                             <a href="{{ path('current_users') }}" class="nav-sidebar__link">
-                                {# <svg class="nav-sidebar__icon">
-                                    <use xlink:href="img/sprite.svg#icon-home"></use>
-                                </svg> #}
+                                <i class="material-icons nav-sidebar__icon">verified_user</i>
                                 <span>Users</span>
                             </a>
                         </li>
@@ -46,9 +47,7 @@
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-sidebar__item {% if active_link is defined and active_link == 'services' %} nav-sidebar__item--active {% endif %}">
                             <a href="{{ path('current_services') }}" class="nav-sidebar__link">
-                                {# <svg class="nav-sidebar__icon">
-                                    <use xlink:href="img/sprite.svg#icon-home"></use>
-                                </svg> #}
+                                <i class="material-icons nav-sidebar__icon">list_alt</i>
                                 <span>Services</span>
                             </a>
                         </li>
@@ -56,13 +55,17 @@
                     {% if is_granted('ROLE_USER') %}
                         <li class="nav-sidebar__item {% if active_link is defined and active_link == 'records' %} nav-sidebar__item--active {% endif %}">
                             <a href="{{ path('current_records') }}" class="nav-sidebar__link">
-                                {# <svg class="nav-sidebar__icon">
-                                    <use xlink:href="img/sprite.svg#icon-home"></use>
-                                </svg> #}
+                                <i class="material-icons nav-sidebar__icon">assignment</i>
                                 <span>Records</span>
                             </a>
                         </li>
                     {% endif %}
+                    <li class="nav-sidebar__item nav-sidebar__item--logout">
+                        <a href="{{ path('logout') }}" class="nav-sidebar__link">
+                            <i class="material-icons nav-sidebar__icon">power_settings_new</i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
 

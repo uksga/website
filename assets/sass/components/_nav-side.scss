@@ -2,9 +2,11 @@
     flex: 0 0 25%;
     font-size: 1.4rem;
     max-width: 25rem;
-    background-color: var(--color-grey-light-1);
-    padding-bottom: 3rem;
-    border-radius: var(--radius-medium);
+    background-color: #fff;
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-dark);
+    align-self: flex-start;
+    padding: 2rem 0;
 
     &__title {
         font-weight: var(--font-weight-bold);
@@ -12,6 +14,36 @@
         margin-top: 2rem;
         margin-bottom: 1rem;
         font-style: italic;
+    }
+
+    &__profile-container {
+        padding: 0 2rem;
+        margin-bottom: 4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__profile-image {
+        height: 4rem;
+        width: 4rem;
+        border-radius: var(--radius-medium);
+        box-shadow: var(--shadow-light);
+    }
+
+    &__profile-information {
+        margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__profile-name {
+        font-size: 1.6rem;
+    }
+
+    &__profile-role {
+        font-size: 1rem;
+        color: var(--color-grey-dark-3);
+        font-weight: var(--font-weight-bold);
     }
 
     .nav-sidebar {
@@ -29,29 +61,48 @@
             @media only screen and (max-width: $bp-medium) {
                 flex: 1;
             }
-        }
-
-        &__item--active {
-            background-color: var(--color-primary);
-            color: #fff;
-            font-weight: var(--font-weight-bold);
-
-            & span {
-                color: #fff;
+            &--active {
+                background-color: var(--color-select-light);
+                & span, i {
+                    color: var(--color-select);
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: .3rem;
+                    height: 100%;
+                    border-top-right-radius: .3rem;
+                    border-bottom-right-radius: .3rem;
+                    background-color: var(--color-select);
+                }
             }
-        }
-    
-        &__item:active::before {
-            background-color: var(--color-primary-light);
+            &--logout {
+                margin-top: 6rem;
+            }
+            &:hover {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: .3rem;
+                    height: 100%;
+                    border-top-right-radius: .3rem;
+                    border-bottom-right-radius: .3rem;
+                    background-color: var(--color-select);
+                }
+            }
         }
     
         &__link:link,
         &__link:visited {
             z-index: 10;
             position: relative;
-            color: var(--color-grey-dark-1);
+            color: var(--color-grey-dark-3);
             text-decoration: none;
-            text-transform: uppercase;
+            text-transform: capitalize;
             display: block;
             padding: 1.5rem 3rem;
             display: flex;
@@ -69,16 +120,8 @@
         }
     
         &__icon {
-            width: 1.75rem;
-            height: 1.75rem;
-            margin-right: 2rem;
+            margin-right: 1rem;
             fill: currentColor;
-            @media only screen and (max-width: $bp-small) {
-                margin-right: 0;
-                margin-bottom: .5rem;
-                width: 1.5rem;
-                height: 1.5rem;
-            }
         }
     }
 }

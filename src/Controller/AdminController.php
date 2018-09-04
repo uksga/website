@@ -31,7 +31,6 @@ use App\Form\MeetingRecordType;
 
 use \Datetime;
 
-
 /**
  * @Route("/admin")
  */

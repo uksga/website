@@ -1,14 +1,12 @@
 <div class="col-lg-12 user">
     <div class="user__profile-image-container">
         <img src="https://s3.amazonaws.com/uksga-website-assets/cf76ae72d40b979329540cea06ee6f85.jpeg" alt="Profile image" class="user__profile-image">
-    </div>
+    </div> 
     <div class="user__contact-container">
         <p class="user__contact contact-information contact-information--name">{{ user.username|capitalize }}</p>
-    </div>
-    <div class="user__contact-container">
         <p class="user__contact contact-information contact-information--contact">{{ user.email }}</p>
     </div>
-    <div class="user__contact-container user__role-container">
+    <div class="user__role-container">
         {% if user.roles[0] == 'ROLE_ADMIN'%}
             <i class="user__icon material-icons md-16 centered">verified_user</i>
         {% else %}

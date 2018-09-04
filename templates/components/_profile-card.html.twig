@@ -17,8 +17,9 @@
             </p>
             <p class="contact-information contact-information--name">{{member.firstName ~ ' ' ~ member.lastName|title}}</p>
             <div class="profile-container__information-box">
-                <i class="material-icons md-18 centered profile-container__text-icon">mail</i>
-                <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" class="profile-container__link">{{member.email}}</a>
+                {# <i class="material-icons md-18 centered profile-container__text-icon">mail</i> #}
+                {{member.email}}
+                <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" class="profile-container__link"></a>
             </div>
             {% if can_delete is defined and can_delete == true %}
                 <a href="{{ path('edit_member', {'id': member.id}) }}" class="btn btn-default btn--blue btn--full-width u-margin-top-medium">edit</a>

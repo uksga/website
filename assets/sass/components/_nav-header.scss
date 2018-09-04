@@ -2,6 +2,7 @@
     display: flex;
     box-shadow: var(--shadow-light);
     flex-wrap: wrap;
+    background-color: #fff;
 
     &__nav-toggle {
         display: none;
@@ -24,9 +25,6 @@
         margin-right: auto;
     }
 
-    &__logo {
-
-    }
 
     &__nav {
         align-self: flex-end;
@@ -71,7 +69,7 @@
         box-sizing: border-box;
         &--active {
             & > a.nav-primary__link {
-                color: var(--color-primary);
+                color: var(--color-select);
                 border-bottom: 3px solid var(--color-primary) !important;
             }
             @include respond(tab-port) {

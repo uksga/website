@@ -4,6 +4,9 @@
     --color-primary: #18468f;
     --color-primary-dark: #202c5f;
     --color-primary-darkest: #141e3f;
+    
+    --color-select: #2290ff;
+    --color-select-light: #f5faff;
 
     --color-grey-light-1: #f9f9f9;
     --color-grey-light-2: #dfe1e5;
@@ -18,7 +21,7 @@
 
     --color-red: rgb(233, 79, 79);
 
-    --shadow-dark: 0 .2rem .6rem rgba(0, 0, 0, .5);
+    --shadow-dark: 0 .6rem .7rem rgba(0, 0, 0, .08);
     --shadow-light: 0rem 0rem 1rem rgba(0, 0, 0, .1);
     --shadow-blurry-light: 0rem .2rem 1.8rem rgba(0, 0, 0, .15);
 
@@ -72,6 +75,7 @@ html {
 }
 
 body {
+    background-color: var(--color-grey-light-4);
     font-family: var(--font-sans-serif);
     font-display: swap;
     font-weight: 300;
@@ -90,6 +94,6 @@ body {
 }
 
 ::selection {
-    background-color: var(--color-primary);
+    background-color: var(--color-select);
     color: #fff;
 }
