@@ -2,14 +2,7 @@
 
 {% block body %}
 
-<header class="header header--{{team.name}}">
-    <div class="header__text-container">
-        <h1 class="heading-primary heading-primary--white">
-            The {{ team.name|capitalize }} team
-        </h1>
-        <p class="description description--white">{{ team.longDescription }}</p>
-    </div>
-</header>
+{{ include('components/_header.html.twig', {'modifier': team.name, 'title': "The " ~ team.name|capitalize ~ " team", 'description': team.longDescription}) }}
 
 <main>
     <section class="section">
