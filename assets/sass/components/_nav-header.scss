@@ -27,9 +27,10 @@
 
 
     &__nav {
-        align-self: flex-end;
         padding-left: 2rem;
         padding-right: 2rem;
+        display: flex;
+        //align-items: flex-end;
         @include respond(tab-port) {
             display: none;
             flex-basis: 100%;
@@ -64,12 +65,9 @@
     }
 
     &__item {
-        height: 100%;
-        align-self: flex-end;
-        box-sizing: border-box;
         &--active {
             & > a.nav-primary__link {
-                color: var(--color-select);
+                color: var(--color-primary);
                 border-bottom: 3px solid var(--color-primary) !important;
             }
             @include respond(tab-port) {
@@ -87,14 +85,18 @@
         font-size: 1.4rem;
         text-decoration: none;
         color: var(--color-grey-dark-3);
-        padding-bottom: 1rem;
+        padding: 2rem 1.5rem 1rem 1.5rem;
         border-bottom: 3px solid transparent;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        height: 100%;
         transition: all .3s;
         &:hover {
             color: var(--color-primary);
             border-bottom: 3px solid var(--color-primary);
+            background-color: var(--color-grey-light-2);
+        }
+        &:focus {
+            background-color: var(--color-primary);
+            color: #fff;
         }
         @include respond(tab-port) {
             width: 100%;

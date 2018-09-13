@@ -1,0 +1,46 @@
+.record {
+    padding: 3rem 0 2rem 0;
+    width: 100%;
+    display: flex;
+    font-family: var(--font-sans-serif);
+    border-bottom: var(--line);
+    &:first-child {
+        border-top: var(--line);
+    }
+    &__information {
+        position: relative;
+        margin-right: 4rem;
+        min-width: 10rem;
+        @include respond(phone) {
+            margin-right: 1rem;
+        }
+        &::before {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: var(--font-weight-medium);
+            position: absolute;
+            top: -1.2rem;
+        }
+        &--entity-name {
+            @include respond(phone) {
+                margin-right: auto;
+            }
+            &::before {
+                content: 'Record Type';
+            }
+        }
+        &--approved-date {
+            @include respond(phone) {
+                text-align: right;
+            }
+            &::before {
+                content: 'Approved Date';
+            }
+        }
+        &--link,
+        &--link:link,
+        &--link:visited {
+            text-decoration: none;
+        }
+    }
+}

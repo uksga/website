@@ -48,7 +48,8 @@ class BranchesController extends Controller
         if ($branch)
         {
             return $this->render('branches/branch.html.twig', array(
-                'team' => $branch[0]
+                'team' => $branch[0],
+                'active_link' => 'branches'
             ));
         }
         throw new \Exception('No branch exists');

@@ -1,20 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Records{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{{ include('components/_header.html.twig', {'modifier': 'funding', 'title': 'Our Records', 'description': 'By Kentucky Law, we are
+requires to keep accurate records of all our open-door meetings. This includes our Full Senate meetings and our various Committee Meetings.'}) }}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/RecordsController.php'|file_link(0) }}">src/Controller/RecordsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/records/index.html.twig'|file_link(0) }}">templates/records/index.html.twig</a></code></li>
-    </ul>
-</div>
+<main>
+    <section class="section">
+        <h1 class="heading-primary">Why?</h1>
+        <p class="description u-margin-bottom-small">
+            While it is required by law that we make these records readily available to the general public, we are more
+            motivated by creating a transparent culture in which students understand how their money is being spent.
+        </p>
+        <p class="description u-margin-bottom-small">
+            We allocate funds to a variety of registered student organizations. We create legislation that describes
+            election protocols. We create initiatives like child care grants that enable parent-students to mitigate
+            the costs of child care while they pursue their education here at the University of Kentucky.
+        </p>
+        <p class="description u-margin-bottom-small">
+            We spend your money. We feel like you should know where it goes. With that in mind, we want you to have 
+            access to the minutes and voting records of all the meetings in which we discuss initiatives and funding
+            appropriations.
+        </p>
+    </section>
+    <section class="section">
+        <h1 class="heading-primary">Most Recent Records</h1>
+        <p class="description u-margin-bottom-small">
+            Below, you'll find a list of our most recent records. If you'd like to explore our archive, please
+            click <a href="#" class="link">here.</a>
+        </p>
+        <div class="container-fluid">
+            <div class="row">
+                {% for i in 0..30 %}
+                    {{ include('/components/_record.html.twig')}}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+
 {% endblock %}

@@ -1,0 +1,20 @@
+.legislation,
+.legislation:link,
+.legislation:visited {
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-grey-dark-2);
+    text-decoration: none;
+    @include respond(phone) {
+        margin: 1rem 0;
+    }
+}

@@ -1,19 +1,37 @@
-.link {
+.link,
+.link:link,
+.link:visited {
 
     text-decoration: none;
     display: inline-block;
     font-size: 1.6rem;
-    text-transform: uppercase;
     font-weight: 700;
-    border-bottom: 2px solid var(--color-primary);
-    transition: all .2s;
+    position: relative;
+    z-index: 999;
+    color: inherit;
 
-    &--primary {
-        color: var(--color-primary);
+    &::after {
+        position: absolute;
+        content: '';
+        height: .6rem;
+        width: 116%;
+        background-color:rgba(0, 60, 255, 0.849);
+        left: -8%;
+        bottom: 0;
+        z-index: 10;
+        transition: height .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        mix-blend-mode: overlay;
     }
 
     &:hover {
-        letter-spacing: 1px;
+        color: #fff;
+        &::after {
+            height: 100%;
+        }
+    }
+
+    &--primary {
+        color: var(--color-primary);
     }
 
 }
