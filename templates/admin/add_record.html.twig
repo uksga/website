@@ -4,10 +4,6 @@
 
 {% block body %}
 
-{{ form_start(form) }}
-{{ form_widget(form) }}
-
-{# 
 <div class="team-container__title-box u-margin-bottom-medium">
     <h1 class="team-container__title heading-secondary">Add a Record</h1>
     {% if referer is defined %}
@@ -15,22 +11,28 @@
     {% endif %}
 </div>
 
-{{ form_start(form) }}
+{{ form_start(form, { 'attr': {'class': 'admin-inputs'}}) }}
 
-{{ form_label(form.name) }}
-{{ form_widget(form.name, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a name for the service'}}) }}
+<div class="admin-inputs__date-input">
+    <div class="admin-inputs__date-group">
+        {{ form_label(form.approved_date.month, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+        {{ form_widget(form.approved_date.month, { 'attr': {'class': 'admin-inputs__select-input'}}) }}
+    </div>
+    <div class="admin-inputs__date-group">
+        {{ form_label(form.approved_date.day, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+        {{ form_widget(form.approved_date.day, { 'attr': {'class': 'admin-inputs__select-input'}}) }}
+    </div>
+    <div class="admin-inputs__date-group">
+        {{ form_label(form.approved_date.year, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+        {{ form_widget(form.approved_date.year, { 'attr': {'class': 'admin-inputs__select-input'}}) }}
+    </div>
+</div>
 
-{{ form_label(form.description) }}
-{{ form_widget(form.description, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a description for the service'}}) }}
+{{ form_label(form.document_url, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+{{ form_widget(form.document_url, { 'attr': {'class': 'admin-inputs__text-input'}}) }}
 
-{{ form_label(form.image_url) }}
-{{ form_widget(form.image_url, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a image_url for the service'}}) }}
-
-{{ form_label(form.image_caption) }}
-{{ form_widget(form.image_caption, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a image_caption for the service'}}) }}
-
-{{ form_label(form.contact) }}
-{{ form_widget(form.contact, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a contact for the service'}}) }}
+{{ form_label(form.managing_entity, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
+{{ form_widget(form.managing_entity, { 'attr': {'class': 'admin-inputs__select-input'}}) }}
 
 <div class="admin-inputs__action-bar u-margin-top-medium">
     <div class="admin-inputs__action-item">
@@ -41,7 +43,7 @@
     <div class="admin-inputs__action-item">
         {{ form_widget(form.save, { 'attr': {'class': 'btn btn-default btn--green-solid'} }) }}
     </div>
-</div> #}
+</div>
 
 {{ form_end(form) }}
 {% endblock %}

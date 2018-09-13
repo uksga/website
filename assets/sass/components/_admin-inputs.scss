@@ -67,6 +67,7 @@
         border: 2px solid var(--color-grey-light-3);
         outline: none;
         text-transform: capitalize;
+        transition: all .4s;
         &:focus {
             border: 2px solid var(--color-primary-light);
             box-shadow: var(--shadow-blurry-light);
@@ -106,5 +107,16 @@
 
     &__icon {
         margin-right: .5rem;
+    }
+
+    &__date-input {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    &__date-group {
+        display: flex;
+        flex-direction: column;
+        margin-right: 2rem;
     }
 }

@@ -22,6 +22,7 @@ class MeetingRecordType extends AbstractType
                 'years' => array(
                     '2018', '2019'
                 ),
+                'format' => 'yyyy-MMMM-d',
                 'placeholder' => array(
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day'
                 )
@@ -35,6 +36,7 @@ class MeetingRecordType extends AbstractType
                     return $name;
                 }
             ])
+            ->add('save', SubmitType::class)
         ;
     }
 

@@ -228,7 +228,8 @@ class AdminController extends Controller
         }
         return $this->render('/admin/add_user.html.twig', array(
             'form' => $form->createView(),
-            'referer' => $request->headers->get('referer')
+            'referer' => $request->headers->get('referer'),
+            'active_link' => 'control'
         ));
     }
 
