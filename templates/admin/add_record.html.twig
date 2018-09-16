@@ -28,13 +28,13 @@
     </div>
 </div>
 
-{{ form_label(form.document_url, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
-{{ form_widget(form.document_url, { 'attr': {'class': 'admin-inputs__text-input'}}) }}
-
 {{ form_label(form.managing_entity, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
 {{ form_widget(form.managing_entity, { 'attr': {'class': 'admin-inputs__select-input'}}) }}
 
-<div class="admin-inputs__action-bar u-margin-top-medium">
+{{ form_label(form.document, null, {'label_attr': {'class': 'admin-inputs__image-input btn btn-default btn--blue required', 'id': 'upload-button'}}) }}
+{{ form_widget(form.document) }}
+
+<div class="admin-inputs__action-bar u-margin-top-large">
     <div class="admin-inputs__action-item">
         {% if referer is defined %}
             <a href="{{ referer }}" class="btn btn-default btn--blue">Cancel</a>
@@ -46,4 +46,26 @@
 </div>
 
 {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+    $(document).ready(function() {
+        console.log('Hey!');
+        var fileUpload = document.getElementById('meeting_record_document'); 
+        var button = document.getElementById('upload-button');
+        fileUpload.addEventListener('change', openFile);
+        function openFile(file) {
+            var input = file.target;
+            var reader = new FileReader();
+            reader.onload = function() {
+                var dataURL = reader.result;
+                button.classList.add("btn--blue-solid");
+                button.classList.add("btn--approved");
+                button.innerHTML = 'Record Attached';
+            };
+            reader.readAsDataURL(input.files[0]);
+        }; 
+    })
+    </script>
 {% endblock %}

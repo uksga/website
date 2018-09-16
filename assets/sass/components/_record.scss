@@ -7,12 +7,17 @@
     &:first-child {
         border-top: var(--line);
     }
+    @include respond(phone) {
+        flex-direction: column;
+    }
     &__information {
         position: relative;
         margin-right: 4rem;
         min-width: 10rem;
         @include respond(phone) {
-            margin-right: 1rem;
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
         }
         &::before {
             font-size: 1rem;
@@ -30,17 +35,31 @@
             }
         }
         &--approved-date {
-            @include respond(phone) {
-                text-align: right;
-            }
+            margin-right: auto;
             &::before {
-                content: 'Approved Date';
+                content: 'Meeting Date';
             }
         }
         &--link,
         &--link:link,
         &--link:visited {
             text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-primary-light);
+            transition: all .3s;
+            @include respond(phone) {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            &:hover {
+                color: var(--color-primary-dark);
+            }
         }
+    }
+
+    &__icon {
+        margin-right: 1rem;
     }
 }

@@ -14,7 +14,6 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-
 use App\Entity\TeamMember;
 use App\Entity\Team;
 use App\Entity\User;
@@ -331,10 +330,6 @@ class AdminController extends Controller
         $managingEntityId = $request->get('id');
         $repo = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class);
         $managingEntity = $repo->find($managingEntityId);
-        if ($managingEntity)
-        {
-            dump($managingEntity);
-        }
 
         $managingEntities = $repo->findAll();
         $record = new MeetingRecord();
@@ -345,7 +340,21 @@ class AdminController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $meetingRecord = $form->getData();
-            $meetingRecord->setApprovedAt(new DateTime());
+            //$meetingRecord->setApprovedDate(new DateTime());
+
+            // Get and upload profile image data
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $form->get('document')->getData();
+            $contents = file_get_contents($file->getPathname());
+
+            $entityName = preg_replace("/[\s-]+/", " ", $meetingRecord->getManagingEntity()->getName());
+            $entityName = preg_replace("/[\s_]/", "-", $entityName);
+            $date = $meetingRecord->getApprovedDate()->format('Y-m-d');
+            $fileName = $date . '-' . $entityName . '.pdf';
+
+            $s3 = $this->container->get(S3::class);
+            $s3->PutS3File($contents, $fileName, $mimeType = 'application/pdf');
+            $meetingRecord->setDocumentURL($fileName);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($meetingRecord);

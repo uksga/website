@@ -1,9 +1,9 @@
-<div class="team-container__title-box u-margin-bottom-medium">
+<div class="team-container__title-box">
     <h1 class="heading-secondary team-container__title">{{managingEntity.name|title}} Records</h1>
     {% if is_granted('ROLE_USER') %}
         <a href="{{ path('add_record', {'id': managingEntity.id}) }}" class="team-container__action btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">description</i>Add a Record</a>
     {% endif %}
 </div>
 {% for record in managingEntity.meetingRecords %}
-    {{ include('/components/_record.html.twig') }}
+    {{ include('/components/_record.html.twig', {'record': record}) }}
 {% endfor %}

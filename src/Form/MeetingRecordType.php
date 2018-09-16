@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 use App\Entity\ManagingEntity;
 
@@ -27,7 +28,7 @@ class MeetingRecordType extends AbstractType
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day'
                 )
             ))
-            ->add('document_url')
+            ->add('document', FileType::class, array('label' => 'Upload Document (.pdf)', 'data_class' => null))
             ->add('managing_entity', ChoiceType::class, [
                 'choices' => $managingEntities,
                 'choice_label' => function($managingEntity, $key, $value) {
@@ -37,7 +38,7 @@ class MeetingRecordType extends AbstractType
                 }
             ])
             ->add('save', SubmitType::class)
-        ;
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

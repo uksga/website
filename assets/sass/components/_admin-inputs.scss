@@ -63,6 +63,7 @@
     select {
         height: 4.2rem;
         width: 100%;
+        margin-bottom: 2rem;
         font-family: var(--font-sans-serif);
         border: 2px solid var(--color-grey-light-3);
         outline: none;
@@ -111,7 +112,6 @@
 
     &__date-input {
         display: flex;
-        margin-bottom: 2rem;
     }
 
     &__date-group {

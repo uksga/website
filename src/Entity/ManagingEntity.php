@@ -80,4 +80,12 @@ class ManagingEntity
 
         return $this;
     }
+
+    /**
+    * @return MeetingRecord[] Returns an array of MeetingRecord objects
+    */
+    public function getMostRecentMeetingRecords($count)
+    {
+        return array_slice($this->meeting_records->toArray(), 0, $count);
+    }
 }

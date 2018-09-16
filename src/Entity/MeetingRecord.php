@@ -32,6 +32,11 @@ class MeetingRecord
      */
     private $document_url;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $document;
+
     public function getId()
     {
         return $this->id;
@@ -69,6 +74,18 @@ class MeetingRecord
     public function setDocumentUrl(?string $document_url): self
     {
         $this->document_url = $document_url;
+
+        return $this;
+    }
+
+    public function getDocument(): ?string
+    {
+        return $this->document;
+    }
+
+    public function setDocument(string $document): self
+    {
+        $this->document = $document;
 
         return $this;
     }

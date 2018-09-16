@@ -9,7 +9,7 @@ Encore
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
 
-    .addEntry('js/app', './assets/js/_member-form-interaction.js')
+    .addEntry('js/app', './assets/js/main.js')
     .addStyleEntry('css/app', './assets/sass/main.scss')
     .addStyleEntry('css/app_admin', './assets/sass/main_admin.scss')
 

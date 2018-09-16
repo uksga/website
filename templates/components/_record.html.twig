@@ -1,4 +1,5 @@
 <div class="record">
-    <span class="record__information record__information--entity-name">Full Senate Minutes</span>
-    <span class="record__information record__information--approved-date">09/08/2018</span>
+    <span class="record__information record__information--entity-name">{{ record.managingEntity.name|title }}</span>
+    <span class="record__information record__information--approved-date">{{ record.approvedDate|date('F d, Y')}}</span>
+    <a href="{{ s3_path ~ record.documentURL }}" target="_blank" class="record__information record__information--link"><i class="material-icons md-16 record__icon">launch</i>LINK</a>
 </div>
