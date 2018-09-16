@@ -15,9 +15,17 @@
 .container-admin-content {
     display: flex;
     padding: 4rem;
+    flex-wrap: wrap;
+    @include respond(phone) {
+        padding: 2rem;
+    }
 }
 
 .container-admin-body {
     margin-left: 5rem;
     flex: 1;
+    @include respond(phone) {
+        flex-basis: 100%;
+        margin: 0;
+    }
 }

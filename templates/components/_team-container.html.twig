@@ -1,12 +1,14 @@
 <div class="team-container u-margin-bottom-medium">
     <div class="team-container__title-box u-margin-bottom-medium">
         <h1 class="heading-secondary team-container__title">{{team.name|capitalize}} Team</h1>
-        {% if is_granted('ROLE_USER') %}
-            <a href="{{ path('edit_team', {'id': team.id})  }}" class="team-container__action btn btn-default btn-default--centered btn--blue"><i class="material-icons centered md-16 team-container__icon">edit</i>Edit Information</a> 
-        {% endif %}
-        {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('add_member') }}" class="team-container__action btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">person_add</i>Add a Member</a>
-        {% endif %}
+        <div class="team-container__action-box">
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('edit_team', {'id': team.id})  }}" class="team-container__action btn btn-default btn-default--centered btn--blue"><i class="material-icons centered md-16 team-container__icon">edit</i>Edit Information</a> 
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('add_member') }}" class="team-container__action btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">person_add</i>Add a Member</a>
+            {% endif %}
+        </div>
     </div>
     <article class="team-container__description team-container__description--short">
         <i class="material-icons centered md-18 team-container__description-icon">format_align_left</i>

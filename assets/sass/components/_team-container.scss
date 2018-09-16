@@ -4,6 +4,13 @@
         &:not(:last-child) {
             margin-right: 2rem;
         }
+        @include respond(phone) {
+            margin: 1rem 0;
+            flex-basis: 100%;
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
     }
 
     &__description {
@@ -49,10 +56,22 @@
         justify-content: center;
         align-items: center;
         min-height: 6rem;
+        flex-wrap: wrap;
     }
 
     &__title {
         margin-right: auto;
+        @include respond(phone) {
+            flex-basis: 100%;
+        }
+    }
+
+    &__action-box {
+        display: flex;
+        flex-wrap: wrap;
+        @include respond(phone) {
+            flex-basis: 100%;
+        }
     }
 
     &__link,

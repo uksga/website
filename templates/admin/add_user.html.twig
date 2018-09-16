@@ -4,11 +4,15 @@
 
 {% block body %}
 
+<div class="team-container">
+
 <div class="team-container__title-box u-margin-bottom-medium">
-    <h1 class="team-container__title heading-secondary">Add a User</h1>
-    {% if referer is defined %}
-        <a href="{{ referer }}" class="btn btn-default btn--blue">&larr; Go Back</a>
-    {% endif %}
+    <h1 class="heading-secondary team-container__title">Add a User</h1>
+    <div class="team-container__action-box">
+        {% if referer is defined %}
+            <a href="{{ referer }}" class="team-container__action btn btn-default btn--blue">&larr; Go Back</a>
+        {% endif %}
+    </div>
 </div>
 
 {{ form_start(form, { 'attr': {'class': 'admin-inputs'}}) }}
@@ -41,5 +45,7 @@
     </div>
 </div>
 {{ form_end(form) }}
+
+</div>
 
 {% endblock %}
