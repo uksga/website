@@ -1,26 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'security/base_security.html.twig' %}
 
 {% block body %}
 <div class="security">
-    <h1 class="page-title">Login</h1>
-    <p class="description u-margin-bottom-huge">
-        Please enter your email and password below so we can get you on to the platform!
-    </p>
-    <form action="{{ path('login') }}" class="form" method="post">
-        {% if error %}
-            <div class="form__error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-        <div class="form__row">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" class="form__input"/>
-        </div>
-        <div class="form__row">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="_password" class="form__input"/>
-        </div>
-        <div class="form__row">
-            <button class="btn btn-default btn--blue">Login &smashp;</button>
-        </div>
-    </form>
+    <div class="security-container">
+        <h1 class="heading-primary">Login</h1>
+        <p class="description u-margin-bottom-medium">
+            Please enter your email and password below so we can get you on to the platform!
+        </p>
+        <form action="{{ path('login') }}" class="admin-inputs" method="post">
+            <label for="username" class="admin-inputs__label">Username:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" class="admin-inputs__text-input"/>
+            <label for="password" class="admin-inputs__label">Password:</label>
+            <input type="password" id="password" name="_password" class="admin-inputs__text-input"/>
+            {% if error %}
+                <div class="admin-inputs__error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <button class="btn btn-default btn--green-solid u-margin-top-medium">Login</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

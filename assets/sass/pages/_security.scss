@@ -1,0 +1,19 @@
+.security {
+    padding: 8rem;
+    @include respond(phone) {
+        padding: 3rem;
+    }
+}
+
+.security-container {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 6rem;
+    background-color: #fff;
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-light);
+    @include respond(phone) {
+        max-width: 100%;
+        padding: 4rem 3rem;
+    }
+}
