@@ -1,7 +1,7 @@
 {
+  "build/js/app.js": "/build/js/app.js",
   "build/css/app.css": "/build/css/app.css",
   "build/css/app_admin.css": "/build/css/app_admin.css",
-  "build/js/app.js": "/build/js/app.js",
   "build/images/header_hero.jpg": "/build/images/header_hero.e7a2f639.jpg",
   "build/images/hero_branches.jpg": "/build/images/hero_branches.75c121e6.jpg",
   "build/images/hero_executive.jpg": "/build/images/hero_executive.43078f93.jpg",

@@ -4,12 +4,24 @@
     padding: 5rem 3rem;
     border-bottom: var(--line);
 
+    @include respond(tab-port) {
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    @include respond(phone) {
+        padding: 0;
+    }
+
     &__content-container {
         flex: 0 0 70%;
         margin: 0 2rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @include respond(phone) {
+            margin: 0;
+        }
     }
 
     &__description {
@@ -41,11 +53,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @include respond(tab-port) {
+            padding: 0;
+            margin-bottom: 2rem;
+        }
     }
 
     &__image {
         width: 100%;
         border-radius: 50%;
+        @include respond(tab-port) {
+            border-radius: var(--radius-medium);
+        }
     }
 
     &__image-caption {

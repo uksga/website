@@ -3,10 +3,17 @@
     padding: 1.5rem;
     border-radius: var(--radius-medium);
     box-shadow: var(--shadow-light);
+    @include respond(phone) {
+        flex-direction: column;
+        width: 100%;
+    }
 
     &__image-container {
         flex: 0 0 10%;
         max-width: 10rem;
+        @include respond(phone) {
+            margin: 1rem auto 3rem auto;
+        }
     }
 
     &__image {
@@ -22,6 +29,9 @@
         margin: 0 2rem;
         &:last-child {
             flex: 1;
+        }
+        @include respond(phone) {
+            margin-bottom: 1rem;
         }
     }
 
