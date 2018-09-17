@@ -27,6 +27,7 @@
         }
         @include respond(phone) {
             flex-basis: 100%;
+            font-size: 1.6rem;
         }
     }
     &__label, label {
