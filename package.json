@@ -12,12 +12,13 @@
   "private": true,
   "scripts": {
     "dev-server": "encore dev-server",
+    "deploy": "./deploy.sh",
     "dev": "encore dev",
     "watch": "encore dev --watch",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
-    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/build/css/app.css -o public/build/css/app.prefix.css",
+    "compress:css": "node-sass public/build/css/app.prefix.css public/build/css/app.compressed.css --output-style compressed",
+    "build:css": "npm-run-all prefix:css compress:css"
   },
   "dependencies": {
     "ajv": "^6.5.3",
