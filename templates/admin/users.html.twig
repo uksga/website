@@ -17,7 +17,9 @@
                 <p class="description description--callout u-margin-top-large">Sorry, there are no users.</p>
             {% endif %}
             {% for user in users %}
-                {{ include('team/_user.html.twig', {'user': user}) }}
+                {% if user.id != app.user.id %}
+                    {{ include('team/_user.html.twig', {'user': user}) }}
+                {% endif %}
             {% endfor %}
         </div>
     </div>

@@ -26,6 +26,13 @@ class SecurityController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $form->getData();
+            if ($user->getRoles()) {
+                $user->setRoles(array('ROLE_ADMIN'));
+            }
+            else {
+                $user->setRoles(array('ROLE_USER'));
+            }
             $password = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
             $entityManager = $this->getDoctrine()->getManager();

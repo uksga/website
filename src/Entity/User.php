@@ -97,7 +97,6 @@ class User implements UserInterface, \Serializable
     public function setIsActive(bool $is_active): self
     {
         $this->is_active = $is_active;
-
         return $this;
     }
 
@@ -108,17 +107,12 @@ class User implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        $roles = $this->roles;
-        if (!in_array('ROLE_USER', $roles)) {
-            $roles[] = 'ROLE_USER';
-        }
-        return $roles;
+        return $this->roles;
     }
 
     public function setRoles($roles): self
     {
         $this->roles = $roles;
-
         return $this;
     }
 
