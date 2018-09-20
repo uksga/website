@@ -1,20 +1,47 @@
-.legislation,
-.legislation:link,
-.legislation:visited {
-    padding: 2rem;
-    margin: 2rem;
-    border-radius: var(--radius-small);
-    box-shadow: var(--shadow-light);
+.legislation {
+    padding: 3rem 1rem 2rem 1rem;
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    cursor: pointer;
+    border-bottom: var(--line);
+    &:first-child {
+        border-top: var(--line);
+    }
+
     font-family: var(--font-serif);
     font-size: 1.6rem;
-    font-weight: var(--font-weight-bold);
     color: var(--color-grey-dark-2);
     text-decoration: none;
     @include respond(phone) {
         margin: 1rem 0;
     }
-}
+
+    &__name {
+        position: relative;
+        margin-right: auto;
+        text-align: right;
+        text-decoration: none;
+        &::before {
+            content: 'Act Name';
+            text-transform: uppercase;
+            position: absolute;
+            left: 0;
+            top: -1.6rem;
+            font-family: var(--font-sans-serif);
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-bold);
+        }
+    }
+
+    &__link, 
+    &__link:link, 
+    &__link:visited {
+        position: relative;
+        color: currentColor;
+        font-family: var(--font-sans-serif);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+} 
