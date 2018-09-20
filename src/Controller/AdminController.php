@@ -44,15 +44,42 @@ class AdminController extends Controller
         $executive = $emTeam->findOneBy(['name' => 'executive']);
         $judicial = $emTeam->findOneBy(['name' => 'judicial']);
         $legislative = $emTeam->findOneBy(['name' => 'legislative']);
-
+        $teamsEmpty = (is_null($executive) && is_null($judicial) && is_null($legislative));
         return $this->render('admin/teams.html.twig', [
             'active_link' => 'manage_team',
+            'teams_empty' => $teamsEmpty,
             'teams' => array(
                 'executive' => $executive,
                 'judicial' => $judicial,
                 'legislative' => $legislative)
         ]);
     }
+
+    /**
+     * @Route("/add_team", name="add_team")
+     */
+    public function addTeam(Request $request)
+    {
+        $team = new Team();
+        $form = $this->createForm(TeamType::class, $team);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $team = $form->getData();
+            $teamName = $team->getName();
+            $team->setName(strtolower($teamName));
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($team);
+            $entityManager->flush();
+            return $this->redirectToRoute('manage_teams');
+        }
+        return $this->render('admin/edit_team.html.twig', array(
+            'form' => $form->createView(),
+            'active_link' => 'manage_team',
+            'team' => $team,
+            'referer' => $request->headers->get('referer')
+        ));
+    }
+
 
     /**
      * @Route("/edit_team", name="edit_team")

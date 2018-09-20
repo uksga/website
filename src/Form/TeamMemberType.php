@@ -21,7 +21,7 @@ class TeamMemberType extends AbstractType
             ->add('team', EntityType::class, array(
                 'class' => Team::class,
                 'choice_label' => 'name',
-                'label' => 'Select a Team'
+                'label' => 'Select a Team' 
             ))
             ->add('is_vip')
             ->add('profile_image', FileType::class, array('label' => 'Upload Profile Image (.jpg)', 'data_class' => null))

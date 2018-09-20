@@ -18,6 +18,7 @@ class TeamType extends AbstractType
             ->add('name')
             ->add('short_description', TextareaType::class)
             ->add('long_description', TextareaType::class)
+            ->add('hero_image', FileType::class, array('label' => 'Upload Hero Image (.jpg)', 'data_class' => null))
             ->add('save', SubmitType::class)
         ;
     }

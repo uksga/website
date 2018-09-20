@@ -11,6 +11,12 @@
 {{ form_label(form.long_description, null, {'label_attr': {'class': 'admin-inputs__label'}}) }}
 {{ form_widget(form.long_description, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a longer description'}}) }}
 
+<div class="admin-inputs__image-preview-container" id="image-preview-container">
+    <img alt="Upload a hero image" class="admin-inputs__image-preview u-margin-bottom-xsmall" id="image-preview">
+</div>
+
+{{ include('team/_image-upload-form.html.twig', {'field': form.hero_image}) }}
+
 <div class="admin-inputs__action-bar">
     <div class="admin-inputs__action-item">
     {% if member is defined %}

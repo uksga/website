@@ -3,7 +3,19 @@
 {% block title %}Manage Teams{% endblock %}
 
 {% block body %}
+    <div class="team-container u-margin-bottom-medium">
+        <div class="team-container__title-box u-margin-bottom-medium">
+            <h1 class="heading-secondary team-container__title">Add a Team</h1>
+            <div class="team-container__action-box">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('add_team') }}" class="team-container__action btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">person_add</i>Add a Team</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
     {% for team in teams %}
-        {{ include('components/_team-container.html.twig', {'team': team}) }}
+        {% if team is not null %}
+            {{ include('components/_team-container.html.twig', {'team': team}) }}
+        {% endif %}
     {% endfor %}
 {% endblock %}
