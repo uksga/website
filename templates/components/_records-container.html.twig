@@ -1,9 +1,20 @@
 <div class="team-container__title-box">
-    <h1 class="heading-secondary team-container__title">{{managingEntity.name|title}} Records</h1>
+    <h1 class="heading-secondary team-container__title">Records</h1>
     {% if is_granted('ROLE_USER') %}
-        <a href="{{ path('add_record', {'id': managingEntity.id}) }}" class="team-container__action btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">description</i>Add a Record</a>
+        <a href="{{ path('add_record') }}" class="team-container__action btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">description</i>Add a Record</a>
     {% endif %}
 </div>
-{% for record in managingEntity.meetingRecords %}
-    {{ include('/components/_record.html.twig', {'record': record}) }}
+{% for entity in managingEntities %}
+    {% if entity.meetingRecords|length != 0 %}
+        <article class="record-group">
+            <div class="record-group__title-box">
+                <h3 class="record-group__title">{{ entity.name|upper }}</h3>
+            </div>
+            <div class="record-group__record-box">
+                {% for record in entity.meetingRecords %}
+                    {{ include('/components/_record.html.twig', {'record': record}) }}
+                {% endfor %}
+            </div>
+        </article>
+    {% endif %}
 {% endfor %}

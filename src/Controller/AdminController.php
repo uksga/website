@@ -338,7 +338,7 @@ class AdminController extends Controller
         ));
         $fullSenate = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Full Senate'
-        ));
+        )); 
 
         return $this->render('/admin/records.html.twig', array(
             'active_link' => 'records',
@@ -354,9 +354,9 @@ class AdminController extends Controller
      */
     public function addRecord(Request $request)
     {
-        $managingEntityId = $request->get('id');
+        // $managingEntityId = $request->get('id');
         $repo = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class);
-        $managingEntity = $repo->find($managingEntityId);
+        // $managingEntity = $repo->find($managingEntityId);
 
         $managingEntities = $repo->findAll();
         $record = new MeetingRecord();

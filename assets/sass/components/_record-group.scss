@@ -1,0 +1,18 @@
+.record-group {
+    margin: 4rem 0;
+
+    &__title-box {
+        font-size: 1.2rem;
+        background-color: var(--color-grey-light-2);
+        border-radius: var(--radius-small);
+        padding: 1rem;
+    }
+
+    &__title {
+        color: var(--color-grey-dark-2);
+    }
+
+    &__record-box {
+        padding: 0 1rem;
+    }
+}

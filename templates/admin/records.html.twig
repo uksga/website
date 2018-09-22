@@ -5,10 +5,7 @@
 {% block body %}
 
 <div class="team-container u-margin-bottom-medium">
-    {{ include('components/_records-container.html.twig', {'managingEntity': asa}) }}
-    {{ include('components/_records-container.html.twig', {'managingEntity': ar}) }}
-    {{ include('components/_records-container.html.twig', {'managingEntity': oe}) }}
-    {{ include('components/_records-container.html.twig', {'managingEntity': fullSenate}) }}
+    {{ include('components/_records-container.html.twig', {'managingEntities': [asa, ar, oe, fullSenate]}) }}
 </div>
 
 {% endblock %}

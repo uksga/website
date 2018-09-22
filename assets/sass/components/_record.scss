@@ -3,8 +3,7 @@
     width: 100%;
     display: flex;
     font-family: var(--font-sans-serif);
-    border-bottom: var(--line);
-    &:first-child {
+    &:not(:first-child) {
         border-top: var(--line);
     }
     @include respond(phone) {
