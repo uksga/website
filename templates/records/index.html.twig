@@ -33,11 +33,15 @@ requires to keep accurate records of all our open-door meetings. This includes o
         </p>
         <div class="container-fluid">
             <div class="row">
-                {% for recordGroup in recordGroups %}
-                    {% for record in recordGroup %}
-                        {{ include('/components/_record.html.twig', {'record': record}) }}
+                {% if recordGroups is defined %}
+                    {% for recordGroup in recordGroups %}
+                        {% for record in recordGroup %}
+                            {{ include('/components/_record.html.twig', {'record': record}) }}
+                        {% endfor %}
                     {% endfor %}
-                {% endfor %}
+                {% endif %}
+                <p class="description description--callout">There are no records to display right now. If you need a record, please reach out directly to 
+                Susie Smith at chiefofstaff@uksga.org</p>
             </div>
         </div>
     </section>

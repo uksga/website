@@ -27,10 +27,16 @@ class RecordsController extends Controller
         $ar = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Apropriations and Revenue Committee'
         ));
-        $records = [$oe->getMostRecentMeetingRecords(2), $asa->getMostRecentMeetingRecords(2), $ar->getMostRecentMeetingRecords(2)];
+        if (!is_null($oe) && !is_null($asa) && !is_null($ar))
+        {
+            $records = [$oe->getMostRecentMeetingRecords(2), $asa->getMostRecentMeetingRecords(2), $ar->getMostRecentMeetingRecords(2)];
+            return $this->render('records/index.html.twig', array(
+                'active_link' => 'records',
+                'recordGroups' => $records
+            ));
+        }
         return $this->render('records/index.html.twig', array(
-            'active_link' => 'records',
-            'recordGroups' => $records
+            'active_link' => 'records'
         ));
     }
 }
