@@ -32,7 +32,9 @@ class RecordsController extends Controller
             $records = [$oe->getMostRecentMeetingRecords(2), $asa->getMostRecentMeetingRecords(2), $ar->getMostRecentMeetingRecords(2)];
             return $this->render('records/index.html.twig', array(
                 'active_link' => 'records',
-                'recordGroups' => $records
+                'managingEntities' => array(
+                    $oe, $asa, $ar
+                )
             ));
         }
         return $this->render('records/index.html.twig', array(

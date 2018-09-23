@@ -4,6 +4,7 @@
         <a href="{{ path('add_record') }}" class="team-container__action btn btn-default btn-default--centered btn--green"><i class="material-icons centered md-16 team-container__icon">description</i>Add a Record</a>
     {% endif %}
 </div>
+<p class="description">For each entity, the 5 most recent records are listed.</p>
 {% for entity in managingEntities %}
     {% if entity.meetingRecords|length != 0 %}
         <article class="record-group">
@@ -11,7 +12,7 @@
                 <h3 class="record-group__title">{{ entity.name|upper }}</h3>
             </div>
             <div class="record-group__record-box">
-                {% for record in entity.meetingRecords %}
+                {% for record in entity.recentRecords %}
                     {{ include('/components/_record.html.twig', {'record': record}) }}
                 {% endfor %}
             </div>

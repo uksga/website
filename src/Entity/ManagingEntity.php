@@ -82,6 +82,20 @@ class ManagingEntity
     }
 
     /**
+     * @return MeetingRecord[] Returns an array of MeetingRecord objects
+     */
+    public function getRecentRecords()
+    {
+        if (count($this->meeting_records->toArray()) > 5)
+        {
+            return array_slice($this->meeting_records->toArray(), 0, 5);
+        }
+        return $this->meeting_records->toArray();
+    }
+
+
+
+    /**
     * @return MeetingRecord[] Returns an array of MeetingRecord objects
     */
     public function getMostRecentMeetingRecords($count)

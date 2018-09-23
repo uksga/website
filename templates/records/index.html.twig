@@ -28,22 +28,27 @@ requires to keep accurate records of all our open-door meetings. This includes o
     <section class="section">
         <h1 class="heading-primary">Most Recent Records</h1>
         <p class="description u-margin-bottom-small">
-            Below, you'll find a list of our most recent records. If you'd like to explore our archive, please
-            click <a href="#" class="link">here.</a>
+            Below, you'll find a list of our most recent records. If you can't find what you're looking for, please reach out!
         </p>
-        <div class="container-fluid">
-            <div class="row">
-                {% if recordGroups is defined %}
-                    {% for recordGroup in recordGroups %}
-                        {% for record in recordGroup %}
-                            {{ include('/components/_record.html.twig', {'record': record}) }}
-                        {% endfor %}
-                    {% endfor %}
+        {% if managingEntities is defined %}
+            {% for entity in managingEntities %}
+                {% if entity.meetingRecords|length != 0 %}
+                    <article class="record-group">
+                        <div class="record-group__title-box">
+                            <h3 class="record-group__title">{{ entity.name|upper }}</h3>
+                        </div>
+                        <div class="record-group__record-box">
+                            {% for record in entity.recentRecords %}
+                                {{ include('/components/_record.html.twig', {'record': record}) }}
+                            {% endfor %}
+                        </div>
+                    </article>
                 {% endif %}
-                <p class="description description--callout">There are no records to display right now. If you need a record, please reach out directly to 
+            {% endfor %}
+        {% else %}
+            <p class="description description--callout">There are no records to display right now. If you need a record, please reach out directly to 
                 Susie Smith at chiefofstaff@uksga.org</p>
-            </div>
-        </div>
+        {% endif %}
     </section>
 </main>
 
