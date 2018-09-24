@@ -3,4 +3,4 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     globals:
-        s3_path: 'https://s3.amazonaws.com/uksga-website-assets/'
+        s3_path: '%env(AWS_BASE_URL)%%env(AWS_BUCKET_NAME)%/'
