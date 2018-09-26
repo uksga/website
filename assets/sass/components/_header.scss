@@ -43,6 +43,14 @@
         background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_funding.jpg');
     }
 
+    &--constitution {
+        background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_constitution.jpg');
+    }
+
+    &--records{
+        background-image: linear-gradient(to bottom right, rgba($--color-primary, 0.7), transparent), url('../../img/hero_records.jpg');
+    }
+
     &__text-container {
         width: 50vw;
         margin-left: 10vw;
