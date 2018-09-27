@@ -14,9 +14,9 @@
         position: absolute;
         content: '';
         height: .6rem;
-        width: 116%;
-        background-color:rgba(0, 60, 255, 0.849);
-        left: -8%;
+        width: 106%;
+        background-color:var(--color-primary);
+        left: -3%;
         bottom: 0;
         z-index: 10;
         transition: height .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
