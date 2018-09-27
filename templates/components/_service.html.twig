@@ -1,0 +1,13 @@
+<article class="service">
+    <div class="service__content-container">
+        <h2 class="heading-secondary heading-secondary--italic u-margin-bottom-small">{{ service.name}}</h2>
+        <p class="service__description description">{{ service.description }}</p>
+        <div class="service__contact-container">
+            {{ include('team/_team-member-horizontal.html.twig', {'member': service.contact})}}
+        </div>
+    </div>
+    <figure class="service__image-container">
+        <img src="{{ s3_path ~ service.imageUrl }}" alt="Service Photo" class="service__image">
+        <figcaption class="service__image-caption">{{ service.imageCaption }}</figcaption>
+    </figure>
+</article>
