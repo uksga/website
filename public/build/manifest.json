@@ -1,14 +1,8 @@
 {
   "build/css/app_admin.css": "/build/css/app_admin.css",
   "build/js/app.js": "/build/js/app.js",
+  "build/css/app.css": "/build/css/app.css",
   "build/images/hero_executive.jpg": "/build/images/hero_executive.43078f93.jpg",
   "build/images/hero_judicial.jpg": "/build/images/hero_judicial.82342fe1.jpg",
-  "build/images/hero_legislative.jpg": "/build/images/hero_legislative.d840b3c2.jpg",
-  "build/css/app.css": "/build/css/app.css",
-  "build/images/header_hero.jpg": "/build/images/header_hero.e7a2f639.jpg",
-  "build/images/hero_branches.jpg": "/build/images/hero_branches.75c121e6.jpg",
-  "build/images/hero_constitution.jpg": "/build/images/hero_constitution.477328a6.jpg",
-  "build/images/hero_funding.jpg": "/build/images/hero_funding.179de6e1.jpg",
-  "build/images/hero_services.jpg": "/build/images/hero_services.d840b3c2.jpg",
-  "build/images/hero_records.jpg": "/build/images/hero_records.9e99d92c.jpg"
+  "build/images/hero_legislative.jpg": "/build/images/hero_legislative.d840b3c2.jpg"
 }

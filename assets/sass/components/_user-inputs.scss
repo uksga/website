@@ -13,7 +13,7 @@
         margin: 0 auto;
     }
     &__email {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         padding: 1rem;
         padding-left: 1.7rem;
         flex: 0 0 80%;
@@ -27,7 +27,7 @@
         }
         @include respond(phone) {
             flex-basis: 100%;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
         }
     }
     &__label, label {
