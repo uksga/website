@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 use App\Entity\TeamMember;
 
@@ -20,7 +21,6 @@ class ServiceType extends AbstractType
         $builder
             ->add('name')
             ->add('description', TextareaType::class)
-            ->add('image_url')
             ->add('image_caption')
             ->add('contact', ChoiceType::class, [
                 'choices' => $teamMembers,
@@ -33,6 +33,7 @@ class ServiceType extends AbstractType
                     return $teamMember->getTeam()->getName();
                 }
             ])
+            ->add('profile_image', FileType::class, array('label' => 'Upload Profile Image (.jpg)', 'data_class' => null))
             ->add('save', SubmitType::class);
         ;
     }

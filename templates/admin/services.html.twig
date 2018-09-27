@@ -15,7 +15,7 @@
                 <p class="description description--callout u-margin-top-large">Sorry, there are no services.</p>
             {% endif %}
             {% for service in services %}
-                {{ include('services/_service.html.twig', {'service': service}) }}
+                {{ include('components/_service.html.twig', {'service': service}) }}
             {% endfor %}
         </div>
     </div>

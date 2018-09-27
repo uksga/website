@@ -47,6 +47,11 @@ class Service
      */
     private $contact;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $profile_image;
+
     public function getId()
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Service
     public function setContact(?TeamMember $contact): self
     {
         $this->contact = $contact;
+
+        return $this;
+    }
+
+    public function getProfileImage(): ?string
+    {
+        return $this->profile_image;
+    }
+
+    public function setProfileImage(?string $profile_image): self
+    {
+        $this->profile_image = $profile_image;
 
         return $this;
     }

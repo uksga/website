@@ -11,7 +11,7 @@
     {% endif %}
 </div>
 
-{{ form_start(form) }}
+{{ form_start(form, { 'attr': {'class': 'admin-inputs'}}) }}
 
 {{ form_label(form.name) }}
 {{ form_widget(form.name, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a name for the service'}}) }}
@@ -19,14 +19,17 @@
 {{ form_label(form.description) }}
 {{ form_widget(form.description, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a description for the service'}}) }}
 
-{{ form_label(form.image_url) }}
-{{ form_widget(form.image_url, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a image_url for the service'}}) }}
-
 {{ form_label(form.image_caption) }}
 {{ form_widget(form.image_caption, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a image_caption for the service'}}) }}
 
 {{ form_label(form.contact) }}
-{{ form_widget(form.contact, { 'attr': {'class': 'admin-inputs__text-input', 'placeholder': 'Enter a contact for the service'}}) }}
+{{ form_widget(form.contact, { 'attr': {'class': 'admin-inputs__select-input', 'placeholder': 'Enter a contact for the service'}}) }}
+
+<div class="admin-inputs__image-preview-container" id="image-preview-container">
+    <img alt="Upload a profile image" class="admin-inputs__image-preview u-margin-bottom-xsmall" id="image-preview">
+</div>
+
+{{ include('team/_image-upload-form.html.twig', {'field': form.profile_image}) }}
 
 <div class="admin-inputs__action-bar u-margin-top-medium">
     <div class="admin-inputs__action-item">

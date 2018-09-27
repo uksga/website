@@ -297,6 +297,16 @@ class AdminController extends Controller
             $service = $form->getData();
             $service->setCreatedAt(new DateTime());
 
+            // Get and upload profile image data
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $form->get('profile_image')->getData();
+            $contents = file_get_contents($file->getPathname());
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+
+            $s3 = $this->container->get(S3::class);
+            $s3->PutS3File($contents, $fileName, $mimeType = 'image/jpeg');
+            $service->setImageUrl($fileName);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($service);
             $entityManager->flush();
