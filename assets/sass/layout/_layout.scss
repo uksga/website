@@ -1,5 +1,5 @@
 .section {
-    padding: 2rem 20rem;
+    padding: 4rem 20rem;
     @include respond(tab-port) {
         padding: 2rem 4rem;
     }
