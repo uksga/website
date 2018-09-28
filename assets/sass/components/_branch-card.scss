@@ -2,17 +2,15 @@
     padding: 0 1rem;
     margin: 1rem 0;
 
-    @include respond(tab-port)
-    {
-        padding: 0;
-        margin: -4rem;
-    }
-
     &:first-child {
         padding-left: 0;
     }
     &:last-child {
         padding-right: 0;
+    }
+
+    @include respond(tab-port) {
+        padding: 0;
     }
 
     &__card {
