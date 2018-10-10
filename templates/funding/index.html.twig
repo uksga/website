@@ -4,17 +4,23 @@
 
 {% block body %}
 
-{{ include('components/_header.html.twig', {'modifier': "funding", 'title': "Funding", 'description': "Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Dignissimos dolorum veniam fuga perspiciatis? Similique doloremque repudiandae rem!
-        Nisi maxime sunt veniam voluptate velit odit aliquam, saepe dolore eaque, asperiores quisquam."}) }}
+{{ include('components/_header.html.twig', {'modifier': "funding", 'title': "Funding", 'description': "Last year the 
+Appropriations and Revenue Committee allocated a total of $190,000 to 125 different Registered Student Organizations. 
+This fiscal year SGA wants to reach even more organizations than we have in the previous years. We plan to do this by 
+reaching out to more organizations through giving examples on social media. 
+"}) }}
 
 <main>
     <section class="section">
         <h1 class="heading-primary">Types of Funding</h1>
+        <p class="description u-margin-bottom-small">
+            For Senate Special Projects SGA allocated 40 different projects totaling $102,000. 
+            We allocated $13,500 in club sports grants, and gave $13,000 to academic or professional
+            conference grants. SGA provided $16,000 in total for service grants and allocated
+            12 multicultural inclusion grants, totalling $17,000. We allocated $29,000 to 41 general funding grants. 
+        </p>
         <p class="description u-margin-bottom-medium">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quisquam voluptates nostrum quasi eaque 
-            animi quidem iusto cum beatae voluptate odit laudantium nihil excepturi, provident voluptatibus 
-            perferendis velit non itaque!
+            To apply for any of these types of funding, fill out the form at our <a target="_blank" href="https://uky.campuslabs.com/engage/submitter/form/start/219147" class="link">BBNVolved Page.</a>
         </p>
 
         <article class="funding-type">
@@ -69,19 +75,29 @@
                 sponsored by a Student Government Senator. The maximum for this grant is $2,500. 
                 Please contact a Senator and visit their office hours to discuss funding for a Senate Special Project.
             </p>
+            <p class="funding-type__content">
+                To see a list of available senators, check out <a target="_blank" href="https://docs.google.com/spreadsheets/d/1cK4A-mjvD2Ysd8stBWM8p6g3IRF_FGiF7S5A0_z1E9I/edit?usp=sharing" class="link">this Google Sheet.</a>
+            </p>
             <div class="funding-type__amount-container">
                  <span class="funding-type__amount-header">Max Amount: $2,500</span>
+            </div>
+        </article>
+
+        <article class="funding-type">
+            <h3 class="funding-type__title">Academic and Professional Conference Grant</h3>
+            <p class="funding-type__content">
+                An academic or professional conference grant is funding request in which any registered organization 
+                may apply to obtain funding for an Academic or Professional Conference that is closely relatable to the 
+                purpose of the registered student organization. 
+            </p>
+            <div class="funding-type__amount-container">
+                 <span class="funding-type__amount-header">Max Amount: $1,500</span>
             </div>
         </article>
     </section>
 
     <section class="section">
-        <h1 class="heading-primary">How to Receive Funding</h1>
-        <p class="description u-margin-bottom-small">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quisquam voluptates nostrum quasi eaque 
-            animi quidem iusto cum beatae voluptate odit laudantium nihil excepturi, provident voluptatibus 
-            perferendis velit non itaque!
-        </p>
+        <h1 class="heading-primary u-margin-bottom-medium">How to Receive Funding</h1>
         <ol class="funding-type__list" type="1">
             <li class="funding-type__list-item">
                 Complete this online form. If you have any additional questions, contact Courtney 
@@ -93,6 +109,9 @@
             <li class="funding-type__list-item">
                 If your proposal is approved by the A&R Committee, you will need to contact Lynn Fresca 
                 within the next FIVE (5) business days. If you fail to do so, your grant will be voided.
+            </li>
+            <li class="funding-type__list-item">
+                To receive full allocated funding the RSO must complete the required evaluation survey provided by the Appropriations and Revenue committee within 2 weeks following the sponsored event.
             </li>
         </ol>
     </section>

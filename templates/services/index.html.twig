@@ -4,12 +4,19 @@
 
 {% block body %}
 
-{{ include('components/_header.html.twig', {'modifier': "services", 'title': "Our Services", 'description': "Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Dignissimos dolorum veniam fuga perspiciatis? Similique doloremque repudiandae rem!
-        Nisi maxime sunt veniam voluptate velit odit aliquam, saepe dolore eaque, asperiores quisquam."}) }}
+{{ include('components/_header.html.twig', {'modifier': "services", 'title': "Our Services", 'description': "The Department of Campus Services oversees the operations and facilitates major programs & services of campus such as Wildcat Cab, Wildcat Wardrobe and The Law Services. This group is comprised of the Director, Assistant Directors and Program Coordinators.  The Director oversees the operations."}) }}
 
 <main>
     <section class="section">
+        <h1 class="heading-primary">About our Services</h1>
+        <p class="description">
+            If you have any ideas that you want SGA to implement or a service that would benefit the students, 
+            do not hesitate to contact the office or the director! We are always open the ideas of students! 
+            Contact information for the Director is services@uksga.org
+        </p>
+    </section>
+    <section class="section">
+        <h1 class="heading-primary">All our Services</h1>
         {% for service in services %}
             {{ include('components/_service.html.twig', {'service': service}) }}
         {% endfor %}
