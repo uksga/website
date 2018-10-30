@@ -16,38 +16,6 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 class SecurityController extends Controller
 {
     /**
-     * @Route("/registration", name="registration")
-     */
-    public function index(Request $request, UserPasswordEncoderInterface $encoder)
-    {
-        // 1) build the form
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user = $form->getData();
-            if ($user->getRoles()) {
-                $user->setRoles(array('ROLE_ADMIN'));
-            }
-            else {
-                $user->setRoles(array('ROLE_USER'));
-            }
-            $password = $encoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
-            return $this->redirectToRoute('home');
-        }
-
-        return $this->render(
-            'security/registration.html.twig',
-            array('form' => $form->createView())
-        );
-    }
-
-    /**
      * @Route("/login", name="login")
      */
     public function login(Request $request, AuthenticationUtils $authenticationUtils)
