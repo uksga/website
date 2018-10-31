@@ -360,6 +360,23 @@ class AdminController extends Controller
     }
 
     /**
+     * @Route("/delete_record/{id}", name="delete_record")
+     */
+    public function deleteRecord(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository(MeetingRecord::class);
+        $record = $repo->find($id);
+        if ($record)
+        {
+            $em->remove($record);
+            $em->flush();
+            return $this->redirectToRoute('current_records');
+        }
+        return $this->redirectToRoute('current_records');
+    }
+
+    /**
      * @Route("/add_record", name="add_record")
      */
     public function addRecord(Request $request)

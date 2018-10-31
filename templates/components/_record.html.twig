@@ -1,5 +1,8 @@
 <div class="record">
     <span class="record__information record__information--entity-name">{{ record.managingEntity.name|title }}</span>
     <span class="record__information record__information--approved-date">{{ record.approvedDate|date('F d, Y')}}</span>
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('delete_record', {'id': record.id}) }}" class="btn btn-default btn--destructive">Delete</a>
+    {% endif %}
     <a href="{{ s3_path ~ record.documentURL }}" target="_blank" class="record__information record__information--link"><i class="material-icons md-16 record__icon">launch</i>LINK</a>
 </div>
