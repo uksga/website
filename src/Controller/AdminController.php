@@ -349,13 +349,16 @@ class AdminController extends Controller
         $fullSenate = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Full Senate'
         )); 
-
+        $sc = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+            'name' => 'Supreme Court'
+        ));
         return $this->render('/admin/records.html.twig', array(
             'active_link' => 'records',
             'oe' => $oe,
             'asa' => $asa,
             'ar' => $ar,
-            'fullSenate' => $fullSenate
+            'fullSenate' => $fullSenate,
+            'sc' => $sc
         ));
     }
 
