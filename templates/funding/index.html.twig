@@ -2,6 +2,11 @@
 
 {% block title %}Funding{% endblock %}
 
+{% block og %}
+    <meta property="og:title" content="UKSGA: Funding" />
+    <meta property="og:image" content="{{asset('img/hero_funding.jpg')}}" />
+{% endblock %}
+
 {% block body %}
 
 {{ include('components/_header.html.twig', {'modifier': "funding", 'title': "Funding", 'description': "Last year the 

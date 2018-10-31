@@ -403,7 +403,7 @@ class AdminController extends Controller
             'form' => $form->createView(),
             'referer' => $request->headers->get('referer'),
             'active_link' => 'records'
-        ));
+        )); 
     }
 
     /**

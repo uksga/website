@@ -2,6 +2,11 @@
 
 {% block title %}Legislation{% endblock %}
 
+{% block og %}
+    <meta property="og:title" content="UKSGA: Legislation" />
+    <meta property="og:image" content="{{asset('img/hero_constitution.jpg')}}" />
+{% endblock %}
+
 {% block body %}
 
 {{ include('components/_header.html.twig', {'modifier': 'constitution', 'title': 'Our Legislation', 'description': 'One of the principal 
