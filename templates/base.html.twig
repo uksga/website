@@ -35,6 +35,7 @@
             <nav class="nav-header__nav">
                 <ul class="nav-primary">
                     {% if is_granted('ROLE_USER') %}<li class="nav-primary__item nav-primary__item--admin"><a href="{{ path('manage_teams') }}" class="nav-primary__link">Admin</a></li>{% endif %}
+                    <li class="nav-primary__item {% if active_link is defined and active_link == 'about_us' %} nav-primary__item--active {% endif %}"><a href="https://uky.campuslabs.com/engage/organization/student-government-association/documents/view/1041753" class="nav-primary__link">Spring Application</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'about_us' %} nav-primary__item--active {% endif %}"><a href="{{ path('home') }}" class="nav-primary__link">About Us</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'branches' %} nav-primary__item--active {% endif %}"><a href="{{ path('branches') }}" class="nav-primary__link">Branches</a></li>            
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'services' %} nav-primary__item--active {% endif %}"><a href="{{ path('services') }}" class="nav-primary__link">Services</a></li>
