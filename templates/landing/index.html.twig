@@ -5,10 +5,20 @@
 <header class="header">
     <div class="header__text-container">
         <h1 class="heading-primary heading-primary--white">
-            Welcome
+            Voting
         </h1>
-        <p class="description description--white">Student Government Association is here to improve the quality of students' experiences while they are on campus, by listening to them and advocating on their behalf.</p>
-        {% set messages = app.flashes('info') %}
+        <p class="description description--white">Online voting will begin on Wednesday, Feb 27th at 9am and will be available throughout the election until Thursday at 6pm. You can vote online by clicking the "Vote Now" button above. There are also several options listed below to vote in person.</p>
+        <br><br>
+        <h3 class="description--white">Wednesday February 27th</h3>
+        <p class="description--white">Whitehall 9am-4pm</p>
+        <p class="description--white">Student Center 6pm-9pm</p>
+        <h3 class="description--white">Thursday February 28th</h3>
+        <p class="description--white">Whitehall 9am-4pm</p>
+
+
+        {# <p class="description description--white">Student Government Association is here to improve the quality of students' experiences while they are on campus, by listening to them and advocating on their behalf.</p> #}
+
+        {# {% set messages = app.flashes('info') %}
         {% if messages is not empty%}
             {% for message in messages %}
                 <p class="description description--white description--callout u-margin-top-large">{{ message }}</p>
@@ -19,7 +29,7 @@
                 {{ form_widget(form.email, { 'attr': {'class': 'user-inputs__email', 'placeholder': 'Enter your email'} }) }}
                 {{ form_widget(form.save, { 'attr': {'class': 'user-inputs__submit'} }) }}
             {{ form_end(form) }}
-        {% endif %}
+        {% endif %} #}
 
     </div>
 </header>
