@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "@symfony/webpack-encore": "^0.19.0",
+    "@symfony/webpack-encore": "^0.24.0",
     "autoprefixer": "^7.1.4",
     "concat": "^1.0.3",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.1",
     "postcss-cli": "^4.1.1",
     "sass-loader": "^7.1.0"
@@ -15,7 +15,7 @@
     "deploy": "./deploy.sh",
     "dev": "encore dev",
     "watch": "encore dev --watch",
-    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "compile:sass": "node-sass ./assets/sass/main.scss ./public/build/css/app.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/build/css/app.css -o public/build/css/app.prefix.css",
     "compress:css": "node-sass public/build/css/app.prefix.css public/build/css/app.compressed.css --output-style compressed",
     "build:css": "npm-run-all prefix:css compress:css"
