@@ -5,16 +5,10 @@
 <header class="header">
     <div class="header__text-container">
         <h1 class="heading-primary heading-primary--white">
-            Polls are Closed
+            Welcome
         </h1>
-        <p class="description description--white">The official results will be announced at 7:30pm on the social staircase in the student center.</p>
-        <br>
-        <p class="description description--white">The official senate results will also be avaiable soon by clicking the "Senate Results" tab above. The unofficial presidential results will be accessable by clicking the "Unofficial Presidental Results" tab.</p>
-
-
-        {# <p class="description description--white">Student Government Association is here to improve the quality of students' experiences while they are on campus, by listening to them and advocating on their behalf.</p> #}
-
-        {# {% set messages = app.flashes('info') %}
+        <p class="description description--white">Student Government Association is here to improve the quality of students' experiences while they are on campus, by listening to them and advocating on their behalf.</p>
+        {% set messages = app.flashes('info') %}
         {% if messages is not empty%}
             {% for message in messages %}
                 <p class="description description--white description--callout u-margin-top-large">{{ message }}</p>
@@ -25,7 +19,7 @@
                 {{ form_widget(form.email, { 'attr': {'class': 'user-inputs__email', 'placeholder': 'Enter your email'} }) }}
                 {{ form_widget(form.save, { 'attr': {'class': 'user-inputs__submit'} }) }}
             {{ form_end(form) }}
-        {% endif %} #}
+        {% endif %}
 
     </div>
 </header>
