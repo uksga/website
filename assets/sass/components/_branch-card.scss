@@ -35,18 +35,18 @@
         min-height: 22rem;
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         background-size: cover;
-        background-image: url('../../img/hero_legislative.jpg'); // Default in case the team name isn't defined
+        background-image: url('../../public/img/hero_legislative.jpg'); // Default in case the team name isn't defined
         &--left {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
         }
         &--legislative {
-            background-image: url('../../img/hero_legislative.jpg');
+            background-image: url('../../public/img/hero_legislative.jpg');
         }
         &--executive {
-            background-image: url('../../img/hero_executive.jpg');
+            background-image: url('../../public/img/hero_executive.jpg');
         }
         &--judicial {
-            background-image: url('../../img/hero_judicial.jpg');
+            background-image: url('../../public/img/hero_judicial.jpg');
         }
     }
 
