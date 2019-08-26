@@ -7,7 +7,7 @@ if (document.getElementById('team_hero_image')) {
 }
 
 var output = document.getElementById('image-preview');
-var button = document.getElementById('upload-button');
+var button = document.getElementById('team_member_save');
 output.style.display = "none";
 fileUpload.addEventListener('change', openFile);
 function openFile(file) {
