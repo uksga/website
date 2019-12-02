@@ -19,3 +19,8 @@
 .DS_Store
 package-lock.json
 /public/.htaccess
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
