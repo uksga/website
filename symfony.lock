@@ -35,9 +35,6 @@
             "ref": "ae205d5114e719deb64d2110f56ef910787d1e04"
         }
     },
-    "doctrine/doctrine-cache-bundle": {
-        "version": "1.3.3"
-    },
     "doctrine/doctrine-migrations-bundle": {
         "version": "1.2",
         "recipe": {
@@ -83,12 +80,6 @@
     "egulias/email-validator": {
         "version": "2.1.4"
     },
-    "facebook/webdriver": {
-        "version": "1.6.0"
-    },
-    "fig/link-util": {
-        "version": "1.0.0"
-    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },
@@ -112,6 +103,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
+    },
+    "php": {
+        "version": "7.3"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
@@ -224,6 +218,9 @@
     "symfony/dotenv": {
         "version": "v4.1.2"
     },
+    "symfony/error-handler": {
+        "version": "v4.4.1"
+    },
     "symfony/event-dispatcher": {
         "version": "v4.1.2"
     },
@@ -259,12 +256,6 @@
             "version": "3.3",
             "ref": "87c585d24de9f43bca80ebcfd5cf5cb39445d95f"
         }
-    },
-    "symfony/http-client": {
-        "version": "v4.3.1"
-    },
-    "symfony/http-client-contracts": {
-        "version": "v1.1.3"
     },
     "symfony/http-foundation": {
         "version": "v4.1.2"
@@ -307,9 +298,6 @@
     },
     "symfony/orm-pack": {
         "version": "v1.0.5"
-    },
-    "symfony/panther": {
-        "version": "v0.2.0"
     },
     "symfony/phpunit-bridge": {
         "version": "4.1",
