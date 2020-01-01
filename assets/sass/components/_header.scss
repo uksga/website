@@ -1,6 +1,6 @@
 .header {
     height: 90vh;
-    background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/header_hero.jpg');
+    background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/header_hero.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -20,35 +20,35 @@
     }
 
     &--branches {
-        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/hero_branches.jpg');
+        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/hero_branches.jpg');
     }
 
     &--executive {
-        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/hero_executive.jpg');
+        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/hero_executive.jpg');
     }
 
     &--legislative {
-        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/hero_legislative.jpg');
+        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/hero_legislative.jpg');
     }
 
     &--judicial {
-        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/hero_judicial.jpg');
+        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/hero_judicial.jpg');
     }
 
     &--services {
-        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/hero_services.jpg');
+        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/hero_services.jpg');
     }
 
     &--funding {
-        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/hero_funding.jpg');
+        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/hero_funding.jpg');
     }
 
     &--constitution {
-        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/hero_constitution.jpg');
+        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/hero_constitution.jpg');
     }
 
     &--records{
-        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('../../public/img/hero_records.jpg');
+        background-image: linear-gradient(to bottom right, #18468f, rgba(24,70,143,0.3)), url('/img/hero_records.jpg');
     }
 
     &__text-container {

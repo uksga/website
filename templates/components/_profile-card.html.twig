@@ -10,7 +10,7 @@
         {% endif %}
         
         <div class="profile-container__image-container u-margin-bottom-xsmall">
-            <img src="{% if member.profileImageURL == "" %} {{ asset('img/placeholder_profile.png')}} {% else %} {{ s3_path ~ member.profileImageURL}} {% endif %}" alt="Profile picture" class="profile-container__image">
+            <img src="{% if member.profileImageURL == "" %} {{ asset('/img/placeholder_profile.png')}} {% else %} {{ s3_path ~ member.profileImageURL}} {% endif %}" alt="Profile picture" class="profile-container__image">
         </div>
         <div class="profile-container__information">
             <p class="contact-information contact-information--title">{{member.title|title}}

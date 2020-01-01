@@ -12,7 +12,7 @@
         {% endblock %}
         {% block og %}
             <meta property="og:title" content="UKSGA: UKY Student Government" />
-            <meta property="og:image" content="{{asset('img/hero_services.jpg')}}" />
+            <meta property="og:image" content="{{asset('/img/hero_services.jpg')}}" />
         {% endblock %}
         {% block meta %}
             <meta name="description" content="The website for the University of Kentucky's Student Government Association" />
@@ -23,7 +23,7 @@
     <body>
         <header class="nav-header">
             <figure class="nav-header__logo-container">
-                <a href="{{ path('home')}}"><img src="{{ asset('img/logo.jpg') }}" alt="UKSGA Logo" class="nav-header__logo logo--primary"></a>
+                <a href="{{ path('home')}}"><img src="{{ asset('/img/logo.jpg') }}" alt="UKSGA Logo" class="nav-header__logo logo--primary"></a>
             </figure>
             <div class="nav-header__nav-toggle" id="nav-toggle">
                 <button class="hamburger hamburger--collapse" type="button" id="nav-toggle-button" aria-label="Menu" aria-controls="navigation">
@@ -52,7 +52,7 @@
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-12">
                         <div class="footer__logo">
-                            <img src="{{ asset('img/logo_white.png') }}" alt="UKSGA Logo" class="logo--secondary">
+                            <img src="{{ asset('/img/logo_white.png') }}" alt="UKSGA Logo" class="logo--secondary">
                         </div>
                         <p class="contact contact--white u-margin-top-medium">Student Government Office<br>
                         160 Avenue of Champions, Suite A267<br>
