@@ -21,7 +21,7 @@ class MeetingRecordType extends AbstractType
         $builder
             ->add('approved_date', DateType::class, array(
                 'years' => array(
-                    '2018', '2019'
+                    '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029'
                 ),
                 'format' => 'yyyy-MMMM-d',
                 'placeholder' => array(
