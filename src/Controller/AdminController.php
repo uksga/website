@@ -307,6 +307,10 @@ class AdminController extends Controller
             $s3->PutS3File($contents, $fileName, $mimeType = 'image/jpeg');
             $service->setImageUrl($fileName);
 
+            // Accept new lines (add breaks)
+            $text = nl2br($service->getDescription());
+            $service->setDescription($text);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($service);
             $entityManager->flush();
