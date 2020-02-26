@@ -320,6 +320,28 @@ class AdminController extends Controller
     }
 
     /**
+     * @Route("/delete_service/{id}", name="delete_service")
+     */
+    public function deleteService(Request $request, $id)
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+        $id = $request->get('id');
+        if ($id)
+        {
+            $em = $this->getDoctrine()->getManager();
+            $service = $em->getRepository(Service::class)->find($id);
+            if ($service)
+            {
+                $em->remove($service);
+                $em->flush();
+                return $this->redirectToRoute('current_services');
+            }
+            throw new \Exception('No such service exists.');
+        }
+        throw new \Exception('No such ID exists.');
+    }
+
+    /**
      * @Route("/current_services", name="current_services")
      */
     public function currentServices(Request $request)

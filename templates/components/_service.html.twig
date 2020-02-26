@@ -5,6 +5,9 @@
         <div class="service__contact-container">
             {{ include('team/_team-member-horizontal.html.twig', {'member': service.contact})}}
         </div>
+        {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('delete_service', {'id': service.id}) }}" class="btn btn-default btn--destructive">Delete</a>
+        {% endif %}
     </div>
     <figure class="service__image-container">
         <img src="{{ s3_path ~ service.imageUrl }}" alt="Service Photo" class="service__image">
