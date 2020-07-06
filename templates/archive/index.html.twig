@@ -4,14 +4,12 @@
 
 {% block og %}
     <meta property="og:title" content="UKSGA: Archive" />
-    <meta property="og:image" content="{{asset('/img/hero_constitution.jpg')}}" />
+    <meta property="og:image" content="{{asset('/img/hero_archive.jpg')}}" />
 {% endblock %}
 
 {% block body %}
 
-{{ include('components/_header.html.twig', {'modifier': 'constitution', 'title': 'Our Legislation', 'description': 'One of the principal 
-responsibilities of our organization is to maintain the regulations which govern our behavior, our powers, and our 
- responsibilities. We are constantly revising our legislation in its entirety.'}) }}
+{{ include('components/_header.html.twig', {'modifier': 'constitution', 'title': 'Our Archive', 'description': ''}) }}
 
 <main>
     <section class="section">
