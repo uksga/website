@@ -505,6 +505,8 @@ body {
     background-image: linear-gradient(to bottom right, #18468f, rgba(24, 70, 143, 0.3)), url("/img/hero_funding.jpg"); }
   .header--constitution {
     background-image: linear-gradient(to bottom right, #18468f, rgba(24, 70, 143, 0.3)), url("/img/hero_constitution.jpg"); }
+  .header--archive {
+    background-image: linear-gradient(to bottom right, #18468f, rgba(24, 70, 143, 0.3)), url("/img/hero_archive.jpg"); }
   .header--records {
     background-image: linear-gradient(to bottom right, #18468f, rgba(24, 70, 143, 0.3)), url("/img/hero_records.jpg"); }
   .header__text-container {
