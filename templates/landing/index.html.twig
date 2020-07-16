@@ -8,18 +8,7 @@
             Welcome
         </h1>
         <p class="description description--white">Student Government Association is here to improve the quality of students' experiences while they are on campus, by listening to them and advocating on their behalf.</p>
-        {% set messages = app.flashes('info') %}
-        {% if messages is not empty%}
-            {% for message in messages %}
-                <p class="description description--white description--callout u-margin-top-large">{{ message }}</p>
-            {% endfor %}
-        {% else %}
-            {{ form_start(form, {'attr': {'class': 'user-inputs'}}) }}
-                {{ form_label(form.email) }}
-                {{ form_widget(form.email, { 'attr': {'class': 'user-inputs__email', 'placeholder': 'Enter your email'} }) }}
-                {{ form_widget(form.save, { 'attr': {'class': 'user-inputs__submit'} }) }}
-            {{ form_end(form) }}
-        {% endif %}
+       
 
     </div>
 </header>
