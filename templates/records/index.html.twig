@@ -31,10 +31,6 @@ a list of our most recent records. If you cannot find what you are looking for, 
         </p>
     </section>
     <section class="section">
-        <h1 class="heading-primary">Most Recent Records</h1>
-        <p class="description u-margin-bottom-small">
-            Below, you'll find a list of our most recent records. If you can't find what you're looking for, please reach out!
-        </p>
         {% if managingEntities is defined %}
             {% for entity in managingEntities %}
                 {% if entity.meetingRecords|length != 0 %}
