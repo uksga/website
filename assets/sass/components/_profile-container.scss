@@ -5,12 +5,9 @@
             margin-bottom: 4rem;
         }
     }
-
     &__link,
     &__link:link,
-    &__link:visited {
-    }
-
+    &__link:visited {}
     &__icon {
         position: absolute;
         right: 1rem;
@@ -20,7 +17,6 @@
         border-radius: 100rem;
         color: var(--color-grey-dark-2);
     }
-
     &__profile {
         padding: 2rem;
         margin: 0 2rem;
@@ -38,7 +34,6 @@
             }
         }
     }
-
     &__image-container {
         position: relative;
         width: 15rem;
@@ -46,22 +41,19 @@
         overflow: hidden;
         border-radius: 50%;
     }
-
     &__image {
         position: absolute;
         left: 50%;
         top: 50%;
-        width: 100%;
-        -webkit-transform: translate(-50%,-50%);
-            -ms-transform: translate(-50%,-50%);
-                transform: translate(-50%,-50%);
+        width: 200%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
-
     &__information-box {
         display: flex;
         justify-content: center;
     }
-
     &__information {
         //margin-top: 2rem;
         display: flex;
@@ -69,13 +61,11 @@
         align-items: center;
         text-align: center;
     }
-
     &__text-icon {
         margin-right: .6rem;
         display: flex;
         justify-content: center;
     }
-
     &__section-description {
         padding: 1.6rem 0;
         display: flex;
@@ -83,7 +73,6 @@
         text-align: center;
         border-bottom: var(--line);
     }
-
     &__link,
     &__link:link,
     &__link:visited {
