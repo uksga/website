@@ -753,6 +753,7 @@ body {
 .profile-container__profile {
   padding: 2rem;
   margin: 0 2rem;
+  height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
