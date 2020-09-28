@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Initiave Tracker{% endblock %}
+
+{% block og %}
+    <meta property="og:title" content="UKSGA: Initiative Tracker" />
+    <meta property="og:image" content="{{asset('/img/hero_archive.jpg')}}" />
+{% endblock %}
+
+{% block body %}
+
+{{ include('components/_header.html.twig', {'modifier': 'tracker', 'title': 'Initiative Tracker', 'description': 'Description for Initiative Tracker.'}) }}
+
+<main>
+
+</main>
