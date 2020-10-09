@@ -6,12 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/tracker")
+ * @Route("/election")
  */
 class ElectionController extends AbstractController
 {
     /**
-     * @Route("/", name="tracker")
+     * @Route("/", name="election")
      */
     public function index()
     {
