@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Initiave Tracker{% endblock %}
+
+{% block og %}
+    <meta property="og:title" content="UKSGA: Election Info" />
+    <meta property="og:image" content="{{asset('/img/hero_tracker.jpg')}}" />
+{% endblock %}
+
+{% block body %}
+
+{{ include('components/_header.html.twig', {'modifier': 'tracker', 'title': 'SGA Election', 'description': 'On this page you will find election information. Please see below for Freshman Senate election information. '}) }}
+
+<main>
+    <section class="section">
+        <h1 class="heading-primary">2020/21 Freshman Senate Candidates</h1>
+        <p class="description u-margin-bottom-small">
+            These are the 20-21 Freshman Senate Candidates and their platform statements.</p>
+        <h2>Patrick Haycraft</h2>
+        <p class="description u-margin-bottom-medium">
+            My name is Patrick Haycraft, and I’m running to represent
+            the freshman class as a Senator in the Student Government Association here at
+            the University of Kentucky. I would like to state how much of an honor it is to
+            even be able to pursue this opportunity, and for that I thank both the students
+            of the University as well as the Student Government Association.
+            I’m running on a broad platform, and that is to make this
+            campus fantastic. That is, to keep to one of the official definitions of the
+            word, a little more imaginative and removed from reality. I want students on
+            this campus to feel as if they’re removed from the outside stresses of the
+            world and can find a home here at the University of Kentucky where they’re
+            welcomed and appreciated every day. That is why, if elected Senator, I plan to
+            advocate for a University of Kentucky where no student struggles to pay for their
+            educational experience, where extracurricular activities receive even more
+            funding than they currently do from the Student Government Association, and
+            where differentiation in culture and heritage are celebrated with funding of
+            organizations specifically for minority groups here on campus.
+            University of Kentucky students, I want to fight for you, to
+            represent you, and to make your student experience on campus wildly fantastic.
+            I want you to be, in every sense of the word, as fantastic
+            as you can be.
+            So, join me, in making these four years something fantastic
+            to remember.
+        </p>
+        <h2>Kelsey Siebenthaler</h2>
+        <p class="description u-margin-bottom-medium">
+            If elected to the Freshman Senate, my main platforms would be student empowerment and sustainability. Our campus is no place for discrimination of any kind, whether that’s based on race, gender, sexual orientation, etc. Beyond this, every student should be treated with fairness and respect. I personally take being an ally for the communities that are not treated with equity very seriously. The path for reporting an offense based on these identities should be clear and encouraged among our community. I would be the link between you and our administration to address the important issues that only students see.
+        </p>
+        <p class="description u-margin-bottom-medium">
+            Sustainable living is also important to me. I do my best to contribute as I can on a personal level but even more relevantly, we must demand more from larger institutions, such as our university, that have an even larger impact. An example of this is in our dining halls. Pre-COVID, our university used an amazing dish-washing system that minimized waste. Currently, the amount of styrofoam we use is truly disappointing. It would be my goal to find and implement a more environmentally conscious alternative across campus. Additionally, I would advocate for increased outdoor seating to compensate for the reduced indoor seating in our dining halls.
+            I want to be your voice. Together, even through this trying pandemic, we will make this campus our own. As a Lexington native, I know that this campus has the potential to become the home away from home that every single student deserves.
+        </p>
+        <h2>Mason Sullivan</h2>
+        <p class="description u-margin-bottom-medium">
+            Being born and raised in South-Central Kentucky, I’ve been exposed to the amazing outreach that the University of Kentucky has had throughout this state. It’s not just a university, it’s an extensive community that perfectly embodies the values of its people. Simply put, as students at UK, we hold ourselves to the highest standards, and I strive to exemplify those standards every single day. As your freshmen senator, I’d aim to ensure that those standards are being put into effect in all decisions we make. I’d work my absolute hardest to endorse resolutions that will not only better your experience as a student but also improve the reality of being a member of this university’s community. Always taking your input into deep consideration, I will establish exciting and progressive goals with my peers as we push through these confusing times. I am fully prepared to take on the challenge of representing our class and making sure every one of your voices is heard. It’d be a terrific pleasure to represent you, and with me as your freshmen senator, you’d be able to Discover What’s Wildly Possible like no other.
+        </p>  
+        <h2>Keiler Belt</h2>
+        <p class="description u-margin-bottom-medium">
+            If elected I will put my heart and service into this position, to enhance the university.”
+            In my hometown, I was very involved in my community. From working at the Boys and Girls club to creating a tutoring program at my middle school, and to volunteering at a local ministry. All these experiences have shaped me into the person I am today. I want to focus on the students of UK but also the community around the university. The majority of UK students are here because they had a person in their life pushing them to their limits. Our class has an enormous influence on middle/high schoolers. We can be the person telling them that they can succeed in life and be the reason they never give up. There are kids in every community throughout the world that have no one encouraging them at home. My goal is to get college students more involved in mentorship/tutoring programs in the community. I learned so much about myself and how I can make a change. Even if it is only in one child's life, that difference matters. If elected for Senate I will be able to enhance and promote the current programs. Making sure all students are aware of the ability of the programs. I will listen to the opinions of fellow students as my job would entail being the voice of our class. I hope I have your vote in this election. 
+        </p> 
+        <h2>Ellie Kiper</h2>
+        <p class="description u-margin-bottom-medium">
+            I’m excited to announce that I have put my name forward for the Freshman Senate at the University of Kentucky. In the time we have been on this campus, I have actively engaged in the Alpha Delta Pi sorority, DanceBlue committee, and Gatton Global Scholars program. Through my experience as student body president, a school ambassador, and DanceBlue head chair, I can advocate for change and execute initiatives. As a freshman senator, I will ensure that everyone has a voice and is represented. I will use my position to advocate for more resources to be made available to increase awareness on mental and physical health, work to make more ecofriendly dining containers available to all, and reform the current visitation policy.
+        </p> 
+        <p class="description u-margin-bottom-medium">
+            During these unprecedented times, it’s critical that our class becomes united and overcomes these obstacles presented. I pledge to be adaptable and transparent with our class in order to make the absolute best of our time on campus. If elected to represent our class, I will serve with integrity and determination to inflict a change in every way I see possible. I would be honored to have your vote as your next Freshman Senator.
+        </p> 
+        <h2>Ben Slack</h2>
+        <p class="description u-margin-bottom-medium">
+            My name is Ben Slack and I want to be your next freshman senator. Growing up in a small town
+            in southern Kentucky as the son of two Wildcat alums, I have bled blue my entire life. I can not
+            tell you how many trips to Lexington I have made in my life, yearning for my chance to be a
+            student at the University of Kentucky. Now, although I feel that our university is a wonderful
+            place to be, I believe that we can make it better.
+            Because of all the changes that we have had to make in the last year, it is crucial that we are
+            able to stay connected, while also receiving a quality education and staying healthy. These are
+            the core values that I have revolving around our community and I feel like I can be your voice to
+            improve the flaws that come with novelty.
+            As the son of a public school teacher, I recognize the importance of education and the policy
+            that governs it. It is one of my biggest passions and why I feel compelled to represent our class
+            in the room where decisions about our future will be discussed. Furthermore, I believe that
+            improvements in involvement as well as health awareness, both physical and mental, are crucial
+            to our success in these next four years. This is why I want to represent us: to be able to make
+            every single student feel the same way about UK as I do.
+        </p> 
+        <h2>Nunu Vorkpor</h2>
+        <p class="description u-margin-bottom-medium">
+            Hello friends! My name is Nunu Vorkpor. I am a freshman at The University of Kentucky, and I’m running for Freshman Senate. I’m from right here from Lexington, KY. I am majoring in economics with a minor in political science.  When I’m not attending class or studying, I love spending time with my family, traveling, watching football, or meeting new people.
+        </p>
+        <p class="description u-margin-bottom-medium">
+            I decided to run for the freshman senate because I desire to be a voice for the voiceless. I strive to be an advocate for all of my fellow peers. I wish for a campus community that everyone can walk on while feeling comfortable and confident. I intend to be an open, approachable, and positive student on campus for others to voice their questions and concerns to me. I am your voice. Together we can create a better campus for the future. In high school, I always felt the need to be the change in a world that is broken. And I now have the chance to be the change I want to see in the world. It starts here at the University of Kentucky.
+        </p>
+        <p class="description u-margin-bottom-medium">
+            If you want a campus where you can be you. If you want a campus where you achieve all your aspirations.If you want a campus that can get you to the next step in your journey. Then vote  Nunu Vorkpor for Freshman Senate to create a more improved campus for you. 
+        </p>  
+    </section>
+
+</main>
+{% endblock %}
