@@ -15,13 +15,13 @@ required to keep accurate records of all our open-door meetings. This includes o
 <main>
     <p class="description">For each entity, the 5 most recent records are listed.</p>
     {% for entity in managingEntities %}
-        {% if entity.meetingRecords|length != 0 %}
+        {% if entity.recentRecords|length != 0 %}
             <article class="record-group">
                 <div class="record-group__title-box">
                     <h3 class="record-group__title">{{ entity.name|upper }}</h3>
                 </div>
                 <div class="record-group__record-box">
-                    {% for record in entity.meetingRecords %}
+                    {% for record in entity.recentRecords %}
                         {{ include('/components/_record.html.twig', {'record': record}) }}
                     {% endfor %}
                 </div>
