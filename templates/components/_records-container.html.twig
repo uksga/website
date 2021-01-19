@@ -6,7 +6,7 @@
 </div>
 <p class="description">For each entity, the 5 most recent records are listed.</p>
 {% for entity in managingEntities %}
-    {% if entity.meetingRecords|length != 0 %}
+    {% if entity.recentRecords|length != 0 %}
         <article class="record-group">
             <div class="record-group__title-box">
                 <h3 class="record-group__title">{{ entity.name|upper }}</h3>
