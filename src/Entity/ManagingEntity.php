@@ -88,7 +88,7 @@ class ManagingEntity
     {
         if (count($this->meeting_records->toArray()) > 5)
         {
-            return array_slice($this->meeting_records->toArray(), 0, 5);
+            return array_slice($this->meeting_records->toArray(), count($this->meeting_records->toArray())-5, count($this->meeting_records->toArray()));
         }
         return $this->meeting_records->toArray();
     }
