@@ -13,6 +13,21 @@
 required to keep accurate records of all our open-door meetings. This includes our Full Senate meetings and our various Committee Meetings.'}) }}
 
 <main>
+    <p class="description">For each entity, the 5 most recent records are listed.</p>
+    {% for entity in managingEntities %}
+        {% if entity.meetingRecords|length != 0 %}
+            <article class="record-group">
+                <div class="record-group__title-box">
+                    <h3 class="record-group__title">{{ entity.name|upper }}</h3>
+                </div>
+                <div class="record-group__record-box">
+                    {% for record in entity.meetingRecords %}
+                        {{ include('/components/_record.html.twig', {'record': record}) }}
+                    {% endfor %}
+                </div>
+            </article>
+        {% endif %}
+    {% endfor %}    
     <section class="section">
         <h1 class="heading-primary">Archived Senate Meetings</h1>
         {{ include('components/_legislation.html.twig', {'name': 'Senate Meeting 3.4.20', 'link': 'https://sga-website.s3.us-east-2.amazonaws.com/03_04_2020.pdf'}) }}
