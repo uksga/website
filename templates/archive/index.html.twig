@@ -15,7 +15,7 @@ required to keep accurate records of all our open-door meetings. This includes o
 <main>
 
     <section class="section">
-        <h1 class="heading-primary">Records</h1>
+        <h1 class="heading-primary">Archives</h1>
         {% if managingEntities is defined %}
             {% for entity in managingEntities %}
                 {% if entity.meetingRecords|length != 0 %}
@@ -24,7 +24,7 @@ required to keep accurate records of all our open-door meetings. This includes o
                             <h3 class="record-group__title">{{ entity.name|upper }}</h3>
                         </div>
                         <div class="record-group__record-box">
-                            {% for record in entity.recentRecords %}
+                            {% for record in entity.meetingRecords %}
                                 {{ include('/components/_record.html.twig', {'record': record}) }}
                             {% endfor %}
                         </div>
