@@ -40,7 +40,7 @@ a list of our most recent records. If you cannot find what you are looking for, 
                             <h3 class="record-group__title">{{ entity.name|upper }}</h3>
                         </div>
                         <div class="record-group__record-box">
-                            {% for record in entity.meetingRecords %}
+                            {% for record in entity.recentRecords %}
                                 {{ include('/components/_record.html.twig', {'record': record}) }}
                             {% endfor %}
                         </div>
