@@ -6,7 +6,6 @@
         "ext-iconv": "*",
         "aws/aws-sdk-php": "^3.64",
         "sensio/framework-extra-bundle": "^5.1",
-        "sensiolabs/security-checker": "^5.0",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "^4.1",
         "symfony/console": "^4.1",
