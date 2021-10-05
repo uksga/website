@@ -25,7 +25,7 @@ class RecordsController extends Controller
             'name' => 'Academic and Student Affairs Committee'
         ));
         $ar = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
-            'name' => 'Appropriations and Revenue Committee'
+            'name' => 'Apropriations and Revenue Committee'
         ));
         $fs = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Full Senate'
