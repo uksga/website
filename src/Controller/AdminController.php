@@ -370,7 +370,7 @@ class AdminController extends Controller
             'name' => 'Academic and Student Affairs Committee'
         ));
         $ar = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
-            'name' => 'Apropriations and Revenue Committee'
+            'name' => 'Appropriations and Revenue Committee'
         ));
         $fullSenate = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Full Senate'
