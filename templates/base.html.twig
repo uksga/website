@@ -35,7 +35,7 @@
             <nav class="nav-header__nav">
                 <ul class="nav-primary">
                     {% if is_granted('ROLE_USER') %}<li class="nav-primary__item nav-primary__item--admin"><a href="{{ path('manage_teams') }}" class="nav-primary__link">Admin</a></li>{% endif %}
-                    {# <li class="nav-primary__item nav-primary__item"><a href="https://uky.campuslabs.com/engage/submitter/election/start/467109" class="nav-primary__link">Voting</a></li> #}
+                    <li class="nav-primary__item nav-primary__item"><a href="https://uky.campuslabs.com/engage/submitter/election/start/508570" class="nav-primary__link">Voting</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'about_us' %} nav-primary__item--active {% endif %}"><a href="{{ path('home') }}" class="nav-primary__link">About Us</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'election' %} nav-primary__item--active {% endif %}"><a href="{{ path('election') }}" class="nav-primary__link">Election</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'branches' %} nav-primary__item--active {% endif %}"><a href="{{ path('branches') }}" class="nav-primary__link">Branches</a></li>            
@@ -44,7 +44,7 @@
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'legislation' %} nav-primary__item--active {% endif %}"><a href="{{ path('legislation') }}" class="nav-primary__link">Legislation</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'records' %} nav-primary__item--active {% endif %}"><a href="{{ path('records') }}" class="nav-primary__link">Records</a></li>
                     <li class="nav-primary__item {% if active_link is defined and active_link == 'archive' %} nav-primary__item--active {% endif %}"><a href="{{ path('archive') }}" class="nav-primary__link">Archive</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'tracker' %} nav-primary__item--active {% endif %}"><a href="{{ path('tracker') }}" class="nav-primary__link">Resources</a></li>
+                   {# <li class="nav-primary__item {% if active_link is defined and active_link == 'tracker' %} nav-primary__item--active {% endif %}"><a href="{{ path('tracker') }}" class="nav-primary__link">Resources</a></li> #}
                 </ul>
             </nav>
         </header>
