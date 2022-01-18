@@ -9,14 +9,16 @@
 
 {% block body %}
 
-{{ include('components/_header.html.twig', {'modifier': 'election', 'title': 'SGA Election', 'description': 'Freshman Senate Election. Please see below for information.'}) }}
+{{ include('components/_header.html.twig', {'modifier': 'election', 'title': 'SGA Election', 'description': 'Important Upcoming Election Information. Please see below for information.'}) }}
 
 <main>
     <section class="section">
-        <h1 class="heading-primary">Freshman Senate Election Results</h1>
+        <h1 class="heading-primary">Election Info</h1>
         <br>
         <br>
-        <h2 class="heading-secondary">Winners:  </h2><a target="_blank" href="https://sga-website.s3.us-east-2.amazonaws.com/tally.jpg" class="link">Results</a>
+        <h4 class="heading-secondary">Applications Open: <p>Currently on BBnvolved</p></h4>
+        <h4 class="heading-secondary">Close: <p>January 31st, 5:00 PM</p></h4>
+        <h4 class="heading-secondary">Applications Open: <a target="_blank" href="https://uky.campuslabs.com/engage/submitter/form/start/520455" class="link"></a></h4>
         <p class="description u-margin-bottom-small">Chase Stevens: stevens.chase@uky.edu<br>Zachary Wasson: zack.wasson@uky.edu</p>
         <h2 class="heading-secondary">Run-off winners:  </h2><a target="_blank" href="https://sga-website.s3.us-east-2.amazonaws.com/tally2.jpg" class="link">Results</a>
         <p class="description u-margin-bottom-small">Kayla Bostic: kayla.bostic@uky.edu<br>Kevin Sanders: kevin.sanders@uky.edu</p>
