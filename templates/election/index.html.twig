@@ -9,22 +9,29 @@
 
 {% block body %}
 
-{{ include('components/_header.html.twig', {'modifier': 'election', 'title': 'SGA Election', 'description': 'Freshman Senate Application are Live. Please see below for information.'}) }}
+{{ include('components/_header.html.twig', {'modifier': 'election', 'title': 'SGA Elections', 'description': 'Important Upcoming Election Information. Please see below for information.'}) }}
 
 <main>
     <section class="section">
+<<<<<<< HEAD
         <h1 class="heading-primary">Election Information</h1>
+=======
+        <h1 class="heading-primary">Election Info</h1> 
+>>>>>>> fb35f4557f7cb2eac266cb09017dc66c30166c10
         <br>
         <br>
-        <h2 class="heading-secondary">Info Sessions</h2>
-        <p class="description">Attend an Info Session on 9/21/21 (In-Person in the Senate Chamber at 5pm) or 9/24/21 (On <a target="_blank" href="https://uky.zoom.us/j/85466985087" class="link">Zoom</a> at 3-4pm) </p>
+        <h4 style="display:inline">Applications Open: </h4><p style="display:inline">Currently on BBnvolved</p><br> 
+        <h4 style="display:inline">Close: </h4><p style="display:inline">January 31st, 5:00 PM</p><br>
+        <h4 style="display:inline">Link: </h4><a style="display:inline" target="_blank" href="https://uky.campuslabs.com/engage/submitter/form/start/520455">https://uky.campuslabs.com/engage/submitter/form/start/520455</a><br>
         <br>
+        <h3 style="display:inline">For information on how to apply please visit the link provided:  </h3>
+        <a style="display:inline" target="_blank" href="https://sga-website.s3.us-east-2.amazonaws.com/SGA+Spring+Election+Info+Session.pdf">SGA_Spring_Election_Info_Session.pdf</a><br>
         <br>
-        <h2 class="heading-secondary">Application</h2>     
-        <p class="description u-margin-bottom-medium">
-            To apply for Freshman Senate Election, please fill out the application at our <a target="_blank" href="https://uky.campuslabs.com/engage/submitter/form/start/503277" class="link">link.</a>
-        </p>
-    </section>
+        <h3 style="display:inline">Spring Election Platform Statements:  </h3>
+        <a style="display:inline" target="_blank" href="https://sga-website.s3.us-east-2.amazonaws.com/2022+SGA+SPRING+ELECTION+PLATFORM+STATEMENTS.pdf">SGA_SPRING_ELECTION_PLATFORM_STATEMENTS.pdf</a><br>
+        <br>
+        <p>Any questions, comments, concerns, or errors can be reported to Gabe Savage, Elections Board Commissioner (sga.elections@uky.edu) or Isaiah Villarreal, SGA Advsior (Isaiah.villarreal@uky.edu).</p>
+    </section>  
 
 </main>
 {% endblock %}

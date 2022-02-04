@@ -1,871 +1,100 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Initiave Tracker{% endblock %}
+{% block title %}Resource Tracker{% endblock %}
 
 {% block og %}
-    <meta property="og:title" content="UKSGA: Initiative Tracker" />
+    <meta property="og:title" content="UKSGA: Resource Tracker" />
     <meta property="og:image" content="{{asset('/img/hero_tracker.jpg')}}" />
 {% endblock %}
 
 {% block body %}
 
-{{ include('components/_header.html.twig', {'modifier': 'tracker', 'title': 'Initiative Tracker', 'description': 'This is a tracker to visualize the work SGA does for students and organizations at UK. Please see individual initiatives for contact information.'}) }}
+{{ include('components/_header.html.twig', {'modifier': 'tracker', 'title': 'Campus Resources', 'description': 'This is a list of resources available to UK students.'}) }}
 
 <main>
     <section class="section">
-    {#
-        <h1 class="initiative-type__title">Academic and Student Affairs</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 1</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    #}
-        <h1 class="initiative-type__title">Operation and Evaluation</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Senate Special project to assist funding UK Salvation Army Clinic</h2>
-                            <p class="description-secondary">
-                                Entry Date: 11/01/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: cassandra.kruchten@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {#
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                #}
-            </div>
-        </div>
+        <h1 class="heading-primary">General Campus Resources</h1>
+        <br>
+        <h3>The Study</h3>
+            <p class="description u-margin-bottom-small">The Study is the University of Kentucky’s centralized peer tutoring center. The Peer Tutoring Program provides FREE, drop-in, peer tutoring for many core courses in mathematics, science, & business. Offering proactive assistance, the goal of the Peer Tutoring Program at The Study is to enhance students' academic experience as early and as often as possible. Learn from and alongside your peers in an open and relaxed group tutoring environment. To learn more please visit this <a target="_blank" href="https://www.uky.edu/thestudy/" class="link">link.</a> </p>
+        <br>
+        <h3>Academic Coaching</h3>
+            <p class="description u-margin-bottom-small">Academic Coaching is a no-cost, stress-free way to learn the skills and resources to be successful in college and beyond. To learn more please visit this <a target="_blank" href="https://www.uky.edu/acadcoach/about-us" class="link">link.</a> </p>
+        <br>
+        <h3>Disability Resource Center (DRC)</h3>
+            <p class="description u-margin-bottom-small">The University of Kentucky Disability Resource Center partners with qualified students with disabilities to assist them in gaining equal access to institutional programs and services consistent with their unique needs. The Center seeks to responsibly advocate the needs of students with disabilities to the campus community through consultation and outreach efforts with administration, faculty, students and University partners. To learn more please visit this <a target="_blank" href="https://www.uky.edu/DisabilityResourceCenter/" class="link">link.</a> </p>
+        <br>
+        <h3>University Health Services (UHS)</h3>
+            <p class="description u-margin-bottom-small">UHS is your source for employee and student health care. Our physicians are board-certified in family practice, internal medicine, gynecology/genitourinary care (GYN/GU), psychiatry, and occupational medicine. In addition to our physicians, our nurse practitioners have certification in family medicine, women's health, psychiatry and emergency medicine. To learn more please visit this <a target="_blank" href="https://ukhealthcare.uky.edu/university-health-service" class="link">link.</a> </p>
+        <br>
+        <h3>Stuckert Career Center</h3>
+            <p class="description u-margin-bottom-small">For more than 20 years, the Stuckert Career Center has served the UK campus community. The Career Center building was dedicated on October 10, 2000, and it is the operational center of university career services for the Lexington campus. The Career Center was established with generous support from James W. Stuckert and other University donors. The Career Center provides comprehensive career development programming, resources, and services for the student body and new graduates. To learn more please visit this <a target="_blank" href="https://www.uky.edu/careercenter/about" class="link">link.</a> </p>
+        <br>
+        <h3>Dean of Students</h3>
+            <p class="description u-margin-bottom-small">At the University of Kentucky, the Dean of Students office provides educationally purposeful programs, activities, and services that engage all students and encourages positive community behavior from our students. To learn more please visit this <a target="_blank" href="https://www.uky.edu/deanofstudents/about" class="link">link.</a> </p>
+        <br>
+        <h3>Martin Luther King Center</h3>
+            <p class="description u-margin-bottom-small">Since January of 1987, the Martin Luther King Jr. Cultural Center has been around to provide a space, programming, and a community for underrepresented populations at the University of Kentucky. From our humble beginnings in an old utility closet, to being centralized in the Gatton Student Center. To learn more please visit this <a target="_blank" href="https://www.uky.edu/mlkc/about-us" class="link">link.</a> </p>
+        <br>
+        <h3>Office of International Center</h3>
+            <p class="description u-margin-bottom-small">The UK International Center (UKIC) leads internationalization efforts at the University of Kentucky. The work of the UKIC is supported by International Advisory Council, a group of globally-engaged faculty and administrators representing each of the University’s 16 colleges, plus other key academic units. To learn more please visit this <a target="_blank" href="https://international.uky.edu/" class="link">link.</a> </p>
+        <br>
+        <h3>Student Health & Well-Being</h3>
+            <p class="description u-margin-bottom-small">Student Health & Well-Being fosters holistic well-being by developing informed, empowered, and academically-successful UK students through engagement, collaboration, and the development of inclusive, evidence-based initiatives that strengthen and improve health behavior. To learn more please visit this <a target="_blank" href="https://www.uky.edu/wellness/" class="link">link.</a> </p>
+        <br>
+        <h3>VIP Center</h3>
+                <p class="description u-margin-bottom-small">Leads, supports, and sustains a culture of accountability to eliminate violence and oppression at UK. We create safe spaces for people to be heard, while also speaking for those who have been silenced. To learn more please visit this <a target="_blank" href="https://www.uky.edu/vipcenter/" class="link">link.</a> </p>
+        <br>  
+        <h1 class="heading-primary">What is Sustainability?</h1>
+            <p class="description u-margin-bottom-small">Sustainability is the ability of something to be sustained into the future, and is generally advocated for and studied through the lens of humanity’s relationship with the natural world. Sustainability consists of 3 main pillars: environmental stewardship, social justice, and economic well-being.</p>
+            <p class="description u-margin-bottom-small">Along these lines, sustainability “implies that the activities of the University of Kentucky are ecologically sound, socially just, and economically viable, and that they will continue to be so for future generations,” <a target="_blank" href="https://www.uky.edu/sustainability/" class="link">(UK Office of Sustainability).</a> Focusing on sustainability at a University level also emphasizes these principles in coursework, research, events, and organizations. </p>
+        <br>
+        <h2>EDUCATION</h2>
+            <br>
+            <h3>WholeSum</h3>
+                <p class="description u-margin-bottom-small">A partnership between UK’s Office of Sustainability, Recycling, and Center for Applied Energy Research, WholeSum is a platform designed to inspire, inform, and encourage our University community to engage in sustainability. To learn more please visit this <a target="_blank" href="https://wholesumky.org" class="link">link.</a> </p>
+        <br>
+        <h2>ORGANIZATIONS</h2>
+            <br>
+            <h3>Big Blue Pantry</h3>
+                <p class="description u-margin-bottom-small">Located in the basement of White Hall Classroom Building, the Big Blue Pantry is open to any University of Kentucky student with a valid UK ID experiencing food insecurity or hunger and operates completely on donations (both food and monetary). There are no qualifications for access to the pantry other than being a UK student. To learn more please visit this <a target="_blank" href="https://www.uky.edu/concern/big-blue-pantry" class="link">link.</a> </p>
+            <br>
+            <h3>GreenThumb</h3>
+                <p class="description u-margin-bottom-small">An environmental activism group that works on environmental stewardship campaigns, such as green investments, healthful food options on campus, and more. To learn more please visit this <a target="_blank" href="https://uky.campuslabs.com/engage/organization/greenthumb" class="link">link.</a> </p>
+            <br>
+            <h3>Student Sustainability Council</h3>
+                <p class="description u-margin-bottom-small">Distributes the Environmental Stewardship Fee to advance sustainability at UK. Check their website for info on applying for funding If you have an idea for a project that will enhance sustainability on campus, or to apply to serve as an at-large council member. To learn more please visit this <a target="_blank" href="https://uky.campuslabs.com/engage/organization/student-sustainability-council" class="link">link.</a> </p>
+            <br>
+            <h3>UK Energy Club</h3>
+                <p class="description u-margin-bottom-small">A space for UK students and faculty to network and learn about current energy issues, the oil and gas industry, and renewable energy technologies through seminars, meetings, conferences, and more. To learn more please visit this <a target="_blank" href="https://uky.campuslabs.com/engage/organization/energyclub" class="link">link.</a> </p>
+            <br>
             
-        <h1 class="initiative-type__title">Appropriation and Revenue</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Integrated Plant and Soil Sciences Graduate Student Association</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/26/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: jcwe243@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Engineers Without Borders Senate Special Project</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/28/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: asbu236@uky.edu, jillian.chamberlain@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                {#
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                #}
-            </div>
-        </div>
-        {#     
-        <h1 class="initiative-type__title">Special Initiatives</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 1</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-                
-        <h1 class="initiative-type__title">Internal Initiatives</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 1</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        #}
-
-        <h1 class="initiative-type__title">Campus Services</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Student Employment Process Expediting</h2>
-                            <p class="description-secondary">
-                                Entry Date: TBD
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: gar230@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">U Flats Composting Initiative</h2>
-                            <p class="description-secondary">
-                                Entry Date: 01/22/2021
-                                <br>
-                                <a href="https://app.smartsheet.com/b/form/b3d34bf3992f46a788779aa2b76a28ee" style="color: #ffffff;">Register</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: recycle@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                {#
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                #}
-            </div>
-        </div>
-        
-          
-        <h1 class="initiative-type__title">Outreach</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Team Building Tournament</h2>
-                            <p class="description-secondary">
-                                Entry Date: TBD
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: PMAG222@uky.edu, IsaccSutherland@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {#
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                #}
-            </div>
-        </div>
-        {#
-        <h1 class="initiative-type__title">Inclusion and Equity</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 1</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-                
-        <h1 class="initiative-type__title">Civic Engagement and Government Relations</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 1</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-                
-        <h1 class="initiative-type__title">Campus Safety</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 1</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        #}
-        <h1 class="initiative-type__title">Sustainability</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Water Bottle Filling Station</h2>
-                            <p class="description-secondary">
-                                Entry Date: 02/08/21
-                                <br>
-                                <a href="" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: sga.sustainability@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {#
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                #}
-            </div>
-        </div>
-        {#        
-        <h1 class="initiative-type__title">Health and Wellness</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #3777d7; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 1</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Ongoing
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 2</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #63656a; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 3</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Planning
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="card" style="background-color: #18468f; color: #ffffff;">
-                        <div class="card__description">
-                            <h2 class="heading-secondary" style="color:#ffffff">Initiative 4</h2>
-                            <p class="description-secondary">
-                                Entry Date: 10/05/20
-                                <br>
-                                <a href="https://www.google.com" style="color: #ffffff;">Report</a>
-                                <br>
-                                Status: Complete
-                                <br>
-                                Contact: sga.someone@uky.edu
-                            </p>                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        #}
+        <h2>PROGRAMS</h2>
+            <br>
+            <h3>EcoReps</h3>
+                <p class="description u-margin-bottom-small">The EcoRep program was established in 2017 as a part of UK Recycling's goals to increase recycling and waste diversion efforts on campus. EcoReps serve as sustainability ambassadors in their residence hall as they provide outreach, participate in events, and help further the University’s sustainability goals. Each EcoRep receives a $100 stipend at the end of the academic year, contingent upon completing all program requirements.To learn more please visit this <a target="_blank" href="https://www.uky.edu/facilities/cppd/services/facilities-services/recycling/ecoreps" class="link">link.</a> </p>            <br>
+            <h3>Big Blue Recycling Crew</h3>
+                <p class="description u-margin-bottom-small">A collaborative effort between UK Recycling and UK Athletics to increase recycling at home football game tailgates. The main duties of the Crew are to pass out recycling bags and promote recycling with football fans. Students are hired for the duration of the football season, and must be available to work at all home games’ tailgates. To learn more please visit this <a target="_blank" href="https://www.uky.edu/facilities/cppd/services/facilities-services/recycling/big-blue-recycling-crew" class="link">link.</a> </p>            <br>
+            <h3>“Grubby” Residence Hall Composting Program</h3>
+                <p class="description u-margin-bottom-small">A program that makes free food waste collection bins available to students living in Central campus. To learn more please visit this <a target="_blank" href="https://www.uky.edu/facilities/cppd/services/facilities-services/recycling/organics-diversion/ResidenceHallProgram " class="link">link.</a> </p>
+            <br>
+            <h3>Sustainability Challenge Grants</h3>
+                <p class="description u-margin-bottom-small">Now in its seventh year, SCGs provide funding to teams from the University working on projects (research, creative, or otherwise) that promote sustainability. Over the years, 43 projects have been awarded a total of $1.15 million. To learn more please visit this <a target="_blank" href="https://www.uky.edu/sustainability/sustainability-challenge-grants" class="link">link.</a> </p>
+            <br>
+            <h3>Sustainability Internship Program</h3>
+                <p class="description u-margin-bottom-small">A partnership between the Office of Sustainability, the Student Sustainability Council, and the Tracy Farmer Institute for Sustainability and the Environment that provides paid internships to UK students. To learn more please visit this <a target="_blank" href="https://www.uky.edu/sustainability/sustainability-internships" class="link">link.</a> </p>
+        <br>
+        <h2>RESOURCES</h2>
+            <br>
+            <h3>Campus Bicycle Resource Map</h3>
+                <p class="description u-margin-bottom-small">A map of all campus biking trails, bike lanes, racks, repair stations, and more! To learn more please visit this <a target="_blank" href="https://maps.uky.edu/bicycle/ " class="link">link.</a> </p>            <br>
+            <h3>Miscellaneous Recycling</h3>
+                <p class="description u-margin-bottom-small">Fill out a service request form based on the material you need to dispose of that can’t be put into general recycling but also shouldn’t go to the landfill (including batteries, ink cartridges, CDs/DVDs, electronics, and more). To learn more please visit this <a target="_blank" href="https://www.uky.edu/facilities/cppd/services/facilities-services/recycling/other-recycling" class="link">link.</a> </p>            <br>
+            <h3>Recycling Bin Map</h3>
+                <p class="description u-margin-bottom-small">A map including all outdoor recycling and landfill bins that can be found on campus. To learn more please visit this <a target="_blank" href="https://ukyfm.maps.arcgis.com/apps/webappviewer/index.html?id=5ecb7b9d90bf449e9588cbc064b38d84 " class="link">link.</a> </p>
+            <br>
+            <h3>Wildcat Wheels Bicycle Library</h3>
+                <p class="description u-margin-bottom-small">A resource that provides free bicycle rentals and repairs to the UK community. To learn more please visit this <a target="_blank" href="https://www.uky.edu/transportation/bike/wildcatwheels" class="link">link.</a> </p>
     </section>
 </main>
 {% endblock %}
