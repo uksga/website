@@ -6,9 +6,12 @@
         "ext-iconv": "*",
         "aws/aws-sdk-php": "^3.64",
         "composer/package-versions-deprecated": "1.11.99.1",
+        "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.2",
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.8",
+        "phpdocumentor/reflection-docblock": "^5.3",
+        "phpstan/phpdoc-parser": "^1.2",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "^4.1",
@@ -20,9 +23,11 @@
         "symfony/http-foundation": "^4.1",
         "symfony/monolog-bundle": "^3.1",
         "symfony/process": "^4.1",
+        "symfony/property-access": "^4.1",
+        "symfony/property-info": "^4.1",
         "symfony/proxy-manager-bridge": "^4.1",
         "symfony/security-bundle": "^4.1",
-        "symfony/serializer-pack": "*",
+        "symfony/serializer": "^4.1",
         "symfony/swiftmailer-bundle": "^3.1",
         "symfony/twig-bundle": "^4.1",
         "symfony/validator": "^4.1",
@@ -30,18 +35,25 @@
         "symfony/yaml": "^4.1"
     },
     "require-dev": {
-        "symfony/debug-pack": "*",
+        "phpunit/phpunit": "^9.5",
+        "symfony/browser-kit": "^4.1",
+        "symfony/css-selector": "^4.1",
+        "symfony/debug-bundle": "^4.1",
         "symfony/dotenv": "^4.1",
         "symfony/maker-bundle": "^1.0",
-        "symfony/profiler-pack": "*",
-        "symfony/test-pack": "^1.0",
+        "symfony/phpunit-bridge": "^6.0",
+        "symfony/stopwatch": "^4.1",
+        "symfony/web-profiler-bundle": "^4.1",
         "symfony/web-server-bundle": "^4.1"
     },
     "config": {
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
