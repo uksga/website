@@ -2,107 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>UKSGA &mdash; {% block title %}University of Kentucky Student Government Assoication {% endblock %}</title>
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            <link rel="stylesheet" href="{% if  app.environment == "dev"%}{{ asset('build/css/app.css') }}{% else %}{{ asset('build/css/app.compressed.css') }}{% endif %}">
-            <link href="https://fonts.googleapis.com/css?family=Merriweather:300i,400,700,700i" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,700i" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+            {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
-        {% block og %}
-            <meta property="og:title" content="UKSGA: UKY Student Government" />
-            <meta property="og:image" content="{{asset('/img/hero_services.jpg')}}" />
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
-        {% block meta %}
-            <meta name="description" content="The website for the University of Kentucky's Student Government Association" />
-        {% endblock %}
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     </head>
     <body>
-        <header class="nav-header">
-            <figure class="nav-header__logo-container">
-                <a href="{{ path('home')}}"><img src="{{ asset('/img/logo.jpg') }}" alt="UKSGA Logo" class="nav-header__logo logo--primary"></a>
-            </figure>
-            <div class="nav-header__nav-toggle" id="nav-toggle">
-                <button class="hamburger hamburger--collapse" type="button" id="nav-toggle-button" aria-label="Menu" aria-controls="navigation">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
-            </div> 
-            <nav class="nav-header__nav">
-                <ul class="nav-primary">
-                    {% if is_granted('ROLE_USER') %}<li class="nav-primary__item nav-primary__item--admin"><a href="{{ path('manage_teams') }}" class="nav-primary__link">Admin</a></li>{% endif %}
-                    {# <li class="nav-primary__item nav-primary__item"><a href="https://uky.campuslabs.com/engage/submitter/election/start/508570" class="nav-primary__link">Voting</a></li> #}
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'about_us' %} nav-primary__item--active {% endif %}"><a href="{{ path('home') }}" class="nav-primary__link">About Us</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'election' %} nav-primary__item--active {% endif %}"><a href="{{ path('election') }}" class="nav-primary__link">Election</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'branches' %} nav-primary__item--active {% endif %}"><a href="{{ path('branches') }}" class="nav-primary__link">Branches</a></li>            
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'services' %} nav-primary__item--active {% endif %}"><a href="{{ path('services') }}" class="nav-primary__link">Services</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'financial' %} nav-primary__item--active {% endif %}"><a href="{{ path('funding')}}" class="nav-primary__link">Financial</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'legislation' %} nav-primary__item--active {% endif %}"><a href="{{ path('legislation') }}" class="nav-primary__link">Legislation</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'records' %} nav-primary__item--active {% endif %}"><a href="{{ path('records') }}" class="nav-primary__link">Records</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'archive' %} nav-primary__item--active {% endif %}"><a href="{{ path('archive') }}" class="nav-primary__link">Archive</a></li>
-                    <li class="nav-primary__item {% if active_link is defined and active_link == 'tracker' %} nav-primary__item--active {% endif %}"><a href="{{ path('tracker') }}" class="nav-primary__link">Resources</a></li>
-                </ul>
-            </nav>
-        </header>
-
         {% block body %}{% endblock %}
-        
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-12">
-                        <div class="footer__logo">
-                            <img src="{{ asset('/img/logo_white.png') }}" alt="UKSGA Logo" class="logo--secondary">
-                        </div>
-                        <p class="contact contact--white u-margin-top-medium">Student Government Office<br>
-                        160 Avenue of Champions, Suite A267<br>
-                        Lexington, KY 40506-0676
-                        </p>
-                    </div>
-                    <div class="col-lg-7 col-md-7 col-sm-12 u-margin-top-large">
-                        <div class="social-container">
-                            <a href="https://www.facebook.com/UKStudentGovernmentAssociation/" class="social-container__item" target="_blank">
-                                <div class="social-container__logo"><img src="{{ asset('/img/social_facebook.png') }}" alt="Facebook" class="social-container__image"></div>
-                            </a>
-                            <a href="https://github.com/uksga" class="social-container__item" target="_blank">
-                                <div class="social-container__logo"><img src="{{ asset('/img/social_github.png') }}" alt="Github" class="social-container__image"></div>
-                            </a>
-                            <a href="https://www.instagram.com/uksga/" class="social-container__item" target="_blank">
-                                <div class="social-container__logo"><img src="{{ asset('/img/social_instagram.png') }}" alt="Instagram" class="social-container__image"></div>
-                            </a>
-                            <a href="https://twitter.com/uksga" class="social-container__item" target="_blank">
-                                <div class="social-container__logo"><img src="{{ asset('/img/social_twitter.png') }}" alt="Twitter" class="social-container__image"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__copy">
-                <span class="footer__copy-text">&copy; 2018 University of Kentucky Student Government Association</span>
-            </div>
-        </footer>
-        <script>
-            $("#nav-toggle-button").click(function(e){
-                e.preventDefault();
-                $('#nav-toggle-button').toggleClass('is-active');
-                $("header > nav").slideToggle();
-            });
-            {# $("#nav-toggle a").click(function(e){
-                
-            }); #}
-            $(window).resize(function() {
-                if($( window ).width() >= "900") {
-                    $("header > nav").css("display", "flex");
-                }
-                else {
-                    $("header > nav").css("display", "none");
-                }
-            });
-        </script>
-        {% block javascripts %}{% endblock %}
     </body>
 </html>
