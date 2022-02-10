@@ -24,6 +24,7 @@ services:
     # as action arguments even if you don't extend any base controller class
     App\Controller\:
         resource: '../src/Controller/'
+        arguments: [ "@doctrine.orm.entity_manager" ]
         tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
