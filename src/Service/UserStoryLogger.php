@@ -21,7 +21,7 @@ class UserStoryLogger
     public function __construct(SessionInterface $sessionInterface, RequestStack $requestStack, EntityManagerInterface $em)
     {
         $this->sessionInterface = $sessionInterface;
-        $this->entityManager = $em;
+        $this->em = $em;
         $this->requestStack = $requestStack;
     }
     
