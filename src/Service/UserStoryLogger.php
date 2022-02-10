@@ -16,7 +16,7 @@ class UserStoryLogger
 
     protected $sessionInterface;
     protected $requestStack;
-    private $em;
+    //private $em;
 
     public function __construct(SessionInterface $sessionInterface, RequestStack $requestStack, $em)
     {
