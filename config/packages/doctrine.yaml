@@ -4,15 +4,7 @@ doctrine:
 
         # IMPORTANT: You MUST configure your server version,
         # either here or in the DATABASE_URL env var (see .env file)
-        dbname:               website_db
-        host:                 website-db.cvu9qgu51kwc.us-east-1.rds.amazonaws.com
-        port:                 3306
-        user:                 admin
-        password:             tE7cEfTLMYNqwBNMqOijqqbXjxPXTNiLmn1JJtLao
-        driver:               pdo_mysql
-        server_version:      '5.7'
-        charset:              UTF8
-        url:                  mysql://db_user:db_password@db_host:3306/db_name
+        server_version:       '5.7'
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
