@@ -10,9 +10,9 @@ doctrine:
         user:                 admin
         password:             tE7cEfTLMYNqwBNMqOijqqbXjxPXTNiLmn1JJtLao
         driver:               pdo_mysql
-        7server_version:       '5.6'
+        server_version:      '5.7'
         charset:              UTF8
-        url:                  mysql://db_user:db_password@127.0.0.1:3306/db_name
+        url:                  mysql://db_user:db_password@db_host:3306/db_name
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
