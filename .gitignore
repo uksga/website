@@ -1,13 +1,16 @@
 
 ###> symfony/framework-bundle ###
-/.env
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
-.phpunit
+.phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
@@ -29,4 +32,7 @@ package-lock.json
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+<<<<<<< HEAD
 aws-elastic-beanstalk-cli-setup
+=======
+>>>>>>> 1043305e0bd1fd20d7bed96660b3895f2d22e5ae

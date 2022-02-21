@@ -1,6 +1,5 @@
 twig:
-    paths: ['%kernel.project_dir%/templates']
+    default_path: '%kernel.project_dir%/templates'
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    globals:
-        s3_path: '%env(AWS_BASE_URL)%%env(AWS_BUCKET_NAME)%/'
+    exception_controller: null
