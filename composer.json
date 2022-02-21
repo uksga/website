@@ -17,7 +17,7 @@
         "symfony/asset": "5.4.*",
         "symfony/console": "5.4.*",
         "symfony/expression-language": "5.4.*",
-        "symfony/flex": "5.4.*",
+        "symfony/flex": "^1.2*",
         "symfony/form": "5.4.*",
         "symfony/framework-bundle": "5.4.*",
         "symfony/http-foundation": "5.4.*",
@@ -44,7 +44,7 @@
         "symfony/phpunit-bridge": "5.4.*",
         "symfony/stopwatch": "^6.0",
         "symfony/web-profiler-bundle": "^5.0",
-        "symfony/web-server-bundle": "5.4.*"
+        "symfony/web-server-bundle": "4.4.*"
     },
     "config": {
         "preferred-install": {
