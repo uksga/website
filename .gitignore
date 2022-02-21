@@ -29,3 +29,4 @@ package-lock.json
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+aws-elastic-beanstalk-cli-setup
