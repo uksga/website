@@ -29,7 +29,7 @@
         "symfony/proxy-manager-bridge": "^4.1",
         "symfony/security-bundle": "^4.1",
         "symfony/serializer": "^4.1",
-        "symfony/string": "^4.1",
+        "symfony/string": "^5.4",
         "symfony/twig-bundle": "^4.1",
         "symfony/validator": "^4.1",
         "symfony/web-link": "^4.1",
