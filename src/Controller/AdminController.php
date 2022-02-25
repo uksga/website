@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Service\S3;
 
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,7 +33,7 @@ use \Datetime;
 /**
  * @Route("/admin")
  */
-class AdminController extends Controller
+class AdminController extends AbstractController
 {
     /**
      * @Route("/", name="manage_teams")
