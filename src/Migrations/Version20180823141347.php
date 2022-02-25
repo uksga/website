@@ -13,7 +13,7 @@ final class Version20180823141347 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+        $this->abortIf($this->connection->getDatabasePlatform()->name !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('CREATE TABLE meeting_record (id INT AUTO_INCREMENT NOT NULL, managing_entity_id INT NOT NULL, approved_date DATETIME NOT NULL, document_url VARCHAR(255) DEFAULT NULL, INDEX IDX_9B5CAED392F7CC58 (managing_entity_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
         $this->addSql('ALTER TABLE meeting_record ADD CONSTRAINT FK_9B5CAED392F7CC58 FOREIGN KEY (managing_entity_id) REFERENCES managing_entity (id)');
@@ -22,7 +22,7 @@ final class Version20180823141347 extends AbstractMigration
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+        $this->abortIf($this->connection->getDatabasePlatform()->name !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql('DROP TABLE meeting_record');
     }
