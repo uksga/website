@@ -4,33 +4,35 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use App\Entity\MeetingRecord;
 use App\Entity\ManagingEntity;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @Route("/records")
  */
-class RecordsController extends Controller
+class RecordsController extends AbstractController
 {
     /**
      * @Route("/", name="records")
      */
-    public function index()
+    public function index(ManagerRegistry $doctrine)
     {
-        $oe = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $oe = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Operations and Evaluations Committee'
         ));
-        $asa = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $asa = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Academic and Student Affairs Committee'
         ));
-        $ar = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $ar = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Apropriations and Revenue Committee'
         ));
-        $fs = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $fs = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Full Senate'
         ));
-        $sc = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $sc = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Supreme Court'
         ));
         if (!is_null($oe) && !is_null($asa) && !is_null($ar))

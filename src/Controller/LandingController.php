@@ -6,6 +6,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+use Doctrine\Persistence\ManagerRegistry;
 
 use \Datetime;
 
@@ -15,12 +18,12 @@ use App\Entity\InvolvementContact;
 
 use App\Service\UserStoryLogger;
 
-class LandingController extends Controller
+class LandingController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function index(Request $request, UserStoryLogger $logger)
+    public function index(Request $request, UserStoryLogger $logger, ManagerRegistry $doctrine)
     {
         $logger->log($request->get('_route'));
 
@@ -29,7 +32,7 @@ class LandingController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->persistForm($form, $request);
+            $this->persistForm($form, $request, $doctrine);
             return $this->render('landing/index.html.twig', [
                 'active_link' => 'about_us',
                 'form' => $form->createView()
@@ -41,13 +44,13 @@ class LandingController extends Controller
         ]);
     }
 
-    private function persistForm($form, $request)
+    private function persistForm($form, $request, ManagerRegistry $doctrine)
     {
         $this->addFlash("info", "We've received your email and look forward to talking with you!");
         $contact = $form->getData();
         $date = new DateTime();
         $contact->setCreatedAt($date);
-        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager = $doctrine->getManager();
         $entityManager->persist($contact);
         $entityManager->flush();
     }
