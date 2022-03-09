@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordHasherInterface;
 
 use App\Entity\TeamMember;
 use App\Entity\Team;
@@ -28,6 +29,8 @@ use App\Form\UserType;
 use App\Form\TeamType;
 use App\Form\MeetingRecordType;
 
+use Doctrine\Persistence\ManagerRegistry;
+
 use \Datetime;
 
 /**
@@ -38,9 +41,9 @@ class AdminController extends AbstractController
     /**
      * @Route("/", name="manage_teams")
      */
-    public function manageTeams(Request $request)
+    public function manageTeams(Request $request, ManagerRegistry $doctrine)
     {
-        $emTeam = $this->getDoctrine()->getManager()->getRepository(Team::class);
+        $emTeam = $doctrine->getManager()->getRepository(Team::class);
         $executive = $emTeam->findOneBy(['name' => 'executive']);
         $judicial = $emTeam->findOneBy(['name' => 'judicial']);
         $legislative = $emTeam->findOneBy(['name' => 'legislative']);
@@ -58,7 +61,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/add_team", name="add_team")
      */
-    public function addTeam(Request $request)
+    public function addTeam(Request $request, ManagerRegistry $doctrine)
     {
         $team = new Team();
         $form = $this->createForm(TeamType::class, $team);
@@ -67,7 +70,7 @@ class AdminController extends AbstractController
             $team = $form->getData();
             $teamName = $team->getName();
             $team->setName(strtolower($teamName));
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $doctrine->getManager();
             $entityManager->persist($team);
             $entityManager->flush();
             return $this->redirectToRoute('manage_teams');
@@ -84,18 +87,18 @@ class AdminController extends AbstractController
     /**
      * @Route("/edit_team", name="edit_team")
      */
-    public function editTeam(Request $request)
+    public function editTeam(Request $request, ManagerRegistry $doctrine)
     {
         $id = $request->get('id');
         if ($id)
         {
-            $team = $this->getDoctrine()->getManager()->getRepository(Team::class)->find($id);
+            $team = $doctrine->getManager()->getRepository(Team::class)->find($id);
             if ($team)
             {
                 $form = $this->createForm(TeamType::class, $team);
                 $form->handleRequest($request);
                 if ($form->isSubmitted() && $form->isValid()) {
-                    $this->getDoctrine()->getManager()->flush();
+                    $doctrine->getManager()->flush();
                     return $this->redirectToRoute('manage_teams');
                 }
                 return $this->render('admin/edit_team.html.twig', array(
@@ -113,7 +116,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/add_member", name="add_member")
      */
-    public function addTeamMember(Request $request)
+    public function addTeamMember(Request $request, ManagerRegistry $doctrine)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
         $teamMember = new TeamMember();
@@ -135,7 +138,7 @@ class AdminController extends AbstractController
             $s3->PutS3File($contents, $fileName, $mimeType = 'image/jpeg');
             $teamMember->setProfileImageUrl($fileName);
 
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $doctrine->getManager();
             $entityManager->persist($teamMember);
             $entityManager->flush();
             return $this->redirectToRoute('manage_teams');
@@ -151,14 +154,14 @@ class AdminController extends AbstractController
     /**
      * @Route("/edit", name="edit_member")
      */
-    public function editMember(Request $request)
+    public function editMember(Request $request, ManagerRegistry $doctrine)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
         $id = $request->get('id');
         $ref = $request->headers->get('referer');
         if ($id)
         {
-            $em = $this->getDoctrine()->getManager();
+            $em = $doctrine->getManager();
             $repo = $em->getRepository(TeamMember::class);
             $member = $repo->find($id);
             if ($member)
@@ -194,13 +197,13 @@ class AdminController extends AbstractController
     /**
      * @Route("/deactivate", name="deactivate")
      */
-    public function deactivate(Request $request)
+    public function deactivate(Request $request, ManagerRegistry $doctrine)
     {
         $id = $request->get('id');
         $teamName = $request->get('team');
         if ($id)
         {
-            $em = $this->getDoctrine()->getManager();
+            $em = $doctrine->getManager();
             $repo = $em->getRepository(TeamMember::class);
             $member = $repo->find($id);
             if ($member)
@@ -217,10 +220,10 @@ class AdminController extends AbstractController
     /**
      * @Route("/current_users", name="current_users")
      */
-    public function currentUsers(Request $request)
+    public function currentUsers(Request $request, ManagerRegistry $doctrine)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
-        $users = $this->getDoctrine()->getManager()->getRepository(User::class)->findAll();
+        $users = $doctrine->getManager()->getRepository(User::class)->findAll();
         return $this->render('/admin/users.html.twig', array(
             'active_link' => 'control',
             'users' => $users
@@ -230,7 +233,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/add_user", name="add_user")
      */
-    public function addUser(Request $request, UserPasswordEncoderInterface $encoder)
+    public function addUser(Request $request, UserPasswordHasherInterface $encoder, ManagerRegistry $doctrine)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
         $user = new User();
@@ -238,7 +241,7 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $password = $encoder->encodePassword($user, $user->getPassword());
+            $password = $encoder->hashPassword($user, $user->getPassword());
             $user->setPassword($password);
             $roles = ['ROLE_USER'];
             $submittedRole = $form['roles']->getData();
@@ -247,7 +250,7 @@ class AdminController extends AbstractController
                 $roles = ['ROLE_ADMIN'];
             }
             $user->setRoles($roles);
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $doctrine->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
             return $this->redirectToRoute('current_users');
@@ -262,13 +265,13 @@ class AdminController extends AbstractController
     /**
      * @Route("/delete_user", name="delete_user")
      */
-    public function deleteUser(Request $request)
+    public function deleteUser(Request $request, ManagerRegistry $doctrine)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
         $id = $request->get('id');
         if ($id)
         {
-            $em = $this->getDoctrine()->getManager();
+            $em = $doctrine->getManager();
             $user = $em->getRepository(User::class)->find($id);
             if ($user)
             {
@@ -284,9 +287,9 @@ class AdminController extends AbstractController
     /**
      * @Route("/add_service", name="add_service")
      */
-    public function addService(Request $request)
+    public function addService(Request $request, ManagerRegistry $doctrine)
     {
-        $teamMembers = $this->getDoctrine()->getManager()->getRepository(TeamMember::class)->findAll();
+        $teamMembers = $doctrine->getManager()->getRepository(TeamMember::class)->findAll();
         $service = new Service();
         $form = $this->createForm(ServiceType::class, $service, array(
             'team_members' => $teamMembers
@@ -311,7 +314,7 @@ class AdminController extends AbstractController
             $text = nl2br($service->getDescription());
             $service->setDescription($text);
 
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $doctrine->getManager();
             $entityManager->persist($service);
             $entityManager->flush();
             return $this->redirectToRoute('current_services');
@@ -326,13 +329,13 @@ class AdminController extends AbstractController
       /**
      * @Route("/delete_service/{id}", name="delete_service")
      */
-    public function deleteService(Request $request, $id)
+    public function deleteService(Request $request, $id, ManagerRegistry $doctrine)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
         $id = $request->get('id');
         if ($id)
         {
-            $em = $this->getDoctrine()->getManager();
+            $em = $doctrine->getManager();
             $service = $em->getRepository(Service::class)->find($id);
             if ($service)
             {
@@ -348,9 +351,9 @@ class AdminController extends AbstractController
     /**
      * @Route("/current_services", name="current_services")
      */
-    public function currentServices(Request $request)
+    public function currentServices(Request $request, ManagerRegistry $doctrine)
     {
-        $services = $this->getDoctrine()->getManager()->getRepository(Service::class)->findAll();
+        $services = $doctrine->getManager()->getRepository(Service::class)->findAll();
         return $this->render('/admin/services.html.twig', array(
             'services' => $services,
             'active_link' => 'services'
@@ -360,22 +363,22 @@ class AdminController extends AbstractController
     /**
      * @Route("/records", name="current_records")
      */
-    public function currentRecords(Request $request)
+    public function currentRecords(Request $request, ManagerRegistry $doctrine)
     {
         // Fetch all managing entities and their records
-        $oe = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $oe = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Operations and Evaluations Committee'
         ));
-        $asa = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $asa = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Academic and Student Affairs Committee'
         ));
-        $ar = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $ar = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Apropriations and Revenue Committee'
         ));
-        $fullSenate = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $fullSenate = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Full Senate'
         )); 
-        $sc = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
+        $sc = $doctrine->getManager()->getRepository(ManagingEntity::class)->findOneBy(array(
             'name' => 'Supreme Court'
         ));
         return $this->render('/admin/records.html.twig', array(
@@ -391,9 +394,9 @@ class AdminController extends AbstractController
     /**
      * @Route("/delete_record/{id}", name="delete_record")
      */
-    public function deleteRecord(Request $request, $id)
+    public function deleteRecord(Request $request, $id, ManagerRegistry $doctrine)
     {
-        $em = $this->getDoctrine()->getManager();
+        $em = $doctrine->getManager();
         $repo = $em->getRepository(MeetingRecord::class);
         $record = $repo->find($id);
         if ($record)
@@ -408,10 +411,10 @@ class AdminController extends AbstractController
     /**
      * @Route("/add_record", name="add_record")
      */
-    public function addRecord(Request $request)
+    public function addRecord(Request $request, ManagerRegistry $doctrine)
     {
         // $managingEntityId = $request->get('id');
-        $repo = $this->getDoctrine()->getManager()->getRepository(ManagingEntity::class);
+        $repo = $doctrine->getManager()->getRepository(ManagingEntity::class);
         // $managingEntity = $repo->find($managingEntityId);
 
         $managingEntities = $repo->findAll();
@@ -439,7 +442,7 @@ class AdminController extends AbstractController
             $s3->PutS3File($contents, $fileName, $mimeType = 'application/pdf');
             $meetingRecord->setDocumentURL($fileName);
 
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $doctrine->getManager();
             $entityManager->persist($meetingRecord);
             $entityManager->flush();
             return $this->redirectToRoute('current_records');
@@ -462,9 +465,9 @@ class AdminController extends AbstractController
         return md5(uniqid());
     }
 
-    private function fetchTeamMembers($teamName)
+    private function fetchTeamMembers($teamName, ManagerRegistry $doctrine)
     {
-        $emTeam = $this->getDoctrine()->getManager()->getRepository(Team::class);
+        $emTeam = $doctrine->getManager()->getRepository(Team::class);
         $team = $emTeam->findOneBy(['name' => $teamName]);
 
         if ($team)
