@@ -13,7 +13,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordHasherInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 use App\Entity\TeamMember;
 use App\Entity\Team;
@@ -236,20 +237,20 @@ class AdminController extends AbstractController
     public function addUser(Request $request, UserPasswordHasherInterface $encoder, ManagerRegistry $doctrine)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
-        $user = new User();
+        $user = new PasswordAuthenticatedUserInterface();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $encoder->hashPassword($user, $user->getPassword());
-            $user->setPassword($password);
+            $user->getPassword($password);
             $roles = ['ROLE_USER'];
             $submittedRole = $form['roles']->getData();
             if ($submittedRole)
             {
                 $roles = ['ROLE_ADMIN'];
             }
-            $user->setRoles($roles);
+            $user->getRoles($roles);
             $entityManager = $doctrine->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
